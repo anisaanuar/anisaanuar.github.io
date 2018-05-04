@@ -1,0 +1,123 @@
+a {
+	text-decoration: none;
+	color:#42CAFD;
+	font-weight:250;
+}
+
+a:hover {
+	color:#1481BA;
+	cursor:pointer;
+}
+
+h1 {
+	font-size:1.65rem;
+	font-weight:500;
+	letter-spacing:.25rem;
+}
+
+h2 {
+	font-size:1.15rem;
+	font-weight:500;
+	letter-spacing:.1rem;
+	line-height:300%;
+}
+
+h3 {
+	font-size:.9rem;
+	font-weight:500;
+	line-height: 0px;
+	display:inline-block;
+}
+
+h4 {
+	font-size:.9rem;
+	font-weight:500;
+	font-style:italic;
+	line-height: 0px;
+	display:inline-block;
+}
+
+p {
+	font-size:.9rem;
+	font-weight:100;
+	line-height: 0px;
+	display:inline-block;
+}
+
+p.transparent {
+	opacity:0;
+    -webkit-margin-before: 0em;
+    -webkit-margin-after: 0em;
+    display:inline;
+}
+
+#resume {
+	width:80%;
+	margin:0 auto;
+	font-family: "Avenir Next";
+}
+
+#resume-paper {
+	width:78%;
+	margin:5%;
+	padding:6%;
+    box-shadow: -10px -10px 50px #ccc;
+}
+
+#education {
+	width:100%;
+}
+
+
+.contact-information {
+	margin:0 auto;
+	padding:0;
+}
+
+.contact-information > h3, p {
+    -webkit-margin-before: .75em;
+    -webkit-margin-after: .75em
+}
+
+
+#education > h2, h3, h4, h5, p {
+    -webkit-margin-before: 0.72em;
+    -webkit-margin-after: 0.72em;
+}
+
+.left {
+	text-align:left;
+	width:65%;
+	float:left;
+}
+
+.right {
+	text-align:right;
+	width:35%;
+	float:left;
+}
+
+.block-10 {
+	text-align:left;
+	width:20%;
+	float:left;
+}
+
+.indent-10 {
+	padding-left: 12%;
+	text-indent: -2%;
+	overflow-wrap: break-word;
+	word-wrap: break-word;
+	hyphens: auto;
+    white-space: normal; 
+    overflow: visible;
+    text-overflow: clip;
+	display:inline;
+}
+
+.indent-10 > p {    
+	width:80%;
+	line-height: 1.5em;
+    margin-top: 0;
+    margin-bottom: 0;
+}
