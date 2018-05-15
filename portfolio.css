@@ -182,7 +182,7 @@ p.transparent {
 #bubble-one {
 	left:10%;
 	top:0%;
-	background-image:url("./climbing.jpeg");
+	background-image:url("./rockclimbingcopy.jpg");
 	background-size:cover;
 	background-repeat:no-repeat;
 }
@@ -208,7 +208,7 @@ p.transparent {
 #bubble-three {
 	right:10%;
 	top:0%;
-	background-image:url("./cake.jpg");
+	background-image:url("./baking.jpg");
 	background-size:cover;
 	background-repeat:no-repeat;
 }
