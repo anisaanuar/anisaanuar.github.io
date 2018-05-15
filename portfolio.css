@@ -121,3 +121,13 @@ p.transparent {
     margin-top: 0;
     margin-bottom: 0;
 }
+
+
+.name {
+	font-family: 'Raleway', sans-serif;
+	text-align:center;
+}
+
+.name h1 {
+	font-size:1.5em;
+}
