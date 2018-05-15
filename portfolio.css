@@ -1,3 +1,7 @@
+body {
+	background-color:#FAF7E8;
+}
+
 a {
 	text-decoration: none;
 	color:#42CAFD;
@@ -46,9 +50,9 @@ p {
 
 p.transparent {
 	opacity:0;
-    -webkit-margin-before: 0em;
-    -webkit-margin-after: 0em;
-    display:inline;
+	-webkit-margin-before: 0em;
+	-webkit-margin-after: 0em;
+	display:inline;
 }
 
 #resume {
@@ -61,7 +65,8 @@ p.transparent {
 	width:78%;
 	margin:5%;
 	padding:6%;
-    box-shadow: -10px -10px 50px #ccc;
+	box-shadow: -10px -10px 50px #ccc;
+	background-color:#fff;
 }
 
 #education {
@@ -75,14 +80,14 @@ p.transparent {
 }
 
 .contact-information > h3, p {
-    -webkit-margin-before: .75em;
-    -webkit-margin-after: .75em
+	-webkit-margin-before: .75em;
+	-webkit-margin-after: .75em
 }
 
 
 #education > h2, h3, h4, h5, p {
-    -webkit-margin-before: 0.72em;
-    -webkit-margin-after: 0.72em;
+	-webkit-margin-before: 0.72em;
+	-webkit-margin-after: 0.72em;
 }
 
 .left {
@@ -109,25 +114,95 @@ p.transparent {
 	overflow-wrap: break-word;
 	word-wrap: break-word;
 	hyphens: auto;
-    white-space: normal; 
-    overflow: visible;
-    text-overflow: clip;
+	white-space: normal; 
+	overflow: visible;
+	text-overflow: clip;
 	display:inline;
 }
 
 .indent-10 > p {    
 	width:80%;
 	line-height: 1.5em;
-    margin-top: 0;
-    margin-bottom: 0;
+	margin-top: 0;
+	margin-bottom: 0;
 }
 
+/* INDEX PAGE STYLING */
+
+/* NAME */
 
 .name {
-	font-family: 'Raleway', sans-serif;
 	text-align:center;
+	padding-top:3%;
+	width:55%;
+	margin:0 auto;
 }
 
-.name h1 {
-	font-size:1.5em;
+.name h1 { 
+	color:#aaa;
+	font-family: 'Raleway', sans-serif;
+	font-size:7.7vw;
+	letter-spacing:.5rem;
+	-webkit-margin-before:.15em;
+	-webkit-margin-after:.25em;
+	font-weight:100;
+}
+
+.fade {
+}
+
+/* BUBBLE OPTIONS */
+
+#bubbles {
+	width:100%;
+	height:57.5%;
+	display:inline-block;
+	position:relative;
+}
+
+.bubble-op {
+	width:20vw;
+	height:20vw;
+	background-color:#aaa;
+	border-radius:50%;
+	display:block;
+	position:absolute;
+}
+
+#bubble-one {
+	left:10%;
+	top:0%;
+}
+
+#bubble-two {
+	left:40%;
+	top:15%;
+}
+
+#bubble-three {
+	right:10%;
+	top:0%;
+}
+
+/* MENU */
+
+.nav-bar {
+	font-family: 'Quicksand', sans-serif;
+	text-align:left;
+	list-style:none;
+	width:55%;
+	margin:0 auto;
+	font-size:1.2vw;
+	color:#aaa;
+}
+
+.nav-op {
+	display:inline-block;
+	line-height:2rem;
+}
+
+.nav-bar img {
+	width:5%;
+	height:auto;
+	float:right;
 }
