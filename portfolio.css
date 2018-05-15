@@ -1,5 +1,14 @@
 body {
-	background-color:#FAF7E8;
+	background-color:#F7F6F2;
+	position:relative;
+}
+
+@keyframes fade {
+	from {opacity:0;} to {opacity:1;}
+}
+
+@keyframes down {
+	from {top:-35px;} to {top:0;}
 }
 
 a {
@@ -134,12 +143,12 @@ p.transparent {
 .name {
 	text-align:center;
 	padding-top:3%;
-	width:55%;
+	width:70%;
 	margin:0 auto;
 }
 
 .name h1 { 
-	color:#aaa;
+	color:#555;
 	font-family: 'Raleway', sans-serif;
 	font-size:7.7vw;
 	letter-spacing:.5rem;
@@ -163,27 +172,51 @@ p.transparent {
 .bubble-op {
 	width:20vw;
 	height:20vw;
-	background-color:#aaa;
+	background-color:#DCE5E6;
 	border-radius:50%;
 	display:block;
 	position:absolute;
+	transition: .5s;
 }
 
 #bubble-one {
 	left:10%;
 	top:0%;
+	background-image:url("./climbing.jpeg");
+	background-size:cover;
+	background-repeat:no-repeat;
+}
+
+#bubble-one:hover {
+	top:5%;
+	opacity: .75;
 }
 
 #bubble-two {
 	left:40%;
 	top:15%;
+	background-image:url("./shiba.png");
+	background-size:cover;
+	background-repeat:no-repeat;
+}
+
+#bubble-two:hover {
+	top:10%;
+	opacity: .75;
 }
 
 #bubble-three {
 	right:10%;
 	top:0%;
+	background-image:url("./cake.jpg");
+	background-size:cover;
+	background-repeat:no-repeat;
 }
 
+#bubble-three:hover {
+	top:5%;
+	opacity: .75;
+}
 /* MENU */
 
 .nav-bar {
@@ -193,7 +226,8 @@ p.transparent {
 	width:55%;
 	margin:0 auto;
 	font-size:1.2vw;
-	color:#aaa;
+	color:#555;
+	padding:0;
 }
 
 .nav-op {
