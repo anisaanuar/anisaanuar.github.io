@@ -155,6 +155,10 @@ p.transparent {
 	-webkit-margin-before:.15em;
 	-webkit-margin-after:.25em;
 	font-weight:100;
+	-webkit-user-select: none; /* Safari */        
+	-moz-user-select: none; /* Firefox */
+	-ms-user-select: none; /* IE10+/Edge */
+	user-select: none; /* Standard */
 }
 
 .fade {
@@ -179,17 +183,56 @@ p.transparent {
 	transition: .5s;
 }
 
+.bubble-op p {
+	font-family: 'Raleway', sans-serif;
+	display:block;
+	position:absolute;
+	z-index:1;
+	font-size:2em;
+	margin-left:auto;
+	margin-right:auto;
+	left:0;
+	right:0;
+	text-align:center;
+	line-height:16.5vw;   
+	color:#F7F6F2;
+	opacity:0;
+	transition:.5s;
+	-webkit-user-select: none; /* Safari */        
+	-moz-user-select: none; /* Firefox */
+	-ms-user-select: none; /* IE10+/Edge */
+	user-select: none; /* Standard */
+}
+
+.button-overlay {
+    width:100%;
+    height:100%;
+    position:absolute;
+    background-color:#000;
+    border-radius:50%;
+    opacity:0;
+    transition:.5s;
+
+}
+
+.bubble-op:hover > .button-overlay {
+    opacity:0.35;
+}
+
+.bubble-op:hover > p {
+	opacity:1;
+}
+
 #bubble-one {
 	left:10%;
 	top:0%;
-	background-image:url("./rockclimbingcopy.jpg");
+	background-image:url("./rockclimbing.jpg");
 	background-size:cover;
 	background-repeat:no-repeat;
 }
 
 #bubble-one:hover {
 	top:5%;
-	opacity: .75;
 }
 
 #bubble-two {
@@ -202,7 +245,6 @@ p.transparent {
 
 #bubble-two:hover {
 	top:10%;
-	opacity: .75;
 }
 
 #bubble-three {
@@ -215,9 +257,8 @@ p.transparent {
 
 #bubble-three:hover {
 	top:5%;
-	opacity: .75;
 }
-/* MENU */
+/* HOMEPAGE MENU */
 
 .nav-bar {
 	font-family: 'Quicksand', sans-serif;
@@ -228,6 +269,10 @@ p.transparent {
 	font-size:1.2vw;
 	color:#555;
 	padding:0;
+	-webkit-user-select: none; /* Safari */        
+	-moz-user-select: none; /* Firefox */
+	-ms-user-select: none; /* IE10+/Edge */
+	user-select: none; /* Standard */
 }
 
 .nav-op {
@@ -239,4 +284,96 @@ p.transparent {
 	width:5%;
 	height:auto;
 	float:right;
+}
+
+/* FLOATING MENU */
+
+nav {
+	font-family: 'Quicksand', sans-serif;
+	text-align:right;
+	-webkit-user-select: none; /* Safari */        
+	-moz-user-select: none; /* Firefox */
+	-ms-user-select: none; /* IE10+/Edge */
+	user-select: none; /* Standard */
+	width:100%;
+}
+
+nav ul {
+	list-style:none;
+	margin:0 auto;
+	font-size:2vw;
+	color:#555;
+	padding:0;
+}
+
+nav li {
+	display:inline-block;
+}
+
+/* ABOUT ME */
+
+#profile-bar {
+	width:25vw;
+	position:relative;
+	display:inline-block;
+	float:left;
+	margin:2.5%;
+}
+
+#profile-bar a {
+	font-size:1.25em;
+	font-family: 'Roboto Slab', serif;
+	display:block;
+}
+
+#profile-image {
+	width:25vw;
+	height:25vw;
+	display:inline-block;
+	float:left;
+	position:relative;
+	border-radius:50%;
+	background-image:url("./anisa.jpg");
+	background-size:cover;
+	background-repeat:no-repeat;
+	margin-bottom:15%;
+}
+
+.linkedin-icon {
+	fill:#fff;
+	margin:0 5px 0 0;
+}
+#linked-in {
+	width:20px;
+	height:20px;
+	margin:15px 5px 0 0;
+	display:inline-block;
+	background-image:url("./linkedin.svg");
+	background-size:cover;
+	background-color:#fff;
+}
+
+#about-me {
+	color:#555;
+	padding:1.5%;
+}
+
+#about-me h1 {
+	display:inline-block;
+	font-size:5em;
+	font-family: 'Roboto Slab', serif;
+	position:relative;
+	letter-spacing:0em;
+	padding-top:5vw;
+	-webkit-margin-before: 0em;
+	-webkit-margin-after: 0em;
+}
+
+#about-me p {
+	font-family: 'Quicksand', sans-serif;
+	display:block;
+	position:relative;
+	font-size:1.5rem;
+	font-weight:100;
+	line-height: 1.5em;
 }
