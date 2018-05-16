@@ -320,12 +320,6 @@ nav li {
 	margin:2.5%;
 }
 
-#profile-bar a {
-	font-size:1.25em;
-	font-family: 'Roboto Slab', serif;
-	display:block;
-}
-
 #profile-image {
 	width:25vw;
 	height:25vw;
@@ -336,28 +330,31 @@ nav li {
 	background-image:url("./anisa.jpg");
 	background-size:cover;
 	background-repeat:no-repeat;
+	margin-top:16%;
 	margin-left:5%;
 	margin-bottom:15%;
 }
 
-.linkedin-icon {
-	fill:#fff;
-	margin:0 5px 0 0;
+#social-media {
+	display:block;
+	width:80%;
+	margin:0 auto;
 }
-#linked-in {
-	width:20px;
-	height:20px;
-	margin:15px 5px 0 0;
-	display:inline-block;
-	background-image:url("./linkedin.svg");
-	background-size:cover;
-	background-color:#fff;
+
+.sm-icon {
+	width:23%;
+	height:auto;
+	float:left;
+	text-align:center;
+	font-size:30px;
 }
 
 #about-me {
+	float:left;
 	color:#555;
+	margin:0;
 	padding:1.5% 0;
-	width:90%;
+	width:55vw;
 }
 
 #about-me h1 {
