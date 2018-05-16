@@ -258,6 +258,7 @@ p.transparent {
 #bubble-three:hover {
 	top:5%;
 }
+
 /* HOMEPAGE MENU */
 
 .nav-bar {
@@ -432,4 +433,65 @@ input[type=submit]:hover {
     border-radius: 5px;
     background-color: #f2f2f2;
     padding: 20px;
+}
+
+/* WORKS */
+
+.gallery {
+	width:100%;
+	height:75%;
+	display:inline-block;
+	position:relative;
+	margin-top:2.5%;
+}
+
+.square-button {
+	width:20vw;
+	height:20vw;
+	background-color:#DCE5E6;
+	display:block;
+	position:relative;
+	float:left;
+	transition: .5s;
+	margin:2.5% 6.25%;
+}
+
+.square-button p {
+	font-family: 'Raleway', sans-serif;
+	display:block;
+	position:absolute;
+	z-index:1;
+	font-size:1em;
+	margin-left:auto;
+	margin-right:auto;
+	left:0;
+	right:0;
+	text-align:center;
+	line-height:16.5vw;   
+	color:#F7F6F2;
+	opacity:0;
+	transition:.5s;
+	-webkit-user-select: none; /* Safari */        
+	-moz-user-select: none; /* Firefox */
+	-ms-user-select: none; /* IE10+/Edge */
+	user-select: none; /* Standard */
+}
+
+.square-overlay {
+	width:100%;
+	height:100%;
+	position:absolute;
+	background-color:#000;
+	border-radius:50%;
+	opacity:0;
+	transition:.5s;
+
+}
+
+.square-button:hover > .square-overlay {
+	opacity:0.35;
+}
+
+.square-button:hover > p {
+	opacity:1;
 }

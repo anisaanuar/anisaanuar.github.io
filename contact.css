@@ -12,7 +12,6 @@
 body, html{
 	margin:0;
 	padding:0;
-	background:#ffffff;
 }
 
 .form-all{
@@ -80,7 +79,7 @@ body, html{
 	font-size: 0.95em;
 }
 .supernova {
-	background-color: #ffffff;
+	background-color: #F7F6F2;
 }
 .supernova body {
 	background-color: transparent;
@@ -141,7 +140,7 @@ body, html{
 /* | */
 .supernova .form-all,
 .form-all {
-	background-color: #ffffff;
+	background-color: #F7F6F2;
 	border: 1px solid transparent;
 }
 .form-header-group {
@@ -320,7 +319,7 @@ h2 ~ .form-subHeader {
 .form-checkbox-other-input,
 .form-captcha input,
 .form-spinner input {
-	background-color: #ffffff;
+	background-color: #F7F6F2;
 }
 [data-type="control_dropdown"] .form-input,
 [data-type="control_dropdown"] .form-input-wide {
