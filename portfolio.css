@@ -67,16 +67,10 @@ p.transparent {
 #resume {
 	width:80%;
 	margin:0 auto;
-<<<<<<< HEAD
-<<<<<<< HEAD
 	font-family: "Avenir Next";
     opacity: 1;
-=======
 	font-family: 'Raleway', sans-serif;
->>>>>>> bf0a28e356bb7e08fed37f08ece22ddcb1243ce0
-=======
 	font-family: 'Raleway', sans-serif;
->>>>>>> bf0a28e356bb7e08fed37f08ece22ddcb1243ce0
 }
 
 
@@ -85,8 +79,6 @@ p.transparent {
 	margin:5%;
 	padding:6%;
 	box-shadow: -10px -10px 50px #ccc;
-<<<<<<< HEAD
-<<<<<<< HEAD
 }
 
 img.logo {
@@ -97,12 +89,8 @@ img.logo {
     padding-right:19%;
     right: 0;
     top: 0;
-=======
 	background-color:#fff;
->>>>>>> bf0a28e356bb7e08fed37f08ece22ddcb1243ce0
-=======
 	background-color:#fff;
->>>>>>> bf0a28e356bb7e08fed37f08ece22ddcb1243ce0
 }
 
 #education {
@@ -125,8 +113,6 @@ img.logo {
 #education > h2, h3, h4, h5, p {
 	-webkit-margin-before: 0.72em;
 	-webkit-margin-after: 0.72em;
-<<<<<<< HEAD
-<<<<<<< HEAD
 }
 
 .left .contact-information h3 {
@@ -140,10 +126,6 @@ img.logo {
 
 .right.contact .contact-information h3 {
 	width:20%;
-=======
->>>>>>> bf0a28e356bb7e08fed37f08ece22ddcb1243ce0
-=======
->>>>>>> bf0a28e356bb7e08fed37f08ece22ddcb1243ce0
 }
 
 .left {
@@ -197,7 +179,6 @@ p {
 	margin-bottom: 0;
 }
 
-<<<<<<< HEAD
 @media (max-width: 1200px) {
 
 	img.logo {
@@ -269,8 +250,6 @@ p {
 .contact h3 {
 	width:100% !important;
 }
-
-=======
 /* INDEX PAGE STYLING */
 
 /* NAME */
@@ -532,8 +511,6 @@ nav li {
 	font-size:1.5rem;
 	font-weight:100;
 	line-height: 1.5em;
-<<<<<<< HEAD
-=======
 	margin-top: 0;
 	margin-bottom: 0;
 }
@@ -799,7 +776,6 @@ nav li {
 	font-size:1.5rem;
 	font-weight:100;
 	line-height: 1.5em;
->>>>>>> bf0a28e356bb7e08fed37f08ece22ddcb1243ce0
 }
 
 /* CONTACT FORM */
@@ -897,8 +873,4 @@ input[type=submit]:hover {
 
 .square-button:hover > p {
 	opacity:1;
-<<<<<<< HEAD
->>>>>>> bf0a28e356bb7e08fed37f08ece22ddcb1243ce0
-=======
->>>>>>> bf0a28e356bb7e08fed37f08ece22ddcb1243ce0
 }
