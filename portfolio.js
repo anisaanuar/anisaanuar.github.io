@@ -1,9 +1,4 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
 $("#resume").delay(1000).animate({ opacity: 1 }, 700);​
-=======
-=======
->>>>>>> bf0a28e356bb7e08fed37f08ece22ddcb1243ce0
 $(document).ready(function() {
 	$('body').css('display', 'none');
 	$('body').fadeIn(750);
@@ -18,7 +13,3 @@ $(document).ready(function() {
 		window.location = newLocation;
 	}
 });
-<<<<<<< HEAD
->>>>>>> bf0a28e356bb7e08fed37f08ece22ddcb1243ce0
-=======
->>>>>>> bf0a28e356bb7e08fed37f08ece22ddcb1243ce0
