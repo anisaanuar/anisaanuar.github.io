@@ -438,22 +438,23 @@ input[type=submit]:hover {
 /* WORKS */
 
 .gallery {
-	width:100%;
+	width:70%;
 	height:75%;
-	display:inline-block;
+	display:block;
 	position:relative;
-	margin-top:2.5%;
+	margin:2.5% auto;
 }
 
 .square-button {
 	width:20vw;
 	height:20vw;
-	background-color:#DCE5E6;
 	display:block;
 	position:relative;
 	float:left;
 	transition: .5s;
-	margin:2.5% 6.25%;
+	margin:.5% 1.5%;
+	background:url("./circle.png") no-repeat;
+	background-size:cover;
 }
 
 .square-button p {
