@@ -1,4 +1,3 @@
-<style type="text/css">
 body {
 	background-color:#F7F6F2;
 	position:relative;
@@ -37,14 +36,14 @@ h2 {
 }
 
 h3 {
-	font-size:.95rem;
+	font-size:.9rem;
 	font-weight:500;
 	line-height: 0px;
 	display:inline-block;
 }
 
 h4 {
-	font-size:.95rem;
+	font-size:.9rem;
 	font-weight:500;
 	font-style:italic;
 	line-height: 0px;
@@ -52,7 +51,7 @@ h4 {
 }
 
 p {
-	font-size:.95rem;
+	font-size:.9rem;
 	font-weight:100;
 	line-height: 0px;
 	display:inline-block;
@@ -68,35 +67,19 @@ p.transparent {
 #resume {
 	width:80%;
 	margin:0 auto;
-	font-family: "Avenir Next";
-    opacity: 1;
-	font-family: 'Raleway', sans-serif;
 	font-family: 'Raleway', sans-serif;
 }
-
 
 #resume-paper {
 	width:78%;
 	margin:5%;
 	padding:6%;
 	box-shadow: -10px -10px 50px #ccc;
-}
-
-img.logo {
-    width: 5%;
-    height: auto;
-    position: absolute;
-    padding-top:10%;
-    padding-right:19%;
-    right: 0;
-    top: 0;
-	background-color:#fff;
 	background-color:#fff;
 }
 
 #education {
 	width:100%;
-	display:inline-block;
 }
 
 
@@ -116,19 +99,6 @@ img.logo {
 	-webkit-margin-after: 0.72em;
 }
 
-.left .contact-information h3 {
-	width:21.153846%;
-}
-
-.left.contact .contact-information h3 {
-	width:30.555556%;
-}
-
-
-.right.contact .contact-information h3 {
-	width:20%;
-}
-
 .left {
 	text-align:left;
 	width:65%;
@@ -139,17 +109,6 @@ img.logo {
 	text-align:right;
 	width:35%;
 	float:left;
-}
-
-.left.contact {
-	width:45%;
-	float:left;
-}
-
-.right.contact {
-	float:right;
-	width:55%;
-	text-align:left;
 }
 
 .block-10 {
@@ -170,347 +129,8 @@ img.logo {
 	display:inline;
 }
 
-.indent-10 p {
+.indent-10 > p {    
 	width:80%;
-}
-
-p {    
-	line-height: 1.5em;
-	margin-top: 0;
-	margin-bottom: 0;
-}
-
-@media (max-width: 1200px) {
-
-	img.logo {
-		padding-top:10.5%;
-	}
-
-	h1 {
-		font-size:1.5rem;
-	}
-
-	h2 {
-		font-size:1.05rem;
-	}
-
-	h3 {
-		font-size:.85rem;
-	}
-
-	h4 {
-		font-size:.85rem;
-	}
-
-	p {
-		font-size:.85rem;
-	}
-}
-
-@media (max-width: 1100px) {
-
-	#resume {
-		width:90%;
-	}
-
-	img.logo {
-		padding-right:15%;
-	}
-
-	h1 {
-		font-size:1.45rem;
-	}
-
-	h2 {
-		font-size:1rem;
-	}
-
-	h3 {
-		font-size:.75rem;
-	}
-
-	h4 {
-		font-size:.75rem;
-	}
-
-	p {
-		font-size:.75rem;
-	}
-}
-
-@media (max-width: 850px) {
-
-.contact-information, .contact {
-	width:100% !important;
-}
-
-.left .contact-information h3 {
-	width:100% !important;
-}
-
-.contact h3 {
-	width:100% !important;
-}
-/* INDEX PAGE STYLING */
-
-/* NAME */
-
-.name {
-	text-align:center;
-	padding-top:3%;
-	width:70%;
-	margin:0 auto;
-}
-
-.name h1 { 
-	color:#555;
-	font-family: 'Raleway', sans-serif;
-	font-size:7.7vw;
-	letter-spacing:.5rem;
-	-webkit-margin-before:.15em;
-	-webkit-margin-after:.25em;
-	font-weight:100;
-	-webkit-user-select: none; /* Safari */        
-	-moz-user-select: none; /* Firefox */
-	-ms-user-select: none; /* IE10+/Edge */
-	user-select: none; /* Standard */
-}
-
-.fade {
-}
-
-/* BUBBLE OPTIONS */
-
-#bubbles {
-	width:100%;
-	height:57.5%;
-	display:inline-block;
-	position:relative;
-}
-
-.bubble-op {
-	width:20vw;
-	height:20vw;
-	background-color:#DCE5E6;
-	border-radius:50%;
-	display:block;
-	position:absolute;
-	transition: .5s;
-}
-
-.bubble-op p {
-	font-family: 'Raleway', sans-serif;
-	display:block;
-	position:absolute;
-	z-index:1;
-	font-size:2em;
-	margin-left:auto;
-	margin-right:auto;
-	left:0;
-	right:0;
-	text-align:center;
-	line-height:16.5vw;   
-	color:#F7F6F2;
-	opacity:0;
-	transition:.5s;
-	-webkit-user-select: none; /* Safari */        
-	-moz-user-select: none; /* Firefox */
-	-ms-user-select: none; /* IE10+/Edge */
-	user-select: none; /* Standard */
-}
-
-.button-overlay {
-	width:100%;
-	height:100%;
-	position:absolute;
-	background-color:#000;
-	border-radius:50%;
-	opacity:0;
-	transition:.5s;
-
-}
-
-.bubble-op:hover > .button-overlay {
-	opacity:0.35;
-}
-
-.bubble-op:hover > p {
-	opacity:1;
-}
-
-#bubble-one {
-	left:10%;
-	top:0%;
-	background-image:url("./rockclimbing.jpg");
-	background-size:cover;
-	background-repeat:no-repeat;
-}
-
-#bubble-one:hover {
-	top:5%;
-}
-
-#bubble-two {
-	left:40%;
-	top:15%;
-	background-image:url("./shiba.png");
-	background-size:cover;
-	background-repeat:no-repeat;
-}
-
-#bubble-two:hover {
-	top:10%;
-}
-
-#bubble-three {
-	right:10%;
-	top:0%;
-	background-image:url("./baking.jpg");
-	background-size:cover;
-	background-repeat:no-repeat;
-}
-
-#bubble-three:hover {
-	top:5%;
-}
-
-/* HOMEPAGE MENU */
-
-.nav-bar {
-	font-family: 'Quicksand', sans-serif;
-	text-align:left;
-	list-style:none;
-	width:55%;
-	margin:0 auto;
-	font-size:1.2vw;
-	color:#555;
-	padding:0;
-	-webkit-user-select: none; /* Safari */        
-	-moz-user-select: none; /* Firefox */
-	-ms-user-select: none; /* IE10+/Edge */
-	user-select: none; /* Standard */
-}
-
-.nav-op {
-	display:inline-block;
-	line-height:2rem;
-}
-
-.nav-bar img {
-	width:5%;
-	height:auto;
-	float:right;
-}
-
-/* FLOATING MENU */
-
-nav {
-	font-family: 'Quicksand', sans-serif;
-	text-align:right;
-	-webkit-user-select: none; /* Safari */        
-	-moz-user-select: none; /* Firefox */
-	-ms-user-select: none; /* IE10+/Edge */
-	user-select: none; /* Standard */
-	width:100%;
-}
-
-nav ul {
-	list-style:none;
-	margin:0 auto;
-	font-size:2vw;
-	color:#555;
-	padding:0;
-}
-
-nav li {
-	display:inline-block;
-}
-
-/* ABOUT ME */
-
-#profile-bar {
-	width:30vw;
-	position:relative;
-	display:inline-block;
-	float:left;
-	margin:2.5%;
-}
-
-#profile-image {
-	width:25vw;
-	height:25vw;
-	display:inline-block;
-	float:left;
-	position:relative;
-	border-radius:50%;
-	background-image:url("./anisa.jpg");
-	background-size:cover;
-	background-repeat:no-repeat;
-	margin-top:16%;
-	margin-left:5%;
-	margin-bottom:15%;
-}
-
-#social-media {
-	display:block;
-	width:80%;
-	margin:0 auto;
-}
-
-.sm-icon {
-	width:23%;
-	height:auto;
-	float:left;
-	text-align:center;
-	font-size:30px;
-}
-
-#about-me {
-	float:left;
-	color:#555;
-	margin:0;
-	padding:1.5% 0;
-	width:55vw;
-}
-
-#about-me h1 {
-	display:inline-block;
-	font-size:5em;
-	font-family: 'Roboto Slab', serif;
-	position:relative;
-	letter-spacing:0em;
-	padding-top:5vw;
-	-webkit-margin-before: 0em;
-	-webkit-margin-after: 0em;
-	-webkit-user-select: none; /* Safari */        
-	-moz-user-select: none; /* Firefox */
-	-ms-user-select: none; /* IE10+/Edge */
-	user-select: none; /* Standard */
-}
-
-#about-me h2 {
-	display:block;
-	font-size:1.5em;
-	font-family: 'Roboto Slab', serif;
-	font-style:italic;
-	position:relative;
-	letter-spacing:0em;
-	line-height:1em;
-	font-weight:100;
-	-webkit-margin-before: 0em;
-	-webkit-margin-after: 1em;
-	-webkit-user-select: none; /* Safari */        
-	-moz-user-select: none; /* Firefox */
-	-ms-user-select: none; /* IE10+/Edge */
-	user-select: none; /* Standard */
-}
-
-#about-me p {
-	font-family: 'Quicksand', sans-serif;
-	display:block;
-	position:relative;
-	font-size:1.5rem;
-	font-weight:100;
 	line-height: 1.5em;
 	margin-top: 0;
 	margin-bottom: 0;
@@ -876,4 +496,3 @@ input[type=submit]:hover {
 .square-button:hover > p {
 	opacity:1;
 }
-</style>
