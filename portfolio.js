@@ -1,3 +1,4 @@
+$("#resume").delay(1000).animate({ opacity: 1 }, 700);​
 $(document).ready(function() {
 	$('body').css('display', 'none');
 	$('body').fadeIn(750);
