@@ -656,19 +656,19 @@ input[type=submit]:hover {
 }
 
 #hobbies-two {
-	left:39%;
-	top:25%;
+	left:41%;
+	top:20%;
 	background-image:url("./baking.jpg");
 	background-size:cover;
 	background-repeat:no-repeat;
 }
 
 #hobbies-two:hover {
-	top:20%;
+	top:15%;
 }
 
 #hobbies-three {
-	right:15%;
+	right:10%;
 	top:0%;
 	background-image:url("./baking.jpg");
 	background-size:cover;
