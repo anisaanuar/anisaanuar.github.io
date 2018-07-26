@@ -469,12 +469,22 @@ input[type=submit]:hover {
 	color:#555;
 	margin:0;
 	padding:1.5% 5%;
-	width:75vw;
+	width:70vw;
 }
 
 #contact h1 {
 	font-size:3em;
 	padding-top:2vw;
+}
+
+#contact p {
+	font-size:1.25rem;
+	font-weight:100;
+	line-height: 1.25em;
+}
+
+.required {
+	color:#ff0000;
 }
 
 /* WORKS */
