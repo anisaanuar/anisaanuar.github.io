@@ -168,9 +168,16 @@ p.transparent {
 
 #bubbles {
 	width:100%;
-	height:57.5%;
 	display:inline-block;
 	position:relative;
+}
+
+#bubbles.long {
+	height:57.5%;
+}
+
+#bubbles.short {
+	height:47.5%;
 }
 
 .bubble-op {
@@ -457,6 +464,19 @@ input[type=submit]:hover {
     padding: 20px;
 }
 
+#contact {
+	float:left;
+	color:#555;
+	margin:0;
+	padding:1.5% 5%;
+	width:75vw;
+}
+
+#contact h1 {
+	font-size:3em;
+	padding-top:2vw;
+}
+
 /* WORKS */
 
 #works {
@@ -491,7 +511,7 @@ input[type=submit]:hover {
 }
 
 #works-two {
-	left:23.5%;
+	left:23.75%;
 	top:30%;
 	background-image:url("./shiba.png");
 	background-size:cover;
@@ -503,7 +523,7 @@ input[type=submit]:hover {
 }
 
 #works-three {
-	left:42%;
+	left:42.5%;
 	top:5%;
 	background-image:url("./shiba.png");
 	background-size:cover;
@@ -516,7 +536,7 @@ input[type=submit]:hover {
 
 
 #works-four {
-	right:23.5%;
+	right:23.75%;
 	top:30%;
 	background-image:url("./shiba.png");
 	background-size:cover;
