@@ -217,6 +217,16 @@ p.transparent {
 	line-height:16.5vw;  
 }
 
+.bubble-op.three-small {
+	width:17vw;
+	height:17vw;
+}
+
+.bubble-op.three-small p {
+	font-size:1.75em;
+	line-height:14.5vw;  
+}
+
 .bubble-op.five {
 	width:15vw;
 	height:15vw;
@@ -629,4 +639,42 @@ input[type=submit]:hover {
 
 .square-button:hover > p {
 	opacity:1;
+}
+
+/* HOBBIES */
+
+#hobbies-one {
+	left:10%;
+	top:5%;
+	background-image:url("./baking.jpg");
+	background-size:cover;
+	background-repeat:no-repeat;
+}
+
+#hobbies-one:hover {
+	top:10%;
+}
+
+#hobbies-two {
+	left:39%;
+	top:25%;
+	background-image:url("./baking.jpg");
+	background-size:cover;
+	background-repeat:no-repeat;
+}
+
+#hobbies-two:hover {
+	top:20%;
+}
+
+#hobbies-three {
+	right:15%;
+	top:0%;
+	background-image:url("./baking.jpg");
+	background-size:cover;
+	background-repeat:no-repeat;
+}
+
+#hobbies-three:hover {
+	top:10%;
 }
