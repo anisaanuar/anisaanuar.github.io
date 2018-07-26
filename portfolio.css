@@ -174,8 +174,6 @@ p.transparent {
 }
 
 .bubble-op {
-	width:20vw;
-	height:20vw;
 	background-color:#DCE5E6;
 	border-radius:50%;
 	display:block;
@@ -188,13 +186,11 @@ p.transparent {
 	display:block;
 	position:absolute;
 	z-index:1;
-	font-size:2em;
 	margin-left:auto;
 	margin-right:auto;
 	left:0;
 	right:0;
-	text-align:center;
-	line-height:16.5vw;   
+	text-align:center; 
 	color:#F7F6F2;
 	opacity:0;
 	transition:.5s;
@@ -202,6 +198,26 @@ p.transparent {
 	-moz-user-select: none; /* Firefox */
 	-ms-user-select: none; /* IE10+/Edge */
 	user-select: none; /* Standard */
+}
+
+.bubble-op.three {
+	width:20vw;
+	height:20vw;
+}
+
+.bubble-op.three p {
+	font-size:2em;
+	line-height:16.5vw;  
+}
+
+.bubble-op.five {
+	width:15vw;
+	height:15vw;
+}
+
+.bubble-op.five p {
+	font-size:1.5em;
+	line-height:12.5vw;  
 }
 
 .button-overlay {
@@ -313,6 +329,25 @@ nav li {
 
 /* ABOUT ME */
 
+h1.main-header {
+	display:inline-block;
+	font-family: 'Roboto Slab', serif;
+	position:relative;
+	letter-spacing:0em;
+	-webkit-margin-before: 0em;
+	-webkit-margin-after: 0em;
+	-webkit-user-select: none; /* Safari */        
+	-moz-user-select: none; /* Firefox */
+	-ms-user-select: none; /* IE10+/Edge */
+	user-select: none; /* Standard */
+}
+
+p.main-paragraph {
+	font-family: 'Quicksand', sans-serif;
+	display:block;
+	position:relative;
+}
+
 #profile-bar {
 	width:30vw;
 	position:relative;
@@ -359,18 +394,8 @@ nav li {
 }
 
 #about-me h1 {
-	display:inline-block;
 	font-size:5em;
-	font-family: 'Roboto Slab', serif;
-	position:relative;
-	letter-spacing:0em;
 	padding-top:5vw;
-	-webkit-margin-before: 0em;
-	-webkit-margin-after: 0em;
-	-webkit-user-select: none; /* Safari */        
-	-moz-user-select: none; /* Firefox */
-	-ms-user-select: none; /* IE10+/Edge */
-	user-select: none; /* Standard */
 }
 
 #about-me h2 {
@@ -391,9 +416,6 @@ nav li {
 }
 
 #about-me p {
-	font-family: 'Quicksand', sans-serif;
-	display:block;
-	position:relative;
 	font-size:1.5rem;
 	font-weight:100;
 	line-height: 1.5em;
@@ -436,6 +458,88 @@ input[type=submit]:hover {
 }
 
 /* WORKS */
+
+#works {
+	float:left;
+	color:#555;
+	margin:0;
+	padding:1.5% 5%;
+	width:75vw;
+}
+
+#works h1 {
+	font-size:3em;
+	padding-top:2vw;
+}
+
+#works p {
+	font-size:1.25rem;
+	font-weight:100;
+	line-height: 1.25em;
+}
+
+#works-one {
+	left:5%;
+	top:5%;
+	background-image:url("./shiba.png");
+	background-size:cover;
+	background-repeat:no-repeat;
+}
+
+#works-one:hover {
+	top:10%;
+}
+
+#works-two {
+	left:23.5%;
+	top:30%;
+	background-image:url("./shiba.png");
+	background-size:cover;
+	background-repeat:no-repeat;
+}
+
+#works-two:hover {
+	top:25%;
+}
+
+#works-three {
+	left:42%;
+	top:5%;
+	background-image:url("./shiba.png");
+	background-size:cover;
+	background-repeat:no-repeat;
+}
+
+#works-three:hover {
+	top:10%;
+}
+
+
+#works-four {
+	right:23.5%;
+	top:30%;
+	background-image:url("./shiba.png");
+	background-size:cover;
+	background-repeat:no-repeat;
+}
+
+#works-four:hover {
+	top:25%;
+}
+
+
+#works-five {
+	right:5%;
+	top:5%;
+	background-image:url("./shiba.png");
+	background-size:cover;
+	background-repeat:no-repeat;
+}
+
+#works-five:hover {
+	top:10%;
+}
+
 
 .gallery {
 	width:70%;
