@@ -1,6 +1,7 @@
 body {
 	background-color:#F7F6F2;
 	position:relative;
+	margin:0;
 }
 
 @keyframes fade {
@@ -323,25 +324,27 @@ p.transparent {
 /* FLOATING MENU */
 
 nav {
-	font-family: 'Quicksand', sans-serif;
+	font-family: 'Raleway', sans-serif;
 	text-align:right;
 	-webkit-user-select: none; /* Safari */        
 	-moz-user-select: none; /* Firefox */
 	-ms-user-select: none; /* IE10+/Edge */
 	user-select: none; /* Standard */
-	width:100%;
+	width:97%;
+	height:65px;
 }
 
 nav ul {
 	list-style:none;
 	margin:0 auto;
 	font-size:2vw;
-	color:#555;
+	font-weight:500;
 	padding:0;
 }
 
 nav li {
 	display:inline-block;
+	margin:2.5% 5.25%;
 }
 
 /* ABOUT ME */
@@ -383,7 +386,7 @@ p.main-paragraph {
 	background-image:url("./anisa.jpg");
 	background-size:cover;
 	background-repeat:no-repeat;
-	margin-top:16%;
+	margin-top:15%;
 	margin-left:5%;
 	margin-bottom:15%;
 }
@@ -406,7 +409,7 @@ p.main-paragraph {
 	float:left;
 	color:#555;
 	margin:0;
-	padding:1.5% 0;
+	padding:.75% 0;
 	width:55vw;
 }
 
