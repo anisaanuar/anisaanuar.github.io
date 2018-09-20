@@ -143,15 +143,17 @@ p.transparent {
 
 .name {
 	text-align:center;
+	width:75%;
 	padding-top:3%;
-	width:70%;
 	margin:0 auto;
 }
 
 .name h1 { 
 	color:#555;
 	font-family: 'Raleway', sans-serif;
-	font-size:7.7vw;
+	font-size:17.5vw;
+	margin-top:15%;
+	margin-bottom:15%;
 	letter-spacing:.5rem;
 	-webkit-margin-before:.15em;
 	-webkit-margin-after:.25em;
@@ -200,8 +202,8 @@ p.transparent {
 	right:0;
 	text-align:center; 
 	color:#F7F6F2;
-	opacity:0;
-	transition:.5s;
+	opacity:1;
+	transition: 0s;
 	-webkit-user-select: none; /* Safari */        
 	-moz-user-select: none; /* Firefox */
 	-ms-user-select: none; /* IE10+/Edge */
@@ -209,13 +211,17 @@ p.transparent {
 }
 
 .bubble-op.three {
-	width:20vw;
-	height:20vw;
+	width:100%;
+	height:65vw;
+	position:relative;
+	border-radius:0%;
+	transition: 0s;
 }
 
 .bubble-op.three p {
-	font-size:2em;
-	line-height:16.5vw;  
+	font-size:8vw;
+	line-height:50vw;  
+	transition: 0s;
 }
 
 .bubble-op.three-small {
@@ -243,9 +249,9 @@ p.transparent {
 	height:100%;
 	position:absolute;
 	background-color:#000;
-	border-radius:50%;
-	opacity:0;
-	transition:.5s;
+	opacity:0.35;
+	border-radius:0%;
+	transition: 0s;
 
 }
 
@@ -257,8 +263,13 @@ p.transparent {
 	opacity:1;
 }
 
+#bubble-one, #bubble-two, #bubble-three {
+	left:0;
+	right:0;
+	transition: 0s;
+}
+
 #bubble-one {
-	left:10%;
 	top:0%;
 	background-image:url("./rockclimbing.jpg");
 	background-size:cover;
@@ -270,19 +281,17 @@ p.transparent {
 }
 
 #bubble-two {
-	left:40%;
-	top:15%;
+	top:20%;	
 	background-image:url("./shiba.png");
 	background-size:cover;
 	background-repeat:no-repeat;
 }
 
 #bubble-two:hover {
-	top:10%;
+	top:15%;
 }
 
 #bubble-three {
-	right:10%;
 	top:0%;
 	background-image:url("./baking.jpg");
 	background-size:cover;
@@ -299,15 +308,19 @@ p.transparent {
 	font-family: 'Quicksand', sans-serif;
 	text-align:left;
 	list-style:none;
-	width:55%;
 	margin:0 auto;
-	font-size:1.2vw;
 	color:#555;
+	position:absolute;
+	top:570px;
+	font-size:1.5vw;
+	width:70%;
+	left:12.5%;
 	padding:0;
 	-webkit-user-select: none; /* Safari */        
 	-moz-user-select: none; /* Firefox */
 	-ms-user-select: none; /* IE10+/Edge */
 	user-select: none; /* Standard */
+	display:none;
 }
 
 .nav-op {
@@ -324,6 +337,7 @@ p.transparent {
 /* FLOATING MENU */
 
 nav {
+	display:none;
 	font-family: 'Raleway', sans-serif;
 	text-align:left;
 	-webkit-user-select: none; /* Safari */        
@@ -338,10 +352,10 @@ nav {
 nav ul {
 	list-style:none;
 	margin:0 auto;
-	font-size:1.45vw;
 	font-weight:bolder;
 	padding:0;
 	margin-left:5%;
+	font-size:1.8vw;
 }
 
 nav li {
@@ -369,7 +383,7 @@ nav a.active {
 	-ms-user-select: none; /* IE10+/Edge */
 	user-select: none; /* Standard */
 	text-transform: lowercase;
-	display:none;
+	display:block;
 	background-color: #ddd;
 	position: relative;
 	width:100%;
@@ -763,9 +777,65 @@ input[type=submit]:hover {
 	top:5%;
 }
 
-/* MOBILE OPTIMIZATION */
+/* DESKTOP OPTIMIZATION */
 
-@media (min-width:851px) and (max-width:1150px) {
+@media only screen and (min-width:1150px) {
+	.name {
+		width:70%;
+	}
+
+	.name h1 {
+		font-size:7.7vw;
+		margin:0 auto;
+	}
+
+	.bubble-op.three {
+		width:20vw;
+		height:20vw;
+		position:relative;
+	}
+
+	#bubble-one {
+		left:10%;
+	} 
+
+	#bubble-two {
+		left:40%;
+		top:15%;
+	} 
+
+	#bubble-two:hover {
+		top:10%;
+	}
+
+	#bubble-three {	
+		right:10%;
+	}
+
+	.nav-bar {
+		position:relative;
+		top:auto;
+		left:auto;
+		width:55%;
+		font-size:1.2vw;
+	}
+
+	.bubble-op:hover > .button-overlay {
+		opacity:0.35;
+	}
+
+	.bubble-op.three p {
+		font-size:2em;
+		line-height:16.5vw;   
+	}
+
+	nav ul {
+		font-size:1.45vw;
+	}
+
+}
+
+@media only screen and (min-width:850px) {
 	.name {
 		width:90%;
 	}
@@ -776,85 +846,36 @@ input[type=submit]:hover {
 		margin-bottom:2vw;
 	}
 
-	.bubble-op.three {
+	.bubble-op.three {	
 		width:25vw;
 		height:25vw;
 		position:absolute;
+		border-radius:50%%;
+		transition: .5s;
 	}
 
 	#bubble-one {
 		left:5vw;
-	} 
+		right:auto;
+	}
 
 	#bubble-two {
-		top:20%;
-		left:37.5vw;	
+		left:37.5vw;
+		right:auto;
 	} 
-
-	#bubble-two:hover {
-		top:15%;
-	}
 
 	#bubble-three {
 		right:5vw;
 	}
 
 	.nav-bar {
-		position:absolute;
-		top:570px;
-		font-size:1.5vw;
-		width:70%;
-		left:12.5%;
-	}
-
-	.bubble-op:hover > .button-overlay {
-		opacity:0.35;
-	}
-
-	.bubble-op.three p {
-		font-size:3vw;
-		line-height:22vw;  
-	}
-
-	nav ul {
-		font-size:1.8vw;
-	}
-
-}
-
-@media (max-width:850px) {
-	.name {
-		width:75%;
-	}
-
-	.name h1 {
-		font-size:17.5vw;
-		margin-top:15%;
-		margin-bottom:15%;
-	}
-
-	.bubble-op.three {
-		width:100%;
-		height:65vw;
-		position:relative;
-		border-radius:0%;
-		transition: 0s;
-	}
-
-	#bubble-one, #bubble-two, #bubble-three {
-		left:0;
-		right:0;
-		transition: 0s;
-	}
-
-	.nav-bar {
-		display:none;
+		display:block;
 	}
 
 	.button-overlay {
-		opacity:0.35;
-		border-radius:0%;
-		transition: 0s;
+		border-radius:50%;
+		opacity:0;
+		transition:.5s;
 	}
 
 	.bubble-op:hover > .button-overlay {
@@ -862,22 +883,22 @@ input[type=submit]:hover {
 	}
 
 	.bubble-op p {
-		opacity:1;
-		transition: 0s;
+		opacity:0;
+		transition: .5s;
 	}
 
 	.bubble-op.three p {
-		font-size:8vw;
-		line-height:50vw;  
-		transition: 0s;
+		font-size:3vw;
+		line-height:22vw; 
+		transition:.5s;
 	}
 
 	nav {
-		display:none;
+		display:block;
 	}
 
 	.mobile-nav {
-		display:block;
+		display:none;
 	}
 
 }
