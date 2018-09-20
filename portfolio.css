@@ -765,7 +765,7 @@ input[type=submit]:hover {
 
 /* MOBILE OPTIMIZATION */
 
-@media (max-width:1150px) {
+@media (min-width:851px) and (max-width:1150px) {
 	.name {
 		width:90%;
 	}
