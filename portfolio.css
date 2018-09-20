@@ -266,7 +266,6 @@ p.transparent {
 #bubble-one, #bubble-two, #bubble-three {
 	left:0;
 	right:0;
-	transition: 0s;
 }
 
 #bubble-one {
@@ -312,9 +311,9 @@ p.transparent {
 	color:#555;
 	position:absolute;
 	top:570px;
+	left:12.5%;
 	font-size:1.5vw;
 	width:70%;
-	left:12.5%;
 	padding:0;
 	-webkit-user-select: none; /* Safari */        
 	-moz-user-select: none; /* Firefox */
@@ -779,61 +778,6 @@ input[type=submit]:hover {
 
 /* DESKTOP OPTIMIZATION */
 
-@media only screen and (min-width:1150px) {
-	.name {
-		width:70%;
-	}
-
-	.name h1 {
-		font-size:7.7vw;
-		margin:0 auto;
-	}
-
-	.bubble-op.three {
-		width:20vw;
-		height:20vw;
-		position:relative;
-	}
-
-	#bubble-one {
-		left:10%;
-	} 
-
-	#bubble-two {
-		left:40%;
-		top:15%;
-	} 
-
-	#bubble-two:hover {
-		top:10%;
-	}
-
-	#bubble-three {	
-		right:10%;
-	}
-
-	.nav-bar {
-		position:relative;
-		top:auto;
-		left:auto;
-		width:55%;
-		font-size:1.2vw;
-	}
-
-	.bubble-op:hover > .button-overlay {
-		opacity:0.35;
-	}
-
-	.bubble-op.three p {
-		font-size:2em;
-		line-height:16.5vw;   
-	}
-
-	nav ul {
-		font-size:1.45vw;
-	}
-
-}
 
 @media only screen and (min-width:850px) {
 	.name {
@@ -850,7 +794,7 @@ input[type=submit]:hover {
 		width:25vw;
 		height:25vw;
 		position:absolute;
-		border-radius:50%%;
+		border-radius:50%;
 		transition: .5s;
 	}
 
@@ -865,10 +809,13 @@ input[type=submit]:hover {
 	} 
 
 	#bubble-three {
+		left:auto;
 		right:5vw;
 	}
 
 	.nav-bar {
+		top:550px;
+		left:15%;
 		display:block;
 	}
 
@@ -903,3 +850,58 @@ input[type=submit]:hover {
 
 }
 
+@media only screen and (min-width:1100px) {
+	.name {
+		width:70%;
+	}
+
+	.name h1 {
+		font-size:7.7vw;
+		margin:0 auto;
+	}
+
+	.bubble-op.three {
+		width:20vw;
+		height:20vw;
+		position:absolute;
+		transition: .5s;
+	}
+
+	#bubble-one {
+		left:10%;
+	} 
+
+	#bubble-two {
+		left:40%;
+		top:15%;
+	} 
+
+	#bubble-two:hover {
+		top:10%;
+	}
+
+	#bubble-three {	
+		right:10%;
+	}
+
+	.nav-bar {
+		width:55%;
+		font-size:1.3vw;
+		top:520px;
+		left:22.5%;
+	}
+
+	.bubble-op:hover > .button-overlay {
+		opacity:0.35;
+	}
+
+	.bubble-op.three p {
+		font-size:2em;
+		line-height:16.5vw;   
+	}
+
+	nav ul {
+		font-size:1.45vw;
+	}
+
+}
