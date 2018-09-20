@@ -823,48 +823,6 @@ input[type=submit]:hover {
 }
 
 @media (max-width:850px) {
-
-	.bubble-op.three {
-		width:28vw;
-		height:28vw;
-		position:absolute;
-	}
-
-	#bubble-one {
-		top:8%;	  
-	}
-
-	#bubble-one:hover {
-		top:15%;	  
-	}
-
-	#bubble-two {
-		left:36vw;
-		top:33%;	  
-	}
-
-	#bubble-two:hover {
-		top:26%;	  
-	}
-
-	#bubble-three {
-		top:8%;	  
-	}
-
-	#bubble-three:hover {
-		top:15%;	  
-	}
-
-	.nav-bar {
-		top:500px;
-	}
-
-	nav ul {
-		font-size:2.4vw;
-	}
-}
-
-@media (max-width:650px) {
 	.name {
 		width:75%;
 	}
