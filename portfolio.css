@@ -398,15 +398,15 @@ nav a.active {
 .mobile-nav #mobile-links {
 	display: none;
 	list-style:none;
-	height:260px;
+	height:240px;
 }
 
 .mobile-nav.four #mobile-links {
-	height:208px;
+	height:192px;
 }
 
 .mobile-nav.six #mobile-links {
-	height:312px;
+	height:288px;
 }
 
 .mobile-nav a {
@@ -414,6 +414,7 @@ nav a.active {
 	padding: 14px 16px;
 	text-decoration: none;
 	font-size: 1.25rem;
+	line-height: 1.25rem;
 	display: block;
 	font-weight:bold;
 }
