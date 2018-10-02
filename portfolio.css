@@ -413,7 +413,7 @@ nav a.active {
 	color: #555;
 	padding: 14px 16px;
 	text-decoration: none;
-	font-size: 25px;
+	font-size: 1.6rem;
 	display: block;
 	font-weight:bold;
 }
@@ -447,12 +447,12 @@ nav a.active {
 }
 
 #about h1 {
-	font-size:3em;
+	font-size:2.5em;
 	padding-top:3.5vw;
 }
 
 #about p {
-	font-size:1.25rem;
+	font-size:1.2rem;
 	font-weight:100;
 	line-height: 1.25em;
 }
@@ -591,7 +591,7 @@ input[type=submit]:hover {
 }
 
 #contact h1 {
-	font-size:3em;
+	font-size:2.5em;
 	padding-top:3.5vw;
 }
 
@@ -616,12 +616,12 @@ input[type=submit]:hover {
 }
 
 #works h1 {
-	font-size:3em;
+	font-size:2.5em;
 	padding-top:3.5vw;
 }
 
 #works p {
-	font-size:1.25rem;
+	font-size:1.2rem;
 	font-weight:100;
 	line-height: 1.25em;
 }
@@ -892,6 +892,16 @@ input[type=submit]:hover {
 
 	/* WORKS */
 
+	#works h1 {
+		font-size:3em;
+		padding-top:3.5vw;
+	}
+	
+	#works p {
+		font-size:1.25rem;
+		font-weight:100;
+		line-height: 1.25em;
+	}
 
 	#works-one {
 		left:5%;
@@ -983,6 +993,25 @@ input[type=submit]:hover {
 		top:5%;
 	}
 
+	/* MENU */
+
+	nav ul {
+		font-size:1.8vw;
+	}
+
+	/* CONTACT */
+
+	#contact h1 {
+		font-size:3em;
+		padding-top:3.5vw;
+	}
+
+	#contact p {
+		font-size:1.2rem;
+		font-weight:100;
+		line-height: 1.25em;
+	}
+
 }
 
 @media only screen and (min-width:1100px) {
@@ -1037,15 +1066,6 @@ input[type=submit]:hover {
 		font-size:2em;
 		line-height:16.5vw;   
 	}
-
-	/* MOBILE MENU */
-
-	nav ul {
-		font-size:1.45vw;
-	}
-
-	/* ABOUT ME */
-
 	
 
 }
