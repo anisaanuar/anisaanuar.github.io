@@ -628,31 +628,31 @@ input[type=submit]:hover {
 }
 
 #works-one {
-	background-image:url("./shiba.png");
+	background-image:url("./devices.png");
 	background-size:cover;
 	background-repeat:no-repeat;
 }
 
 #works-two {
-	background-image:url("./shiba.png");
+	background-image:url("./rmutt.png");
 	background-size:cover;
 	background-repeat:no-repeat;
 }
 
 #works-three {
-	background-image:url("./shiba.png");
+	background-image:url("./bhop.png");
 	background-size:cover;
 	background-repeat:no-repeat;
 }
 
 #works-four {
-	background-image:url("./shiba.png");
+	background-image:url("./resistance.png");
 	background-size:cover;
 	background-repeat:no-repeat;
 }
 
 #works-five {
-	background-image:url("./shiba.png");
+	background-image:url("./emmawatson.png");
 	background-size:cover;
 	background-repeat:no-repeat;
 }
@@ -721,19 +721,19 @@ input[type=submit]:hover {
 /* HOBBIES */
 
 #hobbies-one {
-	background-image:url("./baking.jpg");
+	background-image:url("./cake.jpg");
 	background-size:cover;
 	background-repeat:no-repeat;
 }
 
 #hobbies-two {
-	background-image:url("./baking.jpg");
+	background-image:url("./paintings.jpg");
 	background-size:cover;
 	background-repeat:no-repeat;
 }
 
 #hobbies-three {
-	background-image:url("./baking.jpg");
+	background-image:url("./performance.jpg");
 	background-size:cover;
 	background-repeat:no-repeat;
 }
@@ -851,9 +851,6 @@ input[type=submit]:hover {
 		float:left;
 		position:relative;
 		border-radius:50%;
-		background-image:url("./anisa.jpg");
-		background-size:cover;
-		background-repeat:no-repeat;
 		margin-top:17.5%;
 		margin-left:5%;
 		margin-bottom:15%;
