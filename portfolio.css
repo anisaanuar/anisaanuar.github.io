@@ -225,23 +225,29 @@ p.transparent {
 }
 
 .bubble-op.three-small {
-	width:17vw;
-	height:17vw;
+	width:100%;
+	height:50vw;
+	position:relative;
+	border-radius:0%;
+	transition: 0s;
 }
 
 .bubble-op.three-small p {
-	font-size:1.75em;
-	line-height:14.5vw;  
+	font-size:8vw;
+	line-height:40vw;  
 }
 
 .bubble-op.five {
-	width:15vw;
-	height:15vw;
+	width:100%;
+	height:50vw;
+	position:relative;
+	border-radius:0%;
+	transition: 0s;
 }
 
 .bubble-op.five p {
-	font-size:1.5em;
-	line-height:12.5vw;  
+	font-size:8vw;
+	line-height:40vw;  
 }
 
 .button-overlay {
@@ -395,6 +401,14 @@ nav a.active {
 	height:290px;
 }
 
+.mobile-nav.four #mobile-links {
+	height:232px;
+}
+
+.mobile-nav.six #mobile-links {
+	height:348px;
+}
+
 .mobile-nav a {
 	color: #555;
 	padding: 14px 16px;
@@ -429,7 +443,7 @@ nav a.active {
 	color:#555;
 	margin:0;
 	padding:1.5% 5%;
-	width:55vw;
+	width:75vw;
 }
 
 #about h1 {
@@ -463,38 +477,35 @@ p.main-paragraph {
 }
 
 #profile-bar {
-	width:30vw;
+	width:90%;
 	position:relative;
 	display:inline-block;
-	float:left;
-	margin:2.5% 2.5% 2.5% 0;
+	margin:2.5%;
 }
 
 #profile-image {
-	width:25vw;
-	height:25vw;
+	width:75vw;
+	height:75vw;
 	display:inline-block;
-	float:left;
 	position:relative;
 	border-radius:50%;
 	background-image:url("./anisa.jpg");
 	background-size:cover;
 	background-repeat:no-repeat;
-	margin-top:17.5%;
-	margin-left:5%;
-	margin-bottom:15%;
+	margin:7.5vw;
 }
 
 #social-media {
 	display:block;
-	width:80%;
+	width:100%;
 	margin:0 auto;
 }
 
 .sm-icon {
-	width:23%;
+	width:20%;
 	height:auto;
 	float:left;
+	margin-left:4.75%;
 	text-align:center;
 	font-size:30px;
 }
@@ -616,65 +627,33 @@ input[type=submit]:hover {
 }
 
 #works-one {
-	left:5%;
-	top:5%;
 	background-image:url("./shiba.png");
 	background-size:cover;
 	background-repeat:no-repeat;
-}
-
-#works-one:hover {
-	top:10%;
 }
 
 #works-two {
-	left:23.75%;
-	top:30%;
 	background-image:url("./shiba.png");
 	background-size:cover;
 	background-repeat:no-repeat;
-}
-
-#works-two:hover {
-	top:25%;
 }
 
 #works-three {
-	left:42.5%;
-	top:5%;
 	background-image:url("./shiba.png");
 	background-size:cover;
 	background-repeat:no-repeat;
 }
-
-#works-three:hover {
-	top:10%;
-}
-
 
 #works-four {
-	right:23.75%;
-	top:30%;
 	background-image:url("./shiba.png");
 	background-size:cover;
 	background-repeat:no-repeat;
 }
-
-#works-four:hover {
-	top:25%;
-}
-
 
 #works-five {
-	right:5%;
-	top:5%;
 	background-image:url("./shiba.png");
 	background-size:cover;
 	background-repeat:no-repeat;
-}
-
-#works-five:hover {
-	top:10%;
 }
 
 
@@ -741,45 +720,30 @@ input[type=submit]:hover {
 /* HOBBIES */
 
 #hobbies-one {
-	left:10%;
-	top:0%;
 	background-image:url("./baking.jpg");
 	background-size:cover;
 	background-repeat:no-repeat;
-}
-
-#hobbies-one:hover {
-	top:5%;
 }
 
 #hobbies-two {
-	left:41%;
-	top:15%;
 	background-image:url("./baking.jpg");
 	background-size:cover;
 	background-repeat:no-repeat;
-}
-
-#hobbies-two:hover {
-	top:10%;
 }
 
 #hobbies-three {
-	right:10%;
-	top:0%;
 	background-image:url("./baking.jpg");
 	background-size:cover;
 	background-repeat:no-repeat;
-}
-
-#hobbies-three:hover {
-	top:5%;
 }
 
 /* DESKTOP OPTIMIZATION */
 
 
 @media only screen and (min-width:850px) {
+
+	/* HOMEPAGE */ 
+
 	.name {
 		width:90%;
 	}
@@ -844,13 +808,187 @@ input[type=submit]:hover {
 		display:block;
 	}
 
+	/* MOBILE MENU */
+
 	.mobile-nav {
 		display:none;
+	}
+
+	/* ABOUT ME */
+
+	#about {
+		float:left;
+		color:#555;
+		margin:0;
+		padding:1.5% 5%;
+		width:55vw;
+	}
+
+	#about h1 {
+		font-size:3em;
+		padding-top:3.5vw;
+	}
+
+	#about p {
+		font-size:1.25rem;
+		font-weight:100;
+		line-height: 1.25em;
+	}
+
+	#profile-bar {
+		width:30vw;
+		position:relative;
+		display:inline-block;
+		float:left;
+		margin:2.5% 2.5% 2.5% 0;
+	}
+
+	#profile-image {
+		width:25vw;
+		height:25vw;
+		display:inline-block;
+		float:left;
+		position:relative;
+		border-radius:50%;
+		background-image:url("./anisa.jpg");
+		background-size:cover;
+		background-repeat:no-repeat;
+		margin-top:17.5%;
+		margin-left:5%;
+		margin-bottom:15%;
+	}
+
+	#social-media {
+		display:block;
+		width:80%;
+		margin:0 auto;
+	}
+
+	.sm-icon {
+		width:23%;
+		height:auto;
+		float:left;
+		margin-left:auto;
+		text-align:center;
+		font-size:30px;
+	}
+
+	/* BUBBLES */
+
+
+	.bubble-op.five {
+		width:15vw;
+		height:15vw;
+		position:absolute;
+		border-radius:50%;
+		transition: .5s;
+	}
+
+	.bubble-op.five p {
+		font-size:2vw;
+		line-height:12.5vw;  
+		transition:.5s;
+	}
+
+	/* WORKS */
+
+
+	#works-one {
+		left:5%;
+		top:5%;
+	}
+
+	#works-one:hover {
+		top:10%;
+	}
+
+	#works-two {
+		left:23.75%;
+		top:30%;
+	}
+
+	#works-two:hover {
+		top:25%;
+	}
+
+	#works-three {
+		left:42.5%;
+		top:5%;
+	}
+
+	#works-three:hover {
+		top:10%;
+	}
+
+
+	#works-four {
+		right:23.75%;
+		top:30%;
+	}
+
+	#works-four:hover {
+		top:25%;
+	}
+
+
+	#works-five {
+		right:5%;
+		top:5%;
+	}
+
+	#works-five:hover {
+		top:10%;
+	}
+
+	/* HOBBIES */
+
+	.bubble-op.three-small {
+		width:17vw;
+		height:17vw;
+		position:absolute;
+		border-radius:50%;
+		transition: .5s;
+	}
+
+	.bubble-op.three-small p {
+		font-size:2.5vw;
+		line-height:13.5vw;  
+		transition:.5s;
+	}
+
+	#hobbies-one {
+		left:10%;
+		top:0%;
+	}
+
+	#hobbies-one:hover {
+		top:5%;
+	}
+
+	#hobbies-two {
+		left:41%;
+		top:15%;
+	}
+
+	#hobbies-two:hover {
+		top:10%;
+	}
+
+	#hobbies-three {
+		right:10%;
+		top:0%;
+	}
+
+	#hobbies-three:hover {
+		top:5%;
 	}
 
 }
 
 @media only screen and (min-width:1100px) {
+	
+	/* HOMEPAGE */ 
+	
 	.name {
 		width:70%;
 	}
@@ -900,8 +1038,14 @@ input[type=submit]:hover {
 		line-height:16.5vw;   
 	}
 
+	/* MOBILE MENU */
+
 	nav ul {
 		font-size:1.45vw;
 	}
+
+	/* ABOUT ME */
+
+	
 
 }
