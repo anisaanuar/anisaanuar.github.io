@@ -50,10 +50,103 @@
 	<div id="works">
 		<h1 class="main-header">Ceci n'est pas un site Web.</h1>
 		<p class="main-paragraph"><em>But one could argue that this is a bit <a href="https://www.renemagritte.org/the-treachery-of-images.jsp">surreal</a>.</em></p>
-		<p class="main-paragraph">Working at Paidia Studios was one of my first positions on campus.</p>
+		<p class="main-paragraph">Working at Paidia Studios was one of my first positions on campus. Scroll past the gallery for my story!</p>
+
+		<div class="gallery-row">
+			<div class="gallery-column">
+				<img src="paidiasite.png" style="width:100%;" onclick="openGallery();currentBlock(1)" class="hover-shadow cursor">
+			</div>
+			<div class="gallery-column">
+				<img src="dadaorg.png" style="width:100%" onclick="openGallery();currentBlock(2)" class="hover-shadow cursor">
+			</div>
+			<div class="gallery-column">
+				<img src="dadaarchive.png" style="width:100%" onclick="openGallery();currentBlock(3)" class="hover-shadow cursor">
+			</div>
+			<div class="gallery-column">
+				<img src="gameplay1.png" style="width:100%" onclick="openGallery();currentBlock(4)" class="hover-shadow cursor">
+			</div>
+			<div class="gallery-column">
+				<img src="gameplay2.png" style="width:100%" onclick="openGallery();currentBlock(5)" class="hover-shadow cursor">
+			</div>
+			<div class="gallery-column">
+				<img src="gameplay3.png" style="width:100%" onclick="openGallery();currentBlock(6)" class="hover-shadow cursor">
+			</div>
+		</div>
+
+
+		<div id="photoGallery" class="gallery">
+			<span class="close cursor" onclick="closeGallery()">&times;</span>
+			<div class="gallery-content">
+				
+				<div class="gallery-block">
+					<div class="block-number">
+						1 / 6
+					</div>
+					<img src="paidiasite.png" style="width:100%">
+				</div>
+				<div class="gallery-block">
+					<div class="block-number">
+						2 / 6
+					</div>
+					<img src="dadaorg.png" style="width:100%">
+				</div>
+				<div class="gallery-block">
+					<div class="block-number">
+						3 / 6
+					</div>
+					<img src="dadaarchive.png" style="width:100%">
+				</div>
+				<div class="gallery-block">
+					<div class="block-number">
+						4 / 6
+					</div>
+					<img src="gameplay1.png" style="width:100%">
+				</div>
+				<div class="gallery-block">
+					<div class="block-number">
+						5 / 6
+					</div>
+					<img src="gameplay2.png" style="width:100%">
+				</div>
+				<div class="gallery-block">
+					<div class="block-number">
+						6 / 6
+					</div>
+					<img src="gameplay3.png" style="width:100%">
+				</div>
+
+				<a class="prev" onclick="plusBlock(-1)">&#10094;</a>
+				<a class="next" onclick="plusBlock(1)">&#10095;</a>
+
+				<div class="caption-block">
+					<p id="caption"></p>
+				</div>
+
+				<div class="gallery-column">
+					<img class="gallery-photo cursor" src="paidiasite.png" style="width:100%" onclick="currentBlock(1)" alt="This is an image.">
+				</div>
+				<div class="gallery-column">
+					<img class="gallery-photo cursor" src="dadaorg.png" style="width:100%" onclick="currentBlock(2)" alt="Hi I am cake.">
+				</div>
+				<div class="gallery-column">
+					<img class="gallery-photo cursor" src="dadaarchive.png" style="width:100%" onclick="currentBlock(3)" alt="Insert caption here.">
+				</div>
+				<div class="gallery-column">
+					<img class="gallery-photo cursor" src="gameplay1.png" style="width:100%" onclick="currentBlock(4)" alt="Cool beans.">
+				</div>
+				<div class="gallery-column">
+					<img class="gallery-photo cursor" src="gameplay2.png" style="width:100%" onclick="currentBlock(5)" alt="This is a video I worked on while I was at Nokia.">
+				</div>
+				<div class="gallery-column">
+					<img class="gallery-photo cursor" src="gameplay3.png" style="width:100%" onclick="currentBlock(6)" alt="This is a video I worked on while I was at Nokia.">
+				</div>
+
+			</div>
+		</div>
+
 		<p class="main-paragraph"><strong>Initially, I had applied for an office assistant position.</strong> I wanted to lay low for my first semester of college and have a simple "come to work, check in, do my job, check out, and leave for the day" kind of job. But <strong>when Celia Pearce, a game design professor at Northeastern, reached out to me</strong> about my application saying she had two different positions available-- one of which would require more commitment and, of course, more of an interest in game development-- <strong>I was intrigued.</strong></p>
 		<p class="main-paragraph">Most of my work in the beginning had to do with research. The storyline for the game we were developing at the time needed to be backed by facts, since it was a <strong>historical augmented reality game</strong>. While the interactions were a programmed illusion, the story and content we provided were all, for the most part, true. <strong>Over time, my responsibilities grew.</strong> I created <strong>a submission trailer</strong> for the game that was to be presented for a convention. I also <strong>worked on maintaining the Paidia Studios website</strong>: specifically updating assets and specific content. Then, once our game, Who Is R. Mutt? reached the implementation stage, <strong>I was asked to work on the website portion of the game</strong> that the users interact with in order to advance in the storyline.</p>
-		<p class="main-paragraph">While working for Paidia Studios, <strong>I gained skills I wouldn't have normally</strong> in my classes at Northeastern. I developed <strong>HTML, CSS, and JavaScript</strong> experience as well as <strong>some exposure to cPanel</strong> and further use of <strong>Adobe Premiere Pro, InDesign</strong>, and Illustrator. Without this opportunity, I certainly wouldn't have gotten to where I am today, and for that <strong>I am so grateful</strong>. Here is a glimpse into some of my work:</p>
+		<p class="main-paragraph">While working for Paidia Studios, <strong>I gained skills I wouldn't have normally</strong> in my classes at Northeastern. I developed <strong>HTML, CSS, and JavaScript</strong> experience as well as <strong>some exposure to cPanel</strong> and further use of <strong>Adobe Premiere Pro, InDesign</strong>, and Illustrator. Without this opportunity, I certainly wouldn't have gotten to where I am today, and for that <strong>I am so grateful</strong>.</p>
 	</div>
 
 </body>
