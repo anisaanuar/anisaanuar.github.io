@@ -287,7 +287,7 @@ p.transparent {
 
 #bubble-two {
 	top:20%;	
-	background-image:url("./shiba.PNG");
+	background-image:url("./shiba.png");
 	background-size:cover;
 	background-repeat:no-repeat;
 }
@@ -628,7 +628,7 @@ input[type=submit]:hover {
 }
 
 #works-one {
-	background-image:url("./devices.PNG");
+	background-image:url("./devices.png");
 	background-size:cover;
 	background-repeat:no-repeat;
 }
