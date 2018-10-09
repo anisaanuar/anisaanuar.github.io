@@ -287,7 +287,7 @@ p.transparent {
 
 #bubble-two {
 	top:20%;	
-	background-image:url("./shiba.png");
+	background-image:url("./shiba.PNG");
 	background-size:cover;
 	background-repeat:no-repeat;
 }
@@ -628,31 +628,31 @@ input[type=submit]:hover {
 }
 
 #works-one {
-	background-image:url("./devices.png");
+	background-image:url("./devices.PNG");
 	background-size:cover;
 	background-repeat:no-repeat;
 }
 
 #works-two {
-	background-image:url("./rmutt.png");
+	background-image:url("./rmutt.PNG");
 	background-size:cover;
 	background-repeat:no-repeat;
 }
 
 #works-three {
-	background-image:url("./bhop.png");
+	background-image:url("./bhop.PNG");
 	background-size:cover;
 	background-repeat:no-repeat;
 }
 
 #works-four {
-	background-image:url("./resistance.png");
+	background-image:url("./resistance.PNG");
 	background-size:cover;
 	background-repeat:no-repeat;
 }
 
 #works-five {
-	background-image:url("./emmawatson.png");
+	background-image:url("./emmawatson.PNG");
 	background-size:cover;
 	background-repeat:no-repeat;
 }
@@ -665,7 +665,7 @@ input[type=submit]:hover {
 	float:left;
 	transition: .5s;
 	margin:.5% 1.5%;
-	background:url("./circle.png") no-repeat;
+	background:url("./circle.PNG") no-repeat;
 	background-size:cover;
 }
 
