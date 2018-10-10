@@ -51,13 +51,93 @@
 		<h1 class="main-header">Your focus determines your reality.</h1>
 		<p class="main-paragraph"><em>In this case, would procrastination be my <a href="https://www.youtube.com/watch?v=smpe0m4RD0M" target="blank">dark side</a>?</em></p>
 		<p class="main-paragraph">At Nokia, I had purpose.</p>
-		<p class="main-paragraph">Of course, even now that my internship has ended, I find work to occupy myself and ways to continue creating and thinking, but at Nokia, I had <em>purpose</em>. Responsibilities, expectations, goals. Tasks that had some level of necessity and importance. And during this time, my motivations peaked. For more details about my experience, check out my LinkedIn bio <a href="https://www.linkedin.com/in/anisaanuar/">here</a>!</p>
+		<img src="nokia-screenshot.png" style="width:69%; float:left">
+		<img src="nokia-homepage-2.jpg" style="width:31%"; float:left"">
+		<p class="main-paragraph"><strong>HIGHLIGHT: <a href="./nokia.mp4" target="_blank"><strong>This</strong></a> is the last project I had at Nokia.</strong> It's a video I made for the redesign of their health technology front page. You can see a video of the <em>full</em> redesign I did <a href="./frontpage.mp4" target="_blank">here</a>.</p>
+		<p class="main-paragraph">I created all of the assets you see in the video-- the phone screens, all of the devices, the graph at the end. I made most of them using <a href="./illustrator.html">Illustrator</a> and edited the video using AfterEffects.</p>
+		<p class="main-paragraph">For more details about my experience, check out my LinkedIn bio <a href="https://www.linkedin.com/in/anisaanuar/" target="_blank">here</a>!</p>
+
 		<p class="main-paragraph">At first, a lot of my work consisted of graphic design: posters, banners, e-mail templates... the works.</p>
-		<p class="main-paragraph">However, over time, as my work grew both in quantity and quality, I was given more responsibility and more freedom. As a result, I was able to create such amazing assets.</p>
-	</div>
+		<p class="main-paragraph">However, over time, as my work grew both in quantity and quality, I was given more responsibility and more freedom. As a result, I was able to create such amazing assets. Here is an example of a webpage I redesigned:</p>
+
+		<div class="gallery-row">
+			<div class="gallery-column">
+				<img src="redesign-1.jpg" style="width:100%;" onclick="openGallery();currentBlock(1)" class="hover-shadow cursor">
+			</div>
+			<div class="gallery-column">
+				<img src="redesign-2.jpg" style="width:100%" onclick="openGallery();currentBlock(2)" class="hover-shadow cursor">
+			</div>
+			<div class="gallery-column">
+				<img src="redesign-3.jpg" style="width:100%" onclick="openGallery();currentBlock(3)" class="hover-shadow cursor">
+			</div>
+			<div class="gallery-column">
+			</div>
+			<div class="gallery-column">
+			</div>
+			<div class="gallery-column">
+				<img src="redesign-4.jpg" style="width:100%" onclick="openGallery();currentBlock(3)" class="hover-shadow cursor">
+			</div>
+		</div>
 
 
+		<div id="photoGallery" class="gallery">
+			<span class="close cursor" onclick="closeGallery()">&times;</span>
+			<div class="gallery-content">
+				
+				<div class="gallery-block">
+					<div class="block-number">
+						1 / 4
+					</div>
+					<img src="redesign-1.jpg" style="width:100%">
+				</div>
+				<div class="gallery-block">
+					<div class="block-number">
+						2 / 4
+					</div>
+					<img src="redesign-2.jpg" style="width:100%">
+				</div>
+				<div class="gallery-block">
+					<div class="block-number">
+						3 / 4
+					</div>
+					<img src="redesign-3.jpg" style="width:100%">
+				</div>
+				<div class="gallery-block">
+					<div class="block-number">
+						4 / 4
+					</div>
+					<img src="redesign-4.jpg" style="width:100%">
+				</div>
 
-</body>
+				<a class="prev" onclick="plusBlock(-1)">&#10094;</a>
+				<a class="next" onclick="plusBlock(1)">&#10095;</a>
 
-</html>
+				<div class="caption-block">
+					<p id="caption"></p>
+				</div>
+
+				<div class="gallery-column">
+					<img class="gallery-photo cursor" src="redesign-1.jpg" style="width:100%" onclick="currentBlock(1)" alt="This is a webinar interest form intended for potential partners or consumers.">
+				</div>
+				<div class="gallery-column">
+					<img class="gallery-photo cursor" src="redesign-2.jpg" style="width:100%" onclick="currentBlock(2)" alt="The issue with the form was that the fields were all displayed under the visible window when a user first visits the site.">
+				</div>
+				<div class="gallery-column">
+					<img class="gallery-photo cursor" src="redesign-3.jpg" style="width:100%" onclick="currentBlock(3)" alt="In my redesign, the featured image attracts the immediate attention of the viewer, keeping them on the form, which is now on the side and visible upon visit.">
+				</div>
+				<div class="gallery-column">
+				</div>
+				<div class="gallery-column">
+				</div>
+				<div class="gallery-column">
+					<img class="gallery-photo cursor" src="redesign-4.jpg" style="width:100%" onclick="currentBlock(4)" alt="The form stays with the viewer no matter how far down the page they scroll, encouraging them to fill it out.">
+				</div>
+
+			</div>
+		</div>
+
+		<p class="main-paragraph">If you would like to view more of the work I did at Nokia, feel free to <a href="./contact.html">contact me</a> directly!</p>
+
+	</body>
+
+	</html>

@@ -307,6 +307,24 @@ p.transparent {
 	top:5%;
 }
 
+#resume-link {
+	width:100%;
+	position:relative;
+	font-family: 'Quicksand', sans-serif;
+	text-align:center;
+	top:2.5vw;
+	display:none;
+}
+
+#resume-link a {
+	font-size:1.2em;
+	color:#555;
+}
+
+#resume-link a:hover {
+	color:#42CAFD;
+}
+
 /* HOMEPAGE MENU */
 
 .nav-bar {
@@ -930,6 +948,10 @@ img.hover-shadow {
 		display:block;
 	}
 
+	#resume-link {
+		display:inline-block;
+	}
+
 	/* MOBILE MENU */
 
 	.mobile-nav {
@@ -1136,7 +1158,6 @@ img.hover-shadow {
 	.gallery-column {
 		width: 32.5%;
 	}
-
 }
 
 @media only screen and (min-width:1100px) {
@@ -1161,19 +1182,29 @@ img.hover-shadow {
 
 	#bubble-one {
 		left:10%;
+		top:5%;
 	} 
+
+	#bubble-one:hover {
+		top:12.5%;
+	}
 
 	#bubble-two {
 		left:40%;
-		top:15%;
+		top:22.5%;
 	} 
 
 	#bubble-two:hover {
-		top:10%;
+		top:15%;
 	}
 
 	#bubble-three {	
 		right:10%;
+		top:5%;
+	}
+
+	#bubble-three:hover {
+		top:12.5%;
 	}
 
 	.nav-bar {
