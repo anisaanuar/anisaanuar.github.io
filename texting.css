@@ -1,0 +1,41 @@
+body {
+	background-color:#FFFBFF;
+	position:relative;
+	margin:0;
+}
+
+#texting {
+	text-align: center;
+	width:350px;
+	height:100px;
+	border-radius:30px;
+	background-color:#EBD8D0;
+	margin:50px auto;
+	transition: 0.25s;  
+	box-shadow: 0 0 35px 5px #EBD8D0;
+}
+
+#texting a {
+	position:relative;
+	display:inline-block;
+	font-size:2rem;
+	font-family: 'Roboto Slab', serif;
+	color:#D3AB9E;
+	padding: 25px 0;
+	letter-spacing:0em;
+	margin:0 auto;
+	transition: 0.25s;  
+	-webkit-user-select: none; /* Safari */        
+	-moz-user-select: none; /* Firefox */
+	-ms-user-select: none; /* IE10+/Edge */
+	user-select: none; /* Standard */
+}
+
+#texting:hover a {
+	color:#eee;
+}
+
+#texting:hover {
+	background-color: #EAC9C1;
+	box-shadow: 0 0 35px 5px #D3AB9E;
+}
