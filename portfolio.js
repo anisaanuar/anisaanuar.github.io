@@ -52,8 +52,12 @@ function showGallery(n) {
   var slides = document.getElementsByClassName("gallery-block");
   var dots = document.getElementsByClassName("gallery-photo");
   var captionText = document.getElementById("caption");
-  if (n > slides.length) {slideIndex = 1}
-  if (n < 1) {slideIndex = slides.length}
+  if (n > slides.length) {
+    slideIndex = 1
+  } 
+  if (n < 1) {
+    slideIndex = slides.length
+  }
   for (i = 0; i < slides.length; i++) {
     slides[i].style.display = "none";
   }
@@ -63,4 +67,32 @@ function showGallery(n) {
   slides[slideIndex-1].style.display = "block";
   dots[slideIndex-1].className += " active";
   captionText.innerHTML = dots[slideIndex-1].alt;
+}
+
+
+function toggleDark(bool) {
+
+  if (bool) {
+
+    document.getElementsByTagName("body")[0].classList.add("dark");
+    var all = document.body.getElementsByTagName("*");
+    for (i = 0; i < all.length; i++) {
+      all[i].classList.add("dark");
+    }
+
+    document.getElementsByClassName("light-toggle")[0].style.display = "none";
+    document.getElementsByClassName("dark-toggle")[0].style.display = "block";
+
+  } else {
+    
+    document.getElementsByTagName("body")[0].classList.remove("dark");
+    var all = document.body.getElementsByTagName("*");
+    for (i = 0; i < all.length; i++) {
+      all[i].classList.remove("dark");
+    }
+
+    document.getElementsByClassName("light-toggle")[0].style.display = "block";
+    document.getElementsByClassName("dark-toggle")[0].style.display = "none";
+
+  }
 }
