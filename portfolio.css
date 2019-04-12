@@ -964,7 +964,7 @@ img.hover-shadow {
 		float:left;
 		color:#555;
 		margin:0;
-		padding:1.5% 5%;
+		padding:2% 5%;
 		width:55vw;
 	}
 
@@ -1042,6 +1042,10 @@ img.hover-shadow {
 		font-size:1.25rem;
 		font-weight:100;
 		line-height: 1.25em;
+	}
+
+	#works {
+		padding:2% 5%;
 	}
 
 	#works-one {
@@ -1142,6 +1146,10 @@ img.hover-shadow {
 
 	/* CONTACT */
 
+	#contact {
+		padding:2% 5%;
+	}
+
 	#contact h1 {
 		font-size:3em;
 		padding-top:3.5vw;
@@ -1223,5 +1231,12 @@ img.hover-shadow {
 		line-height:16.5vw;   
 	}
 	
+	#about {
+		padding: 45px 5%;
+	}
+
+	#works {
+		padding: 45px 5%;
+	}
 
 }
