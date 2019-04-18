@@ -22,6 +22,7 @@ function toggleMenu() {
   }
 }
 
+
 // GALLERY JS
 
 // Open the Modal
@@ -84,7 +85,7 @@ function toggleDark(bool) {
     document.getElementsByClassName("dark-toggle")[0].style.display = "block";
 
   } else {
-    
+
     document.getElementsByTagName("body")[0].classList.remove("dark");
     var all = document.body.getElementsByTagName("*");
     for (i = 0; i < all.length; i++) {
