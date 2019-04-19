@@ -1,21 +1,29 @@
-function toggleMenu() {
+$(document).ready(function() {
+	$('body').css('display', 'none');
+	$('body').fadeIn(750);
 
-  var icon = document.getElementsByClassName("icon")[0];
-  var ul = document.getElementsByTagName("ul")[0];
-  var nav = document.getElementsByTagName("nav")[0];
-  if (icon.style.right === "0px") {
-  	icon.style.right = "300px";
-  } else {
-  	icon.style.right = "0px";
-  }
-  if (ul.style.right === "-300px") {
-  	ul.style.right = "0px";
-  } else {
-  	ul.style.right = "-300px";
-  }
-  if (nav.style.right === "-300px") {
-  	nav.style.right = "0px";
-  } else {
-  	nav.style.right = "-300px";
-  }
+	$('.link').click(function(event) {
+		event.preventDefault();
+		newLocation = this.href;
+		$('body').fadeOut(250, newpage);
+	});
+
+	function newpage() {
+		window.location = newLocation;
+	}
+});
+
+function toggleMenu() {
+	var menu = document.getElementById("menuWindow");
+	var content = document.getElementById("main");
+	var menuIcon = document.getElementById("menuIcon");
+	if (menu.style.width === "250px") {
+		menu.style.width = "0px";
+		content.style.marginRight = "0";
+		menuIcon.style.right = "0";
+	} else {
+		menu.style.width = "250px"
+		content.style.marginRight = "250px";
+		menuIcon.style.right = "250px";
+	}
 }
