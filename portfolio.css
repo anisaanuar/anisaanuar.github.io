@@ -1,5 +1,5 @@
 body {
-	background-color:#F7F6F2;
+	background-color:#fff;
 	position:relative;
 	margin:0;
 }
@@ -14,12 +14,12 @@ body {
 
 a {
 	text-decoration: none;
-	color:#42CAFD;
+	color:#83C9F4;
 	font-weight:250;
 }
 
 a:hover {
-	color:#1481BA;
+	color:#3D5A80;
 	cursor:pointer;
 }
 
@@ -322,7 +322,7 @@ p.transparent {
 }
 
 #resume-link a:hover {
-	color:#42CAFD;
+	color:#83C9F4;
 }
 
 /* HOMEPAGE MENU */
@@ -392,11 +392,11 @@ nav a {
 }
 
 nav a:hover {
-	color:#42CAFD;
+	color:#83C9F4;
 }
 
 nav a.active {
-	color:#42CAFD !important;
+	color:#83C9F4 !important;
 }
 
 .mobile-nav {
@@ -438,7 +438,7 @@ nav a.active {
 }
 
 .mobile-nav a.icon {
-	background: #42CAFD;
+	background: #83C9F4;
 	display: block;
 	position: absolute;
 	right: 0;
@@ -447,12 +447,12 @@ nav a.active {
 
 .mobile-nav a:hover {
 	background-color: #555;
-	color: #42CAFD;
+	color: #83C9F4;
 }
 
 .mobile-nav .active {
 	background-color: #555;
-	color: #42CAFD;
+	color: #83C9F4;
 }
 
 /* ABOUT ME */
