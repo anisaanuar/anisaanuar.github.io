@@ -2451,6 +2451,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 .banner-area img {
+  width:100%;
   height:auto;
 }
 
