@@ -2450,6 +2450,10 @@ body.mobile-nav-active #mobile-nav-toggle {
   height: 750px !important;
 }
 
+.banner-area img {
+  height:auto;
+}
+
 .banner-left h6 {
   text-transform: uppercase;
   font-weight: 400;
