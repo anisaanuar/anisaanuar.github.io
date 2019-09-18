@@ -2506,7 +2506,7 @@ body.mobile-nav-active #mobile-nav-toggle {
     margin:0 auto;
     width:70%;
     height:auto;
-    max-height:400px;
+    max-height:350px;
   }
 }
 
@@ -2683,7 +2683,7 @@ body.mobile-nav-active #mobile-nav-toggle {
   text-align: center;
   cursor: pointer;
   margin-bottom: 30px;
-  min-height: 250px;
+  min-height: 200px;
 }
 
 .portfolio-area .filters-content .item img {
@@ -2705,7 +2705,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 
 @media (max-width: 1024px) {
   .portfolio-area .filters-content .item {
-    min-height:200px;
+    min-height:150px;
   }
 }
 
