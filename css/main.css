@@ -2468,6 +2468,10 @@ body.mobile-nav-active #mobile-nav-toggle {
   text-transform: uppercase;
 }
 
+.banner-area.section-gap {
+  margin-top:50px;
+}
+
 @media (max-width: 991px) {
   .banner-left h1 {
     font-size: 30px;
@@ -2480,7 +2484,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 
 @media (max-width: 767px) {
   .banner-left {
-    margin-top: 100px;
+    margin-top: 150px;
   }
 }
 
@@ -2496,9 +2500,8 @@ body.mobile-nav-active #mobile-nav-toggle {
 
 @media (max-width: 767px) {
   .banner-right {
+    padding-top:50px;
     width: 100%;
-    margin-left: auto;
-    margin-right: auto;
     display: block;
   }
 
@@ -2506,7 +2509,7 @@ body.mobile-nav-active #mobile-nav-toggle {
     margin:0 auto;
     width:70%;
     height:auto;
-    max-height:350px;
+    max-height:400px;
   }
 }
 
