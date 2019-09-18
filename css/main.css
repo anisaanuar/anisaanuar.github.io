@@ -2502,7 +2502,9 @@ body.mobile-nav-active #mobile-nav-toggle {
     display: block;
   }
 
-  .banner-img {
+  .banner-area img {
+    width:100%;
+    height:auto;
     max-height:400px;
   }
 }
