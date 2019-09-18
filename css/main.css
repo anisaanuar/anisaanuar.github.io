@@ -2485,6 +2485,23 @@ body.mobile-nav-active #mobile-nav-toggle {
 @media (max-width: 767px) {
   .banner-left {
     margin-top: 150px;
+    margin-bottom:50px;
+  }
+
+  .banner-right {
+    width: 100%;
+    display: block;
+  }
+
+  .banner-area {
+    margin-bottom:50px;
+  }
+
+  .banner-area img {
+    margin:0 auto;
+    width:85%;
+    height:auto;
+    max-height:500px;
   }
 }
 
@@ -2495,21 +2512,6 @@ body.mobile-nav-active #mobile-nav-toggle {
 @media (max-width: 991px) {
   .banner-right {
     align-self: center !important;
-  }
-}
-
-@media (max-width: 767px) {
-  .banner-right {
-    padding-top:50px;
-    width: 100%;
-    display: block;
-  }
-
-  .banner-area img {
-    margin:0 auto;
-    width:70%;
-    height:auto;
-    max-height:400px;
   }
 }
 
