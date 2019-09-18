@@ -2453,6 +2453,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 .banner-area img {
   width:100%;
   height:auto;
+  max-height:600px;
 }
 
 .banner-left h6 {
@@ -2499,6 +2500,10 @@ body.mobile-nav-active #mobile-nav-toggle {
     margin-left: auto;
     margin-right: auto;
     display: block;
+  }
+
+  .banner-img {
+    max-height:400px;
   }
 }
 
