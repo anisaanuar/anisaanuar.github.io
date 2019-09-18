@@ -149,7 +149,7 @@ a, a:focus, a:hover {
  *  Typography
  *
  **/
-.btn i, .btn-large i, .btn-floating i, .btn-large i, .btn-flat i {
+ .btn i, .btn-large i, .btn-floating i, .btn-large i, .btn-flat i {
   font-size: 1em;
   line-height: inherit;
 }
@@ -215,7 +215,7 @@ td, th {
  * 2. The use of `table` rather than `block` is only necessary if using
  *    `:before` to contain the top-margins of child elements.
  */
-.clear::before, .clear::after {
+ .clear::before, .clear::after {
   content: " ";
   display: table;
 }
@@ -2496,14 +2496,15 @@ body.mobile-nav-active #mobile-nav-toggle {
 
 @media (max-width: 767px) {
   .banner-right {
-    width: 70%;
+    width: 100%;
     margin-left: auto;
     margin-right: auto;
     display: block;
   }
 
   .banner-area img {
-    width:100%;
+    margin:0 auto;
+    width:70%;
     height:auto;
     max-height:400px;
   }
@@ -2695,10 +2696,17 @@ body.mobile-nav-active #mobile-nav-toggle {
   opacity: 1;
   display: block;
   border-radius: 5px;
+  min-height: 250px;
   width: 100%;
   height: 100%;
   transition: .5s ease;
   backface-visibility: hidden;
+}
+
+@media (max-width: 1024px) {
+  .image {
+    min-height:200px;
+  }
 }
 
 .middle {
@@ -3188,34 +3196,34 @@ body.mobile-nav-active #mobile-nav-toggle {
 /* -------------------------
    ----- Media Queries ----- 
    ------------------------- */
-@media screen and (max-width: 1020px) {
-  .timeline ul li .content {
-    width: 41vw;
+   @media screen and (max-width: 1020px) {
+    .timeline ul li .content {
+      width: 41vw;
+    }
+    .timeline ul li:nth-child(even) .content {
+      left: calc(-41vw - 45px);
+    }
   }
-  .timeline ul li:nth-child(even) .content {
-    left: calc(-41vw - 45px);
-  }
-}
 
-@media screen and (max-width: 700px) {
-  .timeline ul li {
-    margin-left: 20px;
+  @media screen and (max-width: 700px) {
+    .timeline ul li {
+      margin-left: 20px;
+    }
+    .timeline ul li .content {
+      width: calc(100vw - 100px);
+    }
+    .timeline ul li .content h2 {
+      text-align: initial;
+    }
+    .timeline ul li:nth-child(even) .content {
+      left: 45px;
+    }
+    .timeline ul li:nth-child(even) .content:before {
+      left: -33px;
+    }
   }
-  .timeline ul li .content {
-    width: calc(100vw - 100px);
-  }
-  .timeline ul li .content h2 {
-    text-align: initial;
-  }
-  .timeline ul li:nth-child(even) .content {
-    left: 45px;
-  }
-  .timeline ul li:nth-child(even) .content:before {
-    left: -33px;
-  }
-}
 
-/* =================================== */
+  /* =================================== */
 /*  Pricing Page Styles
 /* =================================== */
 .accordion > dt {
