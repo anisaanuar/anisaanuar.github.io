@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+
+
+/* LOBBY */
+
+body {
+    font-family: Nunito;
+    background-color: #664147;
+}
+
+.screen {
+    height: 96%;
+    width: 96%;
+    display: table;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 2%;
+}
+
+.form {
+    text-align: center;
+    display: table-cell;
+    vertical-align: middle;
+    font-size: 20px;
+    color: #664147;
+}
+
+form {
+    background: rgba(233, 236, 236, 0.8);
+    width: 50%;
+    margin: 0 auto;
+    border-radius: 50px;
+    padding: 5px;
+}
+
+form:hover,
+form:active,
+form:focus,
+form:focus-within {
+    background: rgba(233, 236, 236, 1);
+}
+
+.box {
+    text-align: left;
+    font-size: 15px;
+    font-family: Nunito;
+    outline: none;
+    width: 90%;
+    border: none;
+    background: none;
+    letter-spacing: 0.7px;
+    font-weight: bold;
+}
+
+.confirm {
+    border: none;
+    font-size: 20px;
+    font-family: Nunito;
+    color: #664147;
+    background: none;
+    cursor: pointer;
+}
+
+
+/* GRID */
+
+.grid {
+    width: 90%;
+    padding: 5em 1em;
+    margin: 0 auto;
+    color: #664147;
+    display: table;
+}
+
+.tile {
+    text-align: center;
+    display: block;
+    vertical-align: middle;
+    float: left;
+    width: 100px;
+    height: 100px;
+    background-color: rgba(233, 236, 236, 0.8);
+    margin: 1em;
+    padding: 40px;
+    outline: 5px rgba(233, 236, 236, 0.8) solid;
+    border: 1px #664147 solid;
+}
+
+/* HOME ICON */
+
+.back-button {
+    color: white;
+    opacity: 0.5;
+    font-size: 2em;
+    float:left;
+}
+
+.back-button:hover {
+    cursor: pointer;
+}
