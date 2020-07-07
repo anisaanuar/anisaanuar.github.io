@@ -15,27 +15,33 @@
     <!-- meta character set -->
     <meta charset="UTF-8">
     <!-- Site Title -->
-    <title>Crossword</title>
+    <title>Word Search</title>
     <!-- CSS -->
     <link rel="stylesheet" href="../css/linearicons.css">
     <link rel="stylesheet" href="../css/font-awesome.min.css">
-    <link rel="stylesheet" href="./crossword.css">
+    <link rel="stylesheet" href="./wordsearch.css">
     <link rel="stylesheet" href="./puzzles.css">
 </head>
 
 <body>
     <div class="screen">
         <i class="fa fa-home back-button" aria-hidden="true" onclick="goBack()"></i>
-        <div class="container">
-            <div class="crossword">
+        <div id="main">
+            <div class="left">
+                <div class="letters">
+                    <canvas id="a" width="740" height="740"></canvas>
+                    <canvas id="c" width="740" height="740"></canvas>
+                </div>
+            </div>
+            <div class="right">
+                <div class="words">
+                </div>
             </div>
         </div>
     </div>
-
-    <!-- CREDIT TO https://codepen.io/dtted/pen/GRgmmVO -->
-
+    <!-- CREDIT TO https://codepen.io/collosic/pen/HBtwk -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="./crossword.js"></script>
+    <script src="./wordsearch.js"></script>
     <script src="./puzzles.js"></script>
 </body>
 

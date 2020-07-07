@@ -1,26 +1,26 @@
 var words = [
-    {number:1,direction:'down',row:1,column:14,clue:'His name is Barry Allen, and he&#8217;s the fastest man alive',answer:'flash',hint:''},
-    {number:2,direction:'down',row:2,column:10,clue:'Period',answer:'era',hint:''},
-    {number:3,direction:'across',row:3,column:9,clue:'Named similarly to a filter but is surprisingly unfiltered',answer:'britta',hint:''},
-    {number:4,direction:'down',row:3,column:12,clue:'Small laugh, also an outro',answer:'teehee',hint:''},
-    {number:5,direction:'down',row:6,column:8,clue:'"Watch his stream on Twitch.tv/FikriAnuar"',answer:'promo',hint:''},
-    {number:5,direction:'across',row:6,column:8,clue:'The Shadow Queen&#8217;s princess',answer:'peach',hint:''},
-    {number:6,direction:'down',row:6,column:15,clue:'Iconic tea party setting',answer:'boston',hint:''},
-    {number:7,direction:'across',row:8,column:7,clue:'Period',answer:'dot',hint:''},
-    {number:8,direction:'across',row:8,column:12,clue:'Sponge cake ingredients',answer:'eggs',hint:''},
-    {number:9,direction:'down',row:9,column:11,clue:'It dies so that bread can live',answer:'yeast',hint:''},
-    {number:10,direction:'down',row:10,column:6,clue:'Mythical being with the catchphrase "Objection!"',answer:'phoenix',hint:''},
-    {number:10,direction:'across',row:10,column:6,clue:'Princess Consuela Banana-Hammock',answer:'phoebe',hint:''},
-    {number:11,direction:'across',row:11,column:13,clue:'A shameless gay Jesus',answer:'ian',hint:''},
-    {number:12,direction:'down',row:11,column:17,clue:'Stardew Valley godfather and uncle',answer:'shane',hint:''},
-    {number:13,direction:'across',row:12,column:5,clue:'Tom, Tommy, and Timmy',answer:'nook',hint:''},
-    {number:14,direction:'across',row:13,column:11,clue:'It&#8217;s "free! Free! Freefreefreefree&#8212;"',answer:'turbotax',hint:''},
-    {number:15,direction:'across',row:14,column:1,clue:'(Spoiler alert) The instrument that causes the apocalypse',answer:'violin',hint:''},
-    {number:16,direction:'across',row:15,column:14,clue:'"The _____ of Dunshire"',answer:'cones',hint:''},
-    {number:17,direction:'down',row:15,column:15,clue:'Adjective on many Whole Foods labels',answer:'organic',hint:''},
-    {number:18,direction:'across',row:17,column:13,clue:'A large handhold, or a large milk hold',answer:'jug',hint:''},
-    {number:19,direction:'across',row:19,column:8,clue:'Spiky fruit',answer:'rambutan',hint:''},
-    {number:20,direction:'down',row:19,column:9,clue:'Wows',answer:'awes',hint:''},
+{number:1,direction:'down',row:1,column:14,clue:'His name is Barry Allen, and he&#8217;s the fastest man alive',answer:'flash',hint:''},
+{number:2,direction:'down',row:2,column:10,clue:'Period',answer:'era',hint:''},
+{number:3,direction:'across',row:3,column:9,clue:'Named similarly to a filter but is surprisingly unfiltered',answer:'britta',hint:''},
+{number:4,direction:'down',row:3,column:12,clue:'Small laugh, also an outro',answer:'teehee',hint:''},
+{number:5,direction:'down',row:6,column:8,clue:'"Watch his stream on Twitch.tv/FikriAnuar"',answer:'promo',hint:''},
+{number:5,direction:'across',row:6,column:8,clue:'The Shadow Queen&#8217;s princess',answer:'peach',hint:''},
+{number:6,direction:'down',row:6,column:15,clue:'Iconic tea party setting',answer:'boston',hint:''},
+{number:7,direction:'across',row:8,column:7,clue:'Period',answer:'dot',hint:''},
+{number:8,direction:'across',row:8,column:12,clue:'Sponge cake ingredients',answer:'eggs',hint:''},
+{number:9,direction:'down',row:9,column:11,clue:'It dies so that bread can live',answer:'yeast',hint:''},
+{number:10,direction:'down',row:10,column:6,clue:'Mythical being with the catchphrase "Objection!"',answer:'phoenix',hint:''},
+{number:10,direction:'across',row:10,column:6,clue:'Princess Consuela Banana-Hammock',answer:'phoebe',hint:''},
+{number:11,direction:'across',row:11,column:13,clue:'A shameless gay Jesus',answer:'ian',hint:''},
+{number:12,direction:'down',row:11,column:17,clue:'Stardew Valley godfather and uncle',answer:'shane',hint:''},
+{number:13,direction:'across',row:12,column:5,clue:'Tom, Tommy, and Timmy',answer:'nook',hint:''},
+{number:14,direction:'across',row:13,column:11,clue:'It&#8217;s "free! Free! Freefreefreefree&#8212;"',answer:'turbotax',hint:''},
+{number:15,direction:'across',row:14,column:1,clue:'(Spoiler alert) The instrument that causes the apocalypse',answer:'violin',hint:''},
+{number:16,direction:'across',row:15,column:14,clue:'"The _____ of Dunshire"',answer:'cones',hint:''},
+{number:17,direction:'down',row:15,column:15,clue:'Adjective on many Whole Foods labels',answer:'organic',hint:''},
+{number:18,direction:'across',row:17,column:13,clue:'A large handhold, or a large milk hold',answer:'jug',hint:''},
+{number:19,direction:'across',row:19,column:8,clue:'Spiky fruit',answer:'rambutan',hint:''},
+{number:20,direction:'down',row:19,column:9,clue:'Wows',answer:'awes',hint:''},
 ];
 
 // Set global variables
@@ -57,27 +57,27 @@ for (i=0;i<words.length;i++) {
         }
         if ($square.find('input').length == 0) {
             var $input = $('<input type="text" class="letter" title="'+title+'" id="'+id+'" maxlength="1" />');
-                if (words[i].direction == 'across') {
-                    $input.attr('data-across',words[i].number);
-                    $input.attr('data-across-clue',words[i].clue);
-                } else {
-                    $input.attr('data-down',words[i].number);
-                    $input.attr('data-down-clue',words[i].clue);
-                }
-                $input.data('letter',words[i].answer[j]);
-                $input.appendTo($square);
+            if (words[i].direction == 'across') {
+                $input.attr('data-across',words[i].number);
+                $input.attr('data-across-clue',words[i].clue);
+            } else {
+                $input.attr('data-down',words[i].number);
+                $input.attr('data-down-clue',words[i].clue);
+            }
+            $input.data('letter',words[i].answer[j]);
+            $input.appendTo($square);
             $square.addClass('active');
         } else {
             var $input = $square.find('input');
-                $input.attr('title',$input.attr('title')+'; '+title);
-                $input.attr('id',$input.attr('id')+'+'+id);
-                if (words[i].direction == 'across') {
-                    $input.attr('data-across',words[i].number);
-                    $input.attr('data-across-clue',words[i].clue);
-                } else {
-                    $input.attr('data-down',words[i].number);
-                    $input.attr('data-down-clue',words[i].clue);
-                }
+            $input.attr('title',$input.attr('title')+'; '+title);
+            $input.attr('id',$input.attr('id')+'+'+id);
+            if (words[i].direction == 'across') {
+                $input.attr('data-across',words[i].number);
+                $input.attr('data-across-clue',words[i].clue);
+            } else {
+                $input.attr('data-down',words[i].number);
+                $input.attr('data-down-clue',words[i].clue);
+            }
         }
         if (words[i].direction == 'down') {
             row++;
@@ -91,12 +91,13 @@ for (i=0;i<words.length;i++) {
 var $crosswordClues = $('<div class="crossword-clues col-md-4 col-lg-3"><div class="row"></div></div>');
 var $acrossClues = $('<div class="across-clues col-sm-6 col-md-12"><p><strong>Across</strong></p><ol></ol></div>');
 var $downClues = $('<div class="down-clues col-sm-6 col-md-12"><p><strong>Down</strong></p><ol></ol></div>');
+var $solution = $('<div class="solution col-sm-6 col-md-12"><a href="./aipvhniez.png" target="_blank"><p><strong>Nicely done. Click here to find out where to go next!</strong></p></a></div>')
 for (i=0;i<words.length;i++) {
     var $clue = $('<li value="'+words[i].number+'" data-direction="'+words[i].direction+'" data-clue="'+words[i].number+'"><label>'+words[i].clue+' </label></li>');
-        $clue.find('label').attr('for',$('[data-'+words[i].direction+'='+words[i].number+']').eq(0).attr('id'));
-        $clue.on('click',function(){
-            direction = $(this).data('direction');
-        })
+    $clue.find('label').attr('for',$('[data-'+words[i].direction+'='+words[i].number+']').eq(0).attr('id'));
+    $clue.on('click',function(){
+        direction = $(this).data('direction');
+    })
     if ( words[i].hint.length > 0 && words[i].hint != '' ) {
         $('<a class="hint" href="'+words[i].hint+'" target="_blank" title="Hint for '+words[i].number+' '+words[i].direction+'">(Hint)</a>').appendTo($clue.find('label'));
     }
@@ -113,29 +114,29 @@ $crosswordClues.appendTo('.crossword');
 // Add the hints, reset, and show answers buttons
 var $puzzleButtons = $('<div class="crossword-buttons"></div>');
 var $hintsButton = $('<button class="btn btn-default">Show Hints</button>');
-    $hintsButton.on('click',function(e){
-        e.preventDefault();
-        $('.crossword-clues').toggleClass('show-hints');
-        $(this).text( $(this).text() == 'Show Hints' ? 'Hide Hints' : 'Show Hints' );
-    });
-    $hintsButton.appendTo($puzzleButtons);
+$hintsButton.on('click',function(e){
+    e.preventDefault();
+    $('.crossword-clues').toggleClass('show-hints');
+    $(this).text( $(this).text() == 'Show Hints' ? 'Hide Hints' : 'Show Hints' );
+});
+$hintsButton.appendTo($puzzleButtons);
 var $resetButton = $('<button class="btn btn-default">Clear Puzzle</button>');
-    $resetButton.on('click',function(e){
-        e.preventDefault();
-        $('input.letter').val('').parent('.grid-square').removeClass('correct-down correct-across');
-        $('.crossword-clues li').removeClass('correct');
-        markCorrect = true;
-    });
-    $resetButton.appendTo($puzzleButtons);
+$resetButton.on('click',function(e){
+    e.preventDefault();
+    $('input.letter').val('').parent('.grid-square').removeClass('correct-down correct-across');
+    $('.crossword-clues li').removeClass('correct');
+    markCorrect = true;
+});
+$resetButton.appendTo($puzzleButtons);
 var $solveButton = $('<button class="show-answers btn btn-default">Show Answers</button>');
-    $solveButton.on('click',function(e){
-        e.preventDefault();
-        $('input.letter').each(function(){
-            $(this).val($(this).data('letter'));
-        });
-        markCorrect = false;
+$solveButton.on('click',function(e){
+    e.preventDefault();
+    $('input.letter').each(function(){
+        $(this).val($(this).data('letter'));
     });
-    $solveButton.appendTo($puzzleButtons);
+    markCorrect = false;
+});
+$solveButton.appendTo($puzzleButtons);
 //$puzzleButtons.appendTo('.crossword');
 
 // Add the success modal
@@ -260,7 +261,8 @@ function checkWord($current) {
         }
     }
     if ($('.grid-square.active:not([class*=correct])').length == 0 && !successShown) {
-        $('#success-modal').modal();
+        $solution.appendTo($crosswordClues.find('.row'));
+        // $('#success-modal').modal();
         successShown = true;
     }
 }
@@ -306,9 +308,9 @@ function getDirection($current) {
 function getPrevLetter($current) {
     var index = $('[data-'+direction+'='+$current.data(direction)+']').index($current);
     if (index > 0) {
-       return $('[data-'+direction+'='+$current.data(direction)+']').eq(index-1);
+        return $('[data-'+direction+'='+$current.data(direction)+']').eq(index-1);
     } else {
-       return false;
+        return false;
     }
 }
 
@@ -317,9 +319,9 @@ function getNextLetter($current) {
     var length = $('[data-'+direction+'='+$current.data(direction)+']').length;
     var index = $('[data-'+direction+'='+$current.data(direction)+']').index($current);
     if (index < length-1) {
-       return $('[data-'+direction+'='+$current.data(direction)+']').eq(index+1);
+        return $('[data-'+direction+'='+$current.data(direction)+']').eq(index+1);
     } else {
-       return false;
+        return false;
     }
 }
 
@@ -330,7 +332,7 @@ function tooltipPosition($current) {
     $clueTooltip.find('.clue-tooltip-text').text($current.data(direction+'-clue'));
     var right = left + $clueTooltip.outerWidth();
     var offset = right - $('.crossword-puzzle').outerWidth();
-        offset = offset > 0 ? offset : 0;
+    offset = offset > 0 ? offset : 0;
     left = left - offset;
     return {'left':left,'top':top,'offset':offset};
 }

@@ -164,3 +164,39 @@ input:focus {
 .invisible {
   visibility: hidden;
 }
+
+a {
+  text-decoration: none;
+  color: #232426;
+}
+
+a:hover {
+  color: #343538;
+}
+
+@media (max-width: 1000px) { 
+
+  table.crossword-grid {
+    width: 50% !important;
+  }
+
+  .crossword-clues {
+    width: 30% !important;
+    font-size: 0.75em;
+  }
+
+}
+
+@media (max-width: 800px) { 
+
+  table.crossword-grid {
+    width: 80% !important;
+  }
+
+  .crossword-clues {
+    width: 80% !important;
+    margin-top: 5%;
+    font-size: 1em;
+  }
+
+}

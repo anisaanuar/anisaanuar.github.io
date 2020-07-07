@@ -20,6 +20,9 @@ function checkPswd() {
 		case ('crossword'):
 		window.location = "crossword.html";
 		break;
+		case ('wordsearch'):
+		window.location = "wordsearch.html";
+		break;
 		default:
 		alert("Not a valid password.");
 		break;
