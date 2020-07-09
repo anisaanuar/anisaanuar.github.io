@@ -108,8 +108,8 @@ form:focus-within {
 }
 
 .message-container.small {
-    padding: 4em;
-    width: 50%;
+    padding: 6em;
+    width: 40%;
     outline: 5px #664147 double;
     outline-offset: -2em;
 }
