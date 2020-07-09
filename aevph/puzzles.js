@@ -1,5 +1,5 @@
 function goBack() {
-    window.history.back();
+    window.open('./lobby.html',"_self");
 }
 
 document.getElementById("pswd").addEventListener("keypress", function(e) {
