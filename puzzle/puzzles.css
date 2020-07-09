@@ -62,11 +62,10 @@ form:focus-within {
     cursor: pointer;
 }
 
-
 /* GRID */
 
 .grid {
-    width: 90%;
+    width: 95%;
     padding: 5em 1em;
     margin: 0 auto;
     color: #664147;
@@ -78,12 +77,11 @@ form:focus-within {
     display: block;
     vertical-align: middle;
     float: left;
-    width: 100px;
+    width: 175px;
     height: 100px;
     background-color: rgba(233, 236, 236, 0.8);
-    margin: 1em;
-    padding: 40px;
-    outline: 5px rgba(233, 236, 236, 0.8) solid;
+    margin: 0.5em;
+    padding: 30px 10px;
     border: 1px #664147 solid;
 }
 
@@ -93,9 +91,62 @@ form:focus-within {
     color: white;
     opacity: 0.5;
     font-size: 2em;
-    float:left;
+    float: left;
 }
 
 .back-button:hover {
     cursor: pointer;
+}
+
+/* VIDEO */
+
+.message-container {
+    width: 70%;
+    margin: 0 auto;
+    background-color: rgba(233, 236, 236, 0.8);
+    padding: 2em;
+}
+
+.message-container.small {
+    padding: 4em;
+    width: 50%;
+    outline: 5px #664147 double;
+    outline-offset: -2em;
+}
+
+video {
+    width: 100%;
+}
+
+.message-container p {
+    width: 100%;
+    text-align: left;
+    color: #664147;
+    font-weight: bold;
+    margin: 1em 0 0 0;
+}
+
+.message-container p.transcript-content:hover,
+p.message a:hover {
+    color: #312621;
+    cursor: pointer;
+}
+
+p.message {
+    color: #664147;
+    margin: 0 0 0.5em 0;
+}
+
+p.message a {
+    color: #493931;
+}
+
+.transcript-content {
+    font-size: 1em;
+    font-weight: bold;
+    color: #241C19;
+}
+
+:focus {
+    outline: none;
 }

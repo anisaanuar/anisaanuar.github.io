@@ -27,9 +27,12 @@
     <div class="screen">
         <i class="fa fa-home back-button" aria-hidden="true" onclick="goBack()"></i>
         <div class="container"></div>
-        <div id="controls"><button id="code" type="button" class="btn primary">Get Code</button></div>
+        <div id="controls">
+          <button type="button" class="btn primary" data-action="validate">Validate</button>
+          <button id="code" type="button" class="btn primary">Code</button>
+        </div>
     </div>
-    <!-- CREDIT TO https://codepen.io/Mobius1/details/EmJEoJ -->
+    <!-- CREDIT TO https://codepen.io/Mobius1/pen/EmJEoJ -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="./sudoku.js"></script>
     <script src="./puzzles.js"></script>
