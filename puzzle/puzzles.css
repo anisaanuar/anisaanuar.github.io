@@ -18,6 +18,12 @@ body {
     padding: 2%;
 }
 
+.header-container {
+    width: 100%;
+    display: block;
+    text-align: center;
+}
+
 .form {
     text-align: center;
     display: table-cell;
@@ -126,6 +132,8 @@ video {
     margin: 1em 0 0 0;
 }
 
+
+.message-container #transcript:hover,
 .message-container p.transcript-content:hover,
 p.message a:hover {
     color: #312621;
@@ -149,4 +157,39 @@ p.message a {
 
 :focus {
     outline: none;
+}
+
+
+
+@media (max-width: 800px) {
+
+    form {
+        width: 90%;
+    }
+
+    .media-container {
+        width: 80%;
+    }
+
+    .back-button {
+        float: none;
+    }
+
+    .header-container {
+        height: 5em;
+    }
+
+}
+
+@media (max-width: 500px) {
+
+    .box {
+        width: 80%;
+    }
+
+    .message-container.small {
+        padding: 4em;
+        width: 60%;
+    }
+
 }
