@@ -347,7 +347,6 @@ function goBack() {
     window.open('./lobby.html', "_self");
 }
 
-
 var $pswd = document.getElementById("pswd");
 var $submitButton = document.getElementById("submitButton");
 
@@ -366,7 +365,7 @@ if ($submitButton) {
 }
 
 function checkPswd() {
-    var password = document.getElementById("pswd").value.toLowerCase();
+    var password = document.getElementById("pswd").value.toLowerCase().replace(/\s/g, '');
     switch (password) {
         case ('example'):
             window.location = "example.html";
@@ -374,12 +373,24 @@ function checkPswd() {
         case ('aevph'):
             window.location = "welcome.html";
             break;
-        case ('check my socials'):
         case ('checkmysocials'):
             window.location = "socials.html";
             break;
         case ('cubbies'):
             window.location = "cubbies.html";
+            break;
+        case ('colabt'):
+        case ('gotocolabt'):
+            let phoneNote = confirm("You found Anisa's phone! But it's dead. Maybe you'll be able to recharge it along the way. In the meantime, the boba straw probably means Anisa went to KFT next. Let's head there now.");
+            if (phoneNote) {
+                window.location = "wordsearch.html";
+            }
+            break;
+        case ('taromilkgreentealessicewithpuddingandboba'):
+            let chargerNote = confirm("Nice order! You found a charger with a label on it that says 'Property of Anisa'... Wow, she really loses things easily doesn't she? Well, she's not here, so let's check the climbing gym next.");
+            if (chargerNote) {
+                window.location = "cubbies.html";
+            }
             break;
         case ('dash'):
             window.location = "teamname.html";
@@ -405,10 +416,25 @@ function checkPswd() {
         case ('snapchat'):
             window.location = "snapchat.html";
             break;
-        case ('pam'):
-            let cont = confirm('Great! Just so you know, if you move forward from this page, you will have to re-enter "checkmysocials" as a password to return to the social media pages.');
-            if (cont) {
+        case ('shrek'):
+        case ('shrek2'):
+        case ('shrek3'):
+        case ('shrek4'):
+            let shrekNote = confirm("You found Anisa's cubby - isn't it great? Anyway, there's nothing in it. BUT while figuring out which cubby was hers, you were able to charge her phone. Now to figure out her passcode...");
+            if (shrekNote) {
                 window.location = "sudoku.html";
+            }
+            break;
+        case ('snelllibrary'):
+            let snellNote = confirm('Snell Library it is! Just so you know, if you move forward from this page, you will have to re-enter "checkmysocials" as a password to return to the social media pages.');
+            if (snellNote) {
+                window.location = "crossword.html";
+            }
+            break;
+        case ('571364464'):
+            let passNote = confirm("Nicely done! Now let's see if we can find any clues in Anisa's phone.");
+            if (passNote) {
+                window.location = "voicemessage.html";
             }
             break;
         default:
@@ -460,295 +486,117 @@ $('#transcript').on('click', function() {
     }
 });
 
-/* WORD SEARCH */
-
-function getRandomLetter() {
-    let nextLetter;
-    if (letNum < str.length) {
-        nextLetter = str.charAt(letNum);
-        console.log(nextLetter);
-        letNum++;
-        return nextLetter;
-    }
-    return letters[Math.floor(Math.random() * letters.length)];
-}
-
-function displayWord(w) {
-    for (var j = 0; j < w.word.length; j++) {
-        if (w.direction == "N") {
-            $(".letters").find("." + w.end).text(w.word[j]);
-            if (j + 1 != w.word.length) w.end -= 18;
-        }
-        if (w.direction == "NE") {
-            $(".letters").find("." + w.end).text(w.word[j]);
-            if (j + 1 != w.word.length) w.end -= 17;
-        }
-        if (w.direction == "E") {
-            $(".letters").find("." + w.end).text(w.word[j]);
-            if (j + 1 != w.word.length) w.end += 1;
-        }
-        if (w.direction == "SE") {
-            $(".letters").find("." + w.end).text(w.word[j]);
-            if (j + 1 != w.word.length) w.end += 19;
-        }
-        if (w.direction == "S") {
-            $(".letters").find("." + w.end).text(w.word[j]);
-            if (j + 1 != w.word.length) w.end += 18;
-        }
-        if (w.direction == "SW") {
-            $(".letters").find("." + w.end).text(w.word[j]);
-            if (j + 1 != w.word.length) w.end += 17;
-        }
-        if (w.direction == "W") {
-            $(".letters").find("." + w.end).text(w.word[j]);
-            if (j + 1 != w.word.length) w.end -= 1;
-        }
-        if (w.direction == "NW") {
-            $(".letters").find("." + w.end).text(w.word[j]);
-            if (j + 1 != w.word.length) w.end -= 19;
-        }
-    }
-}
-
-// This function is called when lines need to be drawn on the game
-function draw(f) {
-    // used to draw an arc.  takes in two numbers that represent the beginning
-    // and end of the arc
-    function drawArc(xArc, yArc, num1, num2) {
-        ctx.lineWidth = 2;
-        ctx.beginPath();
-        ctx.arc(xArc, yArc, r, num1 * Math.PI, num2 * Math.PI);
-        ctx.closePath();
-        ctx.fillStyle = strokeColor;
-        ctx.fill();
-    }
-
-    // used to draw the two lines around letters
-    function drawLines(mX1, mY1, lX1, lY1, mX2, mY2, lX2, lY2) {
-        ctx.beginPath();
-        // ctx.moveTo(mX1, mY1);
-        // ctx.lineTo(lX1, lY2);
-        // ctx.lineTo(lX2, lY1);
-        // ctx.lineTo(lX2, lY2);
-        ctx.moveTo(mX1, mY1);
-        ctx.lineTo(lX1, lY1);
-        ctx.lineTo(lX2, lY2);
-        ctx.lineTo(mX2, mY2);
-        ctx.closePath();
-        ctx.fillStyle = strokeColor;
-        ctx.fill();
-    }
-    // Check and see what event occured and create the action that belongs to that 
-    // event.
-    if (f == "mousedown") {
-        ctx.clearRect(0, 0, width, height);
-        drawArc(sX, sY, 0, 2);
-    } else if (f == "mousemove" || f == "mouseup") {
-        /* 
-        This is to show the rise over run I used to get the limits for 
-        all eight directions.  This tells the conditionals when to activiate
-        the lines and in which direction.
-        rise = (sY - eY) * Math.sqrt(6);
-        run = sX - eX;
-        */
-        limit = ((sY - eY) * Math.sqrt(6)) / (sX - eX);
-        // UP
-        if ((limit > 6 || limit < -6) && eY < sY) {
-            // clear the canvas
-            if (f == "mousemove") ctx.clearRect(0, 0, width, height);
-            drawArc(sX, sY, 0, 1); // draw bottom arc
-            drawArc(sX, eY, 1, 2); // draw top arc
-
-            // draw the two lines that connect the bottom and the top arcs
-            drawLines(sX + r, sY, sX + r, eY, sX - r, sY, sX - r, eY);
-
-            // if the player is selecting this as the last letter set its position 
-            // for wordcheck
-            if (f == "mouseup") setPos(sX, eY, "end");
-        }
-        // DOWN
-        if ((limit < -6 || limit > 6) && eY > sY) {
-            // clear the canvas
-            if (f == "mousemove") ctx.clearRect(0, 0, width, height);
-            drawArc(sX, sY, 1, 2);
-            drawArc(sX, eY, 0, 1);
-            drawLines(sX + r, sY, sX + r, eY, sX - r, sY, sX - r, eY);
-            if (f == "mouseup") setPos(sX, eY, "end");
-        }
-        // LEFT
-        if ((limit < 1 && limit > -1) && eX < sX) {
-            if (f == "mousemove") ctx.clearRect(0, 0, width, height);
-            drawArc(sX, sY, 1.5, 0.5);
-            drawArc(eX, sY, 0.5, 1.5);
-            drawLines(sX, sY - r, eX, sY - r, sX, sY + r, eX, sY + r);
-            if (f == "mouseup") setPos(eX, sY, "end");
-        }
-        // RIGHT
-        if ((limit < 1 && limit > -1) && eX > sX) {
-            if (f == "mousemove") ctx.clearRect(0, 0, width, height);
-            drawArc(sX, sY, 0.5, 1.5);
-            drawArc(eX, sY, 1.5, 0.5);
-            drawLines(sX, sY - r, eX, sY - r, sX, sY + r, eX, sY + r);
-            if (f == "mouseup") setPos(eX, sY, "end");
-        }
-        /* 
-        This is for the NW diagonal lines it requires a special number 
-        n that is the adjacent lengths of a 45-45-90 triangle needed to draw these
-        lines.  It also creates a diff for the difference between the 
-        start and the end of the arcs 
-        */
-        // NW
-        if ((limit > 1 && limit < 6) && (eX < sX && eY < sY)) {
-            if (f == "mousemove") ctx.clearRect(0, 0, width, height);
-            diff = sX - eX;
-            drawArc(sX, sY, 1.75, 0.75);
-            drawArc(sX - diff, sY - diff, 0.75, 1.75);
-            drawLines(sX + n, sY - n, sX + n - diff, sY - n - diff,
-                sX - n, sY + n, sX - n - diff, sY + n - diff);
-            if (f == "mouseup") setPos(sX - diff, sY - diff, "end");
-        }
-
-        // NE
-        if ((limit < -1 && limit > -6) && (eX > sX && eY < sY)) {
-            if (f == "mousemove") ctx.clearRect(0, 0, width, height);
-            diff = sX - eX;
-            drawArc(sX, sY, 0.25, 1.25);
-            drawArc(sX - diff, sY + diff, 1.25, 0.25);
-            drawLines(sX + n, sY + n, sX + n - diff, sY + n + diff,
-                sX - n, sY - n, sX - n - diff, sY - n + diff);
-            if (f == "mouseup") setPos(sX - diff, sY + diff, "end");
-        }
-        // SW
-        if ((limit < -1 && limit > -6) && (eX < sX && eY > sY)) {
-            if (f == "mousemove") ctx.clearRect(0, 0, width, height);
-            diff = sX - eX;
-            drawArc(sX, sY, 1.25, 0.25);
-            drawArc(sX - diff, sY + diff, 0.25, 1.25);
-            drawLines(sX + n, sY + n, sX + n - diff, sY + n + diff,
-                sX - n, sY - n, sX - n - diff, sY - n + diff);
-            if (f == "mouseup") setPos(sX - diff, sY + diff, "end");
-        }
-        // SE
-        if ((limit > 1 && limit < 6) && (eX > sX && eY > sY)) {
-            if (f == "mousemove") ctx.clearRect(0, 0, width, height);
-            diff = sX - eX;
-            drawArc(sX, sY, 0.75, 1.75);
-            drawArc(sX - diff, sY - diff, 1.75, 0.75);
-            drawLines(sX + n, sY - n, sX + n - diff, sY - n - diff,
-                sX - n, sY + n, sX - n - diff, sY + n - diff);
-            if (f == "mouseup") setPos(sX - diff, sY - diff, "end");
-        }
-    } else if (f == "mouseleave") {
-        setCanvas("c");
-        ctx.clearRect(0, 0, width, height);
-    }
-}
-
-
-// change the canvas between the bottom and top layer
-function setCanvas(id) {
-    canvas = document.getElementById(id);
-    ctx = canvas.getContext("2d");
-    width = canvas.width;
-    height = canvas.height;
-}
-
-
-// set the offsets to numbers that match the class names of each letter
-function setPos(x, y, loc) {
-    tX = Math.floor((x / 8) / 5) + 1;
-    tY = Math.floor((y / 8) / 5) + 1;
-    if (loc == "start") click.startPos = (tY - 1) * 18 + tX;
-    else click.endPos = (tY - 1) * 18 + tX;
-}
-
-
-// verify if the word chosen is the correct one. If a player decides
-// to highlight a word starting from last letter to first this function
-// will also support that ability
-function checkWord() {
-    // clears the pos array so that a player cannot highlight the same word twice
-    function clearPos(p) {
-        p.start = p.end = 0;
-        return true;
-    }
-    // user highlights from first letter to last
-    if (pos.some(function(o) {
-            return o.start === click.startPos &&
-                o.end === click.endPos && clearPos(o);
-        })) {
-        return true;
-    }
-    // if user highlights from last letter to first
-    else if (pos.some(function(o) {
-            return o.start === click.endPos &&
-                o.end === click.startPos && clearPos(o);
-        })) {
-        return true;
-    } else return false;
-}
-
-// scratch the word on the right out when the word is found on the left
-function scratchWord() {
-    for (var i = 0; i < words.length; i++) {
-        if ((click.startPos === words[i].start && click.endPos === words[i].end) ||
-            (click.startPos === words[i].end && click.endPos === words[i].start)) {
-            // little hack here
-            $(".words").find("." + i).addClass("strike");
-        }
-    }
-    // check if the game is over
-
-}
-
-function isEndOfGame() {
-    return pos.every(function(o) { return o.start === 0 && o.end === 0; });
-}
-
 /* SNAPCHAT */
 
-document.getElementById("pi1").addEventListener("keypress", function(e) {
-    var key = e.which || e.keyCode || 0;
-    if (key === 13) {
-        e.preventDefault();
-        checkPISubs();
-    }
-});
+var $fbpw = document.getElementById("fbpw");
+var $fbbutton = document.getElementById("fbButton");
 
-document.getElementById("pi2").addEventListener("keypress", function(e) {
-    var key = e.which || e.keyCode || 0;
-    if (key === 13) {
-        e.preventDefault();
-        checkPISubs();
-    }
-});
 
-document.getElementById("pi3").addEventListener("keypress", function(e) {
-    var key = e.which || e.keyCode || 0;
-    if (key === 13) {
-        e.preventDefault();
-        checkPISubs();
-    }
-});
+if ($fbpw) {
+    $fbpw.addEventListener("keypress", function(e) {
+        var key = e.which || e.keyCode || 0;
+        if (key === 13) {
+            e.preventDefault();
+            backToSocials();
+        }
+    });
+}
 
-document.getElementById("checkPackedItems").addEventListener("click", checkPISubs);
+
+var $pi1 = document.getElementById("pi1")
+var $pi2 = document.getElementById("pi2")
+var $pi3 = document.getElementById("pi3")
+
+if ($pi1) {
+    $pi1.addEventListener("keypress", function(e) {
+        var key = e.which || e.keyCode || 0;
+        if (key === 13) {
+            e.preventDefault();
+            checkPISubs();
+        }
+    });
+}
+
+if ($pi2) {
+    $pi2.addEventListener("keypress", function(e) {
+        var key = e.which || e.keyCode || 0;
+        if (key === 13) {
+            e.preventDefault();
+            checkPISubs();
+        }
+    });
+}
+
+if ($pi3) {
+    $pi3.addEventListener("keypress", function(e) {
+        var key = e.which || e.keyCode || 0;
+        if (key === 13) {
+            e.preventDefault();
+            checkPISubs();
+        }
+    });
+}
+
+var $packed = document.getElementById("checkPackedItems")
+
+if ($packed) {
+    $packed.addEventListener("click", checkPISubs);
+}
 
 var item1;
 var item2;
 var item3;
 
 function checkPISubs() {
-    console.log('got');
-    $item1 = document.getElementById("pi1").value.toLowerCase();
-    $item2 = document.getElementById("pi2").value.toLowerCase();
-    $item3 = document.getElementById("pi3").value.toLowerCase();
+    $item1 = document.getElementById("pi1").value.toLowerCase().replace(/\s/g, '');;
+    $item2 = document.getElementById("pi2").value.toLowerCase().replace(/\s/g, '');;
+    $item3 = document.getElementById("pi3").value.toLowerCase().replace(/\s/g, '');;
     if ($item1 && $item2 && $item3) {
         if (($item1 === 'husky card' || $item1 === 'huskycard') && ($item2 === 'boba straw' || $item2 === 'bobastraw') && ($item3 === 'climbing shoes' || $item3 === 'climbingshoes')) {
-            alert('Nice job! The code is pam');
+            alert("You found them all! Her husky card, a boba straw, and climbing shoes. There aren't many places Anisa would go where she'd need her husky card... Where do you think she went? \n(Hint: beep boop books)");
         } else {
             alert('Sorry, at least one of the items you entered is incorrect.');
         }
     } else {
         alert('Please enter all the items!');
+    }
+}
+
+/* WHATSAPP */
+
+var $whatsapp746 = $('<img class="wa-746" src="wa746.png"><svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 377 805"><defs></defs><rect class="wa-underlay" width="377" height="805" /><rect class="wa-message" x="43" y="752.62" width="242" height="26.75" rx="13.37" ry="13.37" /><foreignObject x="43" y="752.62" width="242" height="26.75"> <input placeholder="Message" id="wapp" class="box wa"></foreignObject></svg>').appendTo('.whatsapp');
+
+var $whatsapp747 = $('<img class="wa-747" src="wa747.png"><svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 377 805"><defs><style></style></defs><rect class="wa-underlay" width="377" height="805"/><rect class="wa-message" x="17" y="609" width="212" height="128" rx="8.17" ry="8.17" onclick="openCodeNames()"/></svg>');
+
+var $wapp = document.getElementById("wapp");
+
+if ($wapp) {
+    $wapp.addEventListener("keypress", function(e) {
+        var key = e.which || e.keyCode || 0;
+        if (key === 13) {
+            e.preventDefault();
+            checkWapp();
+        }
+    });
+}
+
+function checkWapp() {
+    var password = document.getElementById("wapp").value.toLowerCase().replace(/\s/g, '');
+    switch (password) {
+        case ('hantarinvitesklilagi'):
+            $whatsapp747.appendTo('.whatsapp');
+            $whatsapp746.remove();
+            break;
+        default:
+            alert("I don't think that's the message you should be sending.");
+            break;
+    }
+}
+
+function openCodeNames() {
+    let codenamesNote = confirm("Seems like you're getting close to wherever Anisa is. Now to use this 'invitation' to figure out where to go next...");
+    if (codenamesNote) {
+        window.open('./codenames.png');
+        window.location = "cubbies.html";
     }
 }

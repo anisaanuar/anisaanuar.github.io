@@ -20,42 +20,42 @@
     <link rel="stylesheet" href="../css/linearicons.css">
     <link rel="stylesheet" href="../css/font-awesome.min.css">
     <link rel="stylesheet" href="./puzzles.css">
-    <link rel="stylesheet" href="./snapstory.css">
 </head>
 
 <body>
     <div class="screen">
         <div class="header-container">
-            <i class="fa fa-home back-button" aria-hidden="true" onclick="goBack()"></i>
+            <i class="fa fa-home back-button" aria-hidden="true" onclick="backToSocials()"></i>
         </div>
-                <div class="form">
-                    <form>
-                        <input placeholder="There's a clue here... but how to find it?" id="pswd" class="box">
-                        <input class="confirm" id="submitButton" type="button" value="&#9654;" />
-                    </form>
-                </div>
+        <div class="form top">
+            <form>
+                <input placeholder="There's a clue here... but how to find it?" id="pswd" class="box">
+                <input class="confirm sc" id="submitButton" type="button" value="&#9654;" />
+            </form>
+        </div>
         <div class="message-container snap">
             <video preload="auto" preload controls>
                 <source src="snapstory.MP4" type="video/mp4">
-                    <object data="snapstory.MP4" height="1080">
-                        <param name="wmode" value="transparent">
-                        <param name="autoplay" value="false">
-                        <param name="loop" value="false">
-                    </object>
-                </video>
-                <div class="video-puzzle">
-                    <p>Looks like you'll need to do a little sleuthing to figure out where to look next. My snap story probably has some clues about where I went. Maybe start by figuring out what items I packed with me?</p>
-                    <p>1)<input id="pi1" class="packed-items" placeholder="_____ ____"></p>
-                    <p>2)<input id="pi2" class="packed-items" placeholder="____ _____"></p>
-                    <p>3)<input id="pi3" class="packed-items" placeholder="________ _____"></p>
-                    <p><input class="confirm" id="checkPackedItems" type="button" value="Check to see if you got them right" /></p>
-                    <p class="footnote">*Note: These items may or may not have specific terms. If you think you know what the items are but can't get the right terminology or spelling, just message me!
-                    </div></p>
-                </div>
+                <object data="snapstory.MP4" height="1080">
+                    <param name="wmode" value="transparent">
+                    <param name="autoplay" value="false">
+                    <param name="loop" value="false">
+                </object>
+            </video>
+            <div class="video-puzzle">
+                <p>Looks like you'll need to do a little sleuthing to figure out where to look next. My snap story probably has some clues about where I went. Maybe start by figuring out what items I packed with me?</p>
+                <p>1)<input id="pi1" class="packed-items" placeholder="_____ ____"></p>
+                <p>2)<input id="pi2" class="packed-items" placeholder="____ _____"></p>
+                <p>3)<input id="pi3" class="packed-items" placeholder="________ _____"></p>
+                <p><input class="confirm" id="checkPackedItems" type="button" value="Check to see if you got them right" /></p>
+                <p class="footnote">*Note: These items may or may not have specific terms. If you think you know what the items are but can't get the right terminology or spelling, just message me!
             </div>
-            <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-            <script src="./snapstory.js"></script>
-            <script src="./puzzles.js"></script>
-        </body>
+            </p>
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="./snapstory.js"></script>
+    <script src="./puzzles.js"></script>
+</body>
 
-        </html>
+</html>

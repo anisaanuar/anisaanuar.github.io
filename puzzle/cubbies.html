@@ -24,33 +24,127 @@
 </head>
 
 <body>
-    <div class="screen"> 
+    <div class="screen">
         <i class="fa fa-home back-button" aria-hidden="true" onclick="goBack()"></i>
-        <div class="grid">
-            <div class="tile">👩🏽🌺🌊🐓🦀</div>
-            <div class="tile">👱🏼‍♀️🐱🐰🐛🎩🃏♥️</div>
-            <div class="tile">👸🏽💋🐸🐊🎺💫</div>
-            <div class="tile">💛😄💙😞❤️😡💚😒💜😱</div>
-            <div class="tile">🧑🏽🐻🐯🐍🐵</div>
-            <div class="tile">👳🏽‍♀️🧞‍♂️🕌🐒🔮</div>
-            <div class="tile">🏁🚥🚙🚘🚜</div>
-            <div class="tile">❄️👸🏼👭🏼⛄️</div>
-            <div class="tile">🧜🏻‍♀️🐠&#x1F6A2🐚🍴</div>
-            <div class="tile">👸🏼🌼🌟🏮🎨</div>
-            <div class="tile">🐘🎪🎭</div>
-            <div class="tile">🐴🚀🐷🦖🤖📖</div>
-            <div class="tile">🐜🐞🐛🦟🦗</div>
-            <div class="tile">💇🏻‍♀️🐉⚔️⛩🎏</div>
-            <div class="tile">😴👸🏽👩‍❤️‍💋‍👨🛌</div>
-            <div class="tile">🔎🐟🐢</div>
-            <div class="tile">👩🏽📚🕰🕯🌹</div>
-            <div class="tile">👸🏼🐭👗🏰🕛👠</div>
-            <div class="tile">🌅🦁👑🐗🐘</div>
-            <div class="tile">🧑🏽🟢👩🏻‍🦰🐴🐱🥾</div>
-            <div class="tile">21</div>
-            <div class="tile">22</div>
-
-            
+        <div class="form top">
+            <form>
+                <input placeholder="One of these cubbies is not like the other..." id="pswd" class="box">
+                <input class="confirm" id="submitButton" type="button" value="&#9654;" />
+            </form>
+        </div>
+        <div class="message-container">
+            <div class="grid">
+                <div class="tile">
+                    <span class="emojis">🧑🏽🐻🐯<br>🐍🐵</span>
+                    <span class="text">♪ i wan'na be<br>like you ♪</span>
+                    <span class="knob">⚫</span>
+                </div>
+                <div class="tile">
+                    <span class="emojis">👸🏽💋🐸<br>🐊🎺💫</span>
+                    <span class="text">♪ down in new<br>orleans ♪</span>
+                    <span class="knob">⚫</span>
+                </div>
+                <div class="tile">
+                    <span class="emojis">🐜🐞🐛<br>🦟🦗</span>
+                    <span class="text">♪ the time of<br>your life ♪</span>
+                    <span class="knob">⚫</span>
+                </div>
+                <div class="tile">
+                    <span class="emojis">🌅🦁👑<br>🐗🐘</span>
+                    <span class="text">♪ i just can't wait<br>to be king ♪</span>
+                    <span class="knob">⚫</span>
+                </div>
+                <div class="tile">
+                    <span class="emojis">👩🏽📚🕰️<br>🕯️🌹</span>
+                    <span class="text">♪ tale as old<br>as time ♪</span>
+                    <span class="knob">⚫</span>
+                </div>
+                <div class="tile">
+                    <span class="emojis">🐴🚀🐷<br>🦖🤖📖</span>
+                    <span class="text">♪ you've got a<br>friend in me ♪</span>
+                    <span class="knob">⚫</span>
+                </div>
+                <div class="tile">
+                    <span class="emojis">👩🏽🦝🌈<br>🌬️🌳</span>
+                    <span class="text">♪ colors of<br>the wind ♪</span>
+                    <span class="knob">⚫</span>
+                </div>
+                <div class="tile">
+                    <span class="emojis">❄️👸🏼<br>👭🏼⛄️</span>
+                    <span class="text">♪ let it<br> go ♪</span>
+                    <span class="knob">⚫</span>
+                </div>
+                <div class="tile">
+                    <span class="emojis">💇🏻‍♀️🐉⚔️<br>⛩️🎏</span>
+                    <span class="text">♪ i'll make a man<br> out of you ♪</span>
+                    <span class="knob">⚫</span>
+                </div>
+                <div class="tile">
+                    <span class="emojis">👳🏽‍♀️🧞‍♂️🕌<br>🐒🔮</span>
+                    <span class="text">♪ a whole new<br> world ♪</span>
+                    <span class="knob">⚫</span>
+                </div>
+                <div class="tile">
+                    <span class="emojis">🧑🏽🟢👩🏻‍🦰<br>🐴🐱🥾</span>
+                    <span class="text">♪ i'm a<br>believer ♪</span>
+                    <span class="knob">⚫</span>
+                </div>
+                <div class="tile">
+                    <span class="emojis">🏁🚥🚙<br>🚘🚜</span>
+                    <span class="text">♪ life is a<br>highway ♪</span>
+                    <span class="knob">⚫</span>
+                </div>
+                <div class="tile">
+                    <span class="emojis">🧜🏻‍♀️🐠&#x1F6A2<br>🐚🍴</span>
+                    <span class="text">♪ part of your<br>world ♪</span>
+                    <span class="knob">⚫</span>
+                </div>
+                <div class="tile">
+                    <span class="emojis">👩🏽🌺🌊<br>🐓🦀</span>
+                    <span class="text">♪ how far<br>i'll go ♪</span>
+                    <span class="knob">⚫</span>
+                </div>
+                <div class="tile">
+                    <span class="emojis">😴👸🏽<br>👩‍❤️‍💋‍👨🛌</span>
+                    <span class="text">♪ once upon<br>a dream ♪</span>
+                    <span class="knob">⚫</span>
+                </div>
+                <div class="tile">
+                    <span class="emojis">👸🏼🐭👗<br>🏰🕛👠</span>
+                    <span class="text">♪ the work song<br>(cinderelly) ♪</span>
+                    <span class="knob">⚫</span>
+                </div>
+                <div class="tile">
+                    <span class="emojis">👸🏼🌼🌟<br>🏮🎨</span>
+                    <span class="text">♪ when will my<br>life begin ♪</span>
+                    <span class="knob">⚫</span>
+                </div>
+                <div class="tile">
+                    <span class="emojis">🔎🐠<br>🐟🐢</span>
+                    <span class="text">♪ beyond<br>the sea ♪</span>
+                    <span class="knob">⚫</span>
+                </div>
+                <div class="tile">
+                    <span class="emojis">👱🏼‍♀️🐱🐰<br>🎩🃏❤️</span>
+                    <span class="text">♪ in a world<br>of my own ♪</span>
+                    <span class="knob">⚫</span>
+                </div>
+                <div class="tile">
+                    <span class="emojis">🐘🎪<br>🐭🎭</span>
+                    <span class="text">♪ baby<br> mine ♪</span>
+                    <span class="knob">⚫</span>
+                </div>
+                <div class="tile">
+                    <span class="emojis">🧔🏽🦍🌳<br>🌲🐍🐯</span>
+                    <span class="text">♪ you'll be in<br>my heart ♪</span>
+                    <span class="knob">⚫</span>
+                </div>
+                <div class="tile">
+                    <span class="emojis">👸🏻😡🤪🧐😄<br>😊🤧😴🍎</span>
+                    <span class="text">♪ someday my prince<br> will come ♪</span>
+                    <span class="knob">⚫</span>
+                </div>
+            </div>
         </div>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>

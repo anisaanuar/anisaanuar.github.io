@@ -25,11 +25,19 @@
 
 <body>
     <div class="screen">
-        <i class="fa fa-home back-button" aria-hidden="true" onclick="goBack()"></i>
+        <div class="header-container">
+            <i class="fa fa-home back-button" aria-hidden="true" onclick="goBack()"></i>
+        </div>
+        <div class="form top">
+            <form>
+                <input placeholder="Got the passcode yet?" id="pswd" class="box">
+                <input class="confirm" id="submitButton" type="button" value="&#9654;" />
+            </form>
+        </div>
         <div class="container"></div>
         <div id="controls">
           <button type="button" class="btn primary" data-action="validate">Validate</button>
-          <button id="code" type="button" class="btn primary">Code</button>
+          <button id="code" type="button" class="btn primary">Passcode</button>
         </div>
     </div>
     <!-- CREDIT TO https://codepen.io/Mobius1/pen/EmJEoJ -->

@@ -48,6 +48,13 @@ form:focus-within {
     background: rgba(233, 236, 236, 1);
 }
 
+.form.top {
+    width: 100%;
+    display: block;
+    margin: 1em 0 2em;
+}
+
+
 .box {
     text-align: left;
     font-size: 0.75em;
@@ -73,14 +80,12 @@ form:focus-within {
 
 .footnote {
     font-weight: normal !important;
-    font-size:0.9em;
+    font-size: 0.9em;
 }
 
 /* GRID */
 
 .grid {
-    width: 95%;
-    padding: 5em 1em;
     margin: 0 auto;
     color: #664147;
     display: table;
@@ -88,15 +93,61 @@ form:focus-within {
 
 .tile {
     text-align: center;
-    display: block;
+    display: table-cell;
     vertical-align: middle;
+    box-sizing: content-box;
     float: left;
-    width: 175px;
-    height: 100px;
-    background-color: rgba(233, 236, 236, 0.8);
+    font-size: 1.5em;
+    background-color: rgba(233, 236, 236, 0.5);
     margin: 0.5em;
-    padding: 30px 10px;
-    border: 1px #664147 solid;
+    padding: 1.5em 1.5em 1.5em 1em;
+    box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
+    min-width: 5em;
+    min-height: 2.75em;
+    transition: 0.25s;
+}
+
+.tile .emojis {
+    width: 90%;
+    float: left;
+    display: block;
+    font-size: 0.9em;
+}
+
+.tile .knob {
+    width: 10%;
+    font-size: 0.75em;
+    float: right;
+    padding: 1em 0;
+    display: block;
+}
+
+.tile .text {
+    display: none;
+    width: 100%;
+    float: left;
+    font-size: 0.7em;
+    line-height: 1.25em;
+    padding: 0.5em 0;
+    font-weight: bold;
+    color: #343538;
+}
+
+.tile:hover {
+    background-color: rgba(233, 236, 236, 1);
+    box-shadow: none;
+}
+
+.tile:hover .emojis {
+    display: none;
+}
+
+.tile:hover .knob {
+    display: none;
+}
+
+.tile:hover .text {
+    display: block;
 }
 
 /* HOME ICON */
@@ -255,6 +306,46 @@ p.message a {
     margin: 1em 1.15em;
 }
 
+/* SNAPCHAT */
+
+.packed-items {
+    text-align: left;
+    font-size: 0.9em;
+    font-family: Nunito;
+    outline: none;
+    width: 80%;
+    border: none;
+    background: none;
+    letter-spacing: 0.5em;
+    font-weight: bold;
+    display: inline-block;
+    margin-left: 1em;
+}
+
+.confirm.sc:hover {
+    text-decoration: underline;
+}
+
+/* WHATSAPP */
+
+
+.wa-underlay {
+    opacity: 0.02;
+}
+
+.wa-message {
+    fill: #fff;
+    opacity: 1;
+}
+
+.wa-message:hover {
+    opacity: 0;
+    cursor: pointer;
+}
+
+.box.wa {
+    margin-left: 1em;
+}
 
 @media only screen and (max-width: 1100px) {
 
