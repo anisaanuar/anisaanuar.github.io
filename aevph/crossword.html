@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- Mobile Specific Meta -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Favicon-->
+    <link rel="shortcut icon" href="img/favicon.png">
+    <!-- Author Meta -->
+    <meta name="author" content="colorlib">
+    <!-- Meta Description -->
+    <meta name="description" content="">
+    <!-- Meta Keyword -->
+    <meta name="keywords" content="">
+    <!-- meta character set -->
+    <meta charset="UTF-8">
+    <!-- Site Title -->
+    <title>Crossword</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/linearicons.css">
+    <link rel="stylesheet" href="../css/font-awesome.min.css">
+    <link rel="stylesheet" href="./crossword.css">
+    <link rel="stylesheet" href="./puzzles.css">
+</head>
+
+<body>
+    <div class="screen">
+        <i class="fa fa-home back-button" aria-hidden="true" onclick="goBack()"></i>
+        <div class="form top">
+            <form>
+                <input placeholder="But where in Snell to look?" id="pswd" class="box">
+                <input class="confirm" id="submitButton" type="button" value="&#9654;" />
+            </form>
+        </div>
+        <div class="container">
+            <div class="crossword">
+            </div>
+        </div>
+    </div>
+
+    <!-- CREDIT TO https://codepen.io/dtted/pen/GRgmmVO -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="./crossword.js"></script>
+    <script src="./puzzles.js"></script>
+</body>
+
+</html>
