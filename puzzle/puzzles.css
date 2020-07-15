@@ -368,6 +368,10 @@ p.message a {
         width: 70%;
     }
 
+    .message-container.snap {
+        width: 80%;
+    }
+
 }
 
 
@@ -397,8 +401,12 @@ p.message a {
         width: 80%;
     }
 
-    .message-container.snap {
-        width: 70%;
+    .message-container.snap video {
+        width: 100%;
+    }
+    .message-container.snap .video-puzzle {
+        width: 100%;
+        float:none;
     }
 
     .message-container.medium {
