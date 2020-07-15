@@ -1,0 +1,125 @@
+/* DESKTOP OPTIMIZATION */
+
+@media only screen and (min-width:1150px) {
+	.name {
+		width:70%;
+	}
+
+	.name h1 {
+		font-size:7.7vw;
+		margin:0 auto;
+	}
+
+	.bubble-op.three {
+		width:20vw;
+		height:20vw;
+	}
+
+	#bubble-one {
+		left:10%;
+	} 
+
+	#bubble-two {
+		left:40%;
+		top:15%;
+	} 
+
+	#bubble-two:hover {
+		top:10%;
+	}
+
+	#bubble-three {	
+		right:10%;
+	}
+
+	.nav-bar {
+		position:relative;
+		top:auto;
+		left:auto;
+		width:55%;
+		font-size:1.2vw;
+	}
+
+	.bubble-op:hover > .button-overlay {
+		opacity:0.35;
+	}
+
+	.bubble-op.three p {
+		font-size:2em;
+		line-height:16.5vw;   
+	}
+
+	nav ul {
+		font-size:1.45vw;
+	}
+
+}
+
+@media only screen and (min-width:850px) {
+	.name {
+		width:90%;
+	}
+
+	.name h1 {
+		font-size:9vw;
+		margin-top:2vw;
+		margin-bottom:2vw;
+	}
+
+	.bubble-op.three {	
+		width:25vw;
+		height:25vw;
+		position:absolute;
+		border-radius:50%%;
+		transition: .5s;
+	}
+
+	#bubble-one {
+		left:5vw;
+		right:auto;
+	}
+
+	#bubble-two {
+		left:37.5vw;
+		right:auto;
+	} 
+
+	#bubble-three {
+		right:5vw;
+	}
+
+	.nav-bar {
+		display:block;
+	}
+
+	.button-overlay {
+		border-radius:50%;
+		opacity:0;
+		transition:.5s;
+	}
+
+	.bubble-op:hover > .button-overlay {
+		opacity:0.35;
+	}
+
+	.bubble-op p {
+		opacity:0;
+		transition: .5s;
+	}
+
+	.bubble-op.three p {
+		font-size:3vw;
+		line-height:22vw; 
+		transition:.5s;
+	}
+
+	nav {
+		display:block;
+	}
+
+	.mobile-nav {
+		display:none;
+	}
+
+}
+
