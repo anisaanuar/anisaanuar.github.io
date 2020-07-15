@@ -154,6 +154,12 @@ p {
     margin-bottom: 0;
 }
 
+.wide-video {
+    width: 100%;
+    height: 50%;
+    padding: 0.5em 0;
+}
+
 /* INDEX PAGE STYLING */
 
 /* NAME */
@@ -1220,6 +1226,11 @@ img.hover-shadow {
         font-size: 2.5vw;
         line-height: 13.5vw;
         transition: .5s;
+    }
+
+    .wide-video {
+        width: 80%;
+        height: 480px;
     }
 
     /*#hobbies-one {
