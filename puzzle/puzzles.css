@@ -172,6 +172,13 @@ form:focus-within {
     padding: 2em;
 }
 
+.message-container.medium {
+    width: 50%;
+    margin: 0 auto;
+    background-color: rgba(233, 236, 236, 0.8);
+    padding: 2em;
+}
+
 .message-container.small {
     padding: 6em;
     width: 40%;
@@ -394,6 +401,15 @@ p.message a {
         width: 70%;
     }
 
+    .message-container.medium {
+        width: 70%;
+    }
+
+    .full-screen .ig-post {
+        width: 70%;
+        margin: 5% 15%;
+    }
+
 }
 
 @media only screen and (max-width: 500px) {
@@ -407,8 +423,18 @@ p.message a {
         width: 60%;
     }
 
+    .message-container.medium {
+        padding: 2em;
+        width: 60%;
+    }
+
     .message-container.snap {
         width: 80%;
+    }
+
+    .full-screen .ig-post {
+        width: 70%;
+        margin: 5% 15%;
     }
 
     body {
