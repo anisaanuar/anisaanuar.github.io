@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- Mobile Specific Meta -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Favicon-->
+    <link rel="shortcut icon" href="img/favicon.png">
+    <!-- Author Meta -->
+    <meta name="author" content="colorlib">
+    <!-- Meta Description -->
+    <meta name="description" content="">
+    <!-- Meta Keyword -->
+    <meta name="keywords" content="">
+    <!-- meta character set -->
+    <meta charset="UTF-8">
+    <!-- Site Title -->
+    <title>Floor finder</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/linearicons.css">
+    <link rel="stylesheet" href="../css/font-awesome.min.css">
+    <link rel="stylesheet" href="./puzzles.css">
+</head>
+
+<body>
+    <div class="screen">
+        <div class="header-container">
+            <i class="fa fa-home back-button" aria-hidden="true" onclick="backToSocials()"></i>
+        </div>
+        <div class="header-container">
+            <button class="floor" onclick="checkFF()">check answer</button>
+        </div>
+        <div class="image-overlay wide">
+            <img src="fallen.png">
+            <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1430 1436">
+                <rect class="cls1--1" width="1378" height="862"></rect>
+                <rect class="ff-rect" x="228" y="150" width="532" height="93"></rect>
+                <foreignObject x="228" y="150" width="532" height="93"> <input class="fall" id="ffword1" maxlength="5"></foreignObject>
+                <rect class="ff-rect" x="892" y="150" width="199" height="93"></rect>
+                <foreignObject x="892" y="150" width="199" height="93"> <input class="fall" id="ffword2" maxlength="2"></foreignObject>
+                <rect class="ff-rect" x="559" y="261" width="201" height="93"></rect>
+                <foreignObject x="559" y="261" width="201" height="93"> <input class="fall" id="ffword3" maxlength="2"></foreignObject>
+                <rect class="ff-rect" x="228" y="371" width="975" height="93"></rect>
+                <foreignObject x="228" y="371" width="975" height="93"> <input class="fall" id="ffword4" maxlength="9"></foreignObject>
+                <rect class="ff-rect" x="338" y="482" width="199" height="93"></rect>
+                <foreignObject x="338" y="482" width="199" height="93"> <input class="fall" id="ffword5" maxlength="2"></foreignObject>
+                <rect class="ff-rect" x="672" y="482" width="308" height="93"></rect>
+                <foreignObject x="672" y="482" width="308" height="93"> <input class="fall" id="ffword6" maxlength="3"></foreignObject>
+                <rect class="ff-rect" x="228" y="593" width="975" height="93"></rect>
+                <foreignObject x="228" y="593" width="975" height="93"> <input class="fall" id="ffword7" maxlength="9"></foreignObject>
+                <rect class="ff-rect" x="449" y="703" width="532" height="93"></rect>
+                <foreignObject x="449" y="703" width="532" height="93"> <input class="fall" id="ffword8" maxlength="5"></foreignObject>
+            </svg>
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="./puzzles.js"></script>
+</body>
+
+</html>

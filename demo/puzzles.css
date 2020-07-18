@@ -1,0 +1,570 @@
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+@import url('https://fonts.googleapis.com/css?family=Roboto+Mono');
+
+
+/* LOBBY */
+
+body {
+    font-family: Nunito;
+    background-color: #664147;
+    font-size: 1.15vw;
+}
+
+.screen {
+    height: 96%;
+    width: 96%;
+    display: table;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 2%;
+}
+
+.header-container {
+    width: 100%;
+    display: block;
+    text-align: center;
+}
+
+.form {
+    text-align: center;
+    display: table-cell;
+    vertical-align: middle;
+    font-size: 20px;
+    color: #664147;
+}
+
+form {
+    background: rgba(233, 236, 236, 0.8);
+    width: 50%;
+    margin: 0 auto;
+    border-radius: 50px;
+    padding: 5px;
+}
+
+form:hover,
+form:active,
+form:focus,
+form:focus-within {
+    background: rgba(233, 236, 236, 1);
+}
+
+.form.top {
+    width: 100%;
+    display: block;
+    margin: 1em 0 2em;
+}
+
+
+.box {
+    text-align: left;
+    font-size: 0.75em;
+    font-family: Nunito;
+    outline: none;
+    width: 90%;
+    border: none;
+    background: none;
+    letter-spacing: 0.7px;
+    font-weight: bold;
+}
+
+.confirm {
+    border: none;
+    padding: 0;
+    font-weight: bold;
+    font-size: 1em;
+    font-family: Nunito;
+    color: #664147;
+    background: none;
+    cursor: pointer;
+}
+
+.footnote {
+    font-weight: normal !important;
+    font-size: 0.9em;
+}
+
+/* GRID */
+
+.grid {
+    margin: 0 auto;
+    color: #664147;
+    display: table;
+}
+
+.tile {
+    text-align: center;
+    display: table-cell;
+    vertical-align: middle;
+    box-sizing: content-box;
+    float: left;
+    font-size: 1.5em;
+    background-color: rgba(233, 236, 236, 0.5);
+    margin: 0.5em;
+    padding: 1.5em 1.5em 1.5em 1em;
+    box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
+    min-width: 5em;
+    min-height: 2.75em;
+    transition: 0.25s;
+}
+
+.tile .emojis {
+    width: 90%;
+    float: left;
+    display: block;
+    font-size: 0.9em;
+}
+
+.tile .knob {
+    width: 10%;
+    font-size: 0.75em;
+    float: right;
+    padding: 1em 0;
+    display: block;
+}
+
+.tile .text {
+    display: none;
+    width: 100%;
+    float: left;
+    font-size: 0.7em;
+    line-height: 1.25em;
+    padding: 0.5em 0;
+    font-weight: bold;
+    color: #343538;
+}
+
+.tile:hover {
+    background-color: rgba(233, 236, 236, 1);
+    box-shadow: none;
+}
+
+.tile:hover .emojis {
+    display: none;
+}
+
+.tile:hover .knob {
+    display: none;
+}
+
+.tile:hover .text {
+    display: block;
+}
+
+/* HOME ICON */
+
+.back-button {
+    color: white;
+    opacity: 0.5;
+    font-size: 2em;
+    float: left;
+}
+
+.back-button:hover {
+    cursor: pointer;
+}
+
+/* VIDEO */
+
+.message-container {
+    width: 70%;
+    margin: 0 auto;
+    background-color: rgba(233, 236, 236, 0.8);
+    padding: 2em;
+}
+
+.message-container.medium {
+    width: 50%;
+    margin: 0 auto;
+    background-color: rgba(233, 236, 236, 0.8);
+    padding: 2em;
+}
+
+.message-container.small {
+    padding: 6em;
+    width: 40%;
+    outline: 5px #664147 double;
+    outline-offset: -2em;
+}
+
+.message-container.snap {
+    width: 50%;
+}
+
+.message-container video {
+    width: 100%;
+}
+
+.message-container.snap video {
+    width: 50%;
+}
+
+.message-container.snap .video-puzzle {
+    width: 47%;
+    float: right;
+}
+
+.message-container p {
+    width: 100%;
+    text-align: left;
+    color: #664147;
+    font-weight: bold;
+    margin: 1em 0 0 0;
+}
+
+.message-container #transcript:hover,
+.message-container p.transcript-content:hover,
+p.message a:hover {
+    color: #312621;
+    cursor: pointer;
+}
+
+p.message {
+    color: #664147;
+    margin: 0 0 0.5em 0;
+}
+
+p.message a {
+    color: #493931;
+}
+
+.transcript-content {
+    font-size: 1em;
+    font-weight: bold;
+    color: #241C19;
+}
+
+:focus {
+    outline: none;
+}
+
+/* INSTAGRAM */
+
+.image-overlay {
+    width: 40%;
+    margin: 0 auto;
+    position: relative;
+}
+
+.image-overlay.wide {
+    width: 80%;
+}
+
+.image-overlay img,
+.image-overlay svg {
+    width: 100%;
+    top: 0;
+    left: 0;
+    position: absolute;
+    margin-bottom: 2em;
+}
+
+.image-overlay svg rect {
+    opacity: 0.1 !important;
+}
+
+.image-overlay svg .cubby-note {
+    opacity: 0.05 !important;
+}
+
+.image-overlay svg .ddclick,
+.image-overlay svg .stings {
+    opacity: 0 !important;
+}
+
+.image-overlay svg rect.ig-sq:hover,
+.image-overlay svg rect.sm-icon:hover,
+.image-overlay svg path.cubby-note:hover,
+.image-overlay svg .ddclick:hover,
+.image-overlay svg .stings:hover {
+    opacity: 0 !important;
+    cursor: pointer;
+}
+
+.full-screen {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    overflow-y: scroll;
+}
+
+.full-screen::-webkit-scrollbar {
+    display: none;
+}
+
+.full-screen .ig-post {
+    position: relative;
+    text-align: left;
+    background-color: white;
+    border-radius: 10px;
+    color: black;
+    width: 30%;
+    margin: 5% 35%;
+    padding: 0.15% 0 1%;
+}
+
+.full-screen .cb-note {
+    position: relative;
+    text-align: left;
+    padding: 0;
+    background-color: rgb(237, 228, 222);
+    color: black;
+    width: 30%;
+    margin: 5% 35%;
+}
+
+.full-screen .ig-post a {
+    text-decoration: none;
+    font-weight: bold;
+    color: #312621;
+}
+
+.full-screen .propic {
+    width: 2em;
+    border-radius: 100%;
+    float: left;
+    margin: 2.5% 0.5em 0 1em;
+    padding-top: 0%;
+}
+
+.full-screen .feature {
+    width: 100%;
+    z-index: 1;
+}
+
+.full-screen .ig-post p {
+    margin: 1em 1.15em;
+}
+
+/* SNAPCHAT */
+
+.packed-items {
+    text-align: left;
+    font-size: 0.9em;
+    font-family: Nunito;
+    outline: none;
+    width: 80%;
+    border: none;
+    background: none;
+    letter-spacing: 0.5em;
+    font-weight: bold;
+    display: inline-block;
+    margin-left: 1em;
+}
+
+.confirm.sc:hover {
+    text-decoration: underline;
+}
+
+/* WHATSAPP */
+
+
+.wa-underlay {
+    opacity: 0.02;
+}
+
+.wa-message {
+    fill: #fff;
+    opacity: 1;
+}
+
+.wa-message:hover {
+    opacity: 0;
+    cursor: pointer;
+}
+
+.box.wa {
+    margin-left: 1em;
+}
+
+/* FALLEN */
+
+.fall {
+    text-align: left;
+    font-size: 5em;
+    font-family: Roboto Mono;
+    outline: none;
+    width: 100%;
+    border: none;
+    background: none;
+    letter-spacing: 0.8em;
+    line-height: 1em;
+    font-weight: bold;
+}
+
+.image-overlay svg rect.ff-rect {
+    opacity: 0 !important;
+}
+
+button.floor {
+    background-color: #c69c6d;
+    font-family: Nunito;
+    font-size: 1em;
+    border: none;
+    padding: 0.5em 1em;
+    border-radius: 10px;
+    font-weight: bold;
+    color: #442a1b;
+    margin-bottom: 1em;
+}
+
+/* AEVA */
+
+.aeva-button {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+}
+
+.aeva-button img {
+    width: 4em;
+    float: right;
+    padding: 1em;
+}
+
+.aeva-button img:hover {
+    cursor: pointer;
+}
+
+.aeva-full {
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.4);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.aeva-full .aeva-message {
+    width: 70%;
+    margin: 5% 15%;
+    background: #E9ECEC;
+    position: relative;
+    border-radius: 10px;
+}
+
+.aeva-full .aeva-message .aeva-message-text {
+    padding: 10%;
+    font-weight: bold;
+    font-size:1.2em;
+}
+
+.aeva-full .aeva-message img {
+    position: absolute;
+    right: -10%;
+    width: 10em;
+    bottom: -10%;
+}
+
+/* MEDIA QUERIES */
+
+@media only screen and (max-width: 1100px) {
+
+    body {
+        font-size: 1.65vw;
+    }
+
+    form {
+        width: 70%;
+    }
+
+    .image-overlay {
+        width: 70%;
+    }
+
+    .image-overlay.wide {
+        width: 80%;
+    }
+
+    .message-container.snap {
+        width: 80%;
+    }
+
+}
+
+
+@media only screen and (max-width: 800px) {
+
+    form {
+        width: 90%;
+    }
+
+    .media-container {
+        width: 80%;
+    }
+
+    .back-button {
+        float: none;
+    }
+
+    .header-container {
+        height: 5em;
+    }
+
+    body {
+        font-size: 2vw;
+    }
+
+    .image-overlay {
+        width: 80%;
+    }
+
+    .image-overlay.wide {
+        width: 90%;
+    }
+
+    .message-container.snap video {
+        width: 100%;
+    }
+
+    .message-container.snap .video-puzzle {
+        width: 100%;
+        float: none;
+    }
+
+    .message-container.medium {
+        width: 70%;
+    }
+
+    .full-screen .ig-post,
+    .full-screen .cb-note {
+        width: 70%;
+        margin: 5% 15%;
+    }
+
+}
+
+@media only screen and (max-width: 500px) {
+
+    .box {
+        width: 80%;
+    }
+
+    .message-container.small {
+        padding: 4em;
+        width: 60%;
+    }
+
+    .message-container.medium {
+        padding: 2em;
+        width: 60%;
+    }
+
+    .message-container.snap {
+        width: 80%;
+    }
+
+    .full-screen .ig-post,
+    .full-screen .cb-note {
+        width: 70%;
+        margin: 5% 15%;
+    }
+
+    body {
+        font-size: 3vw !important;
+    }
+
+}
