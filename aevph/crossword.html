@@ -15,31 +15,38 @@
     <!-- meta character set -->
     <meta charset="UTF-8">
     <!-- Site Title -->
-    <title>Join the hunt!</title>
+    <title>Crossword</title>
     <!-- CSS -->
     <link rel="stylesheet" href="../css/linearicons.css">
     <link rel="stylesheet" href="../css/font-awesome.min.css">
+    <link rel="stylesheet" href="./crossword.css">
     <link rel="stylesheet" href="./puzzles.css">
 </head>
 
 <body>
     <div class="screen">
-        <div class="message-container small">
-            <p class="message">
-                Phew. I knew you'd make it!
-            </p>
-            <p class="message">
-                So, unfortunately you're going to have to wait a little for access to the rest of the puzzles. Until then, sharpen up your puzzle-solving skills and don't forget to fill out <a href="https://forms.gle/bKft9Xr7jsXKLoz59">this form</a>!
-            </p>
-            <p class="message">
-                Just to clarify, I recommend doing the hunt with a group of people! You likely won't need the help, but I just think it's more fun that way.
-            </p>
-            <p class="message">
-                See you all again soon!
-            </p>
+        <i class="fa fa-home back-button" aria-hidden="true" onclick="goBack()"></i>
+        <div class="form top">
+            <form>
+                <input placeholder="But where in Snell to look?" id="pswd" class="box">
+                <input class="confirm" id="submitButton" type="button" value="&#9654;" />
+            </form>
+        </div>
+        <div class="container">
+            <div class="crossword">
+            </div>
+        </div>
+        <div class="aeva-button">
+            <img src="aeva-neutral.png">
+        </div>
+        <div class="full">
         </div>
     </div>
+
+    <!-- CREDIT TO https://codepen.io/dtted/pen/GRgmmVO -->
+
     <script src="./jquery-3.3.1.min.js"></script>
+    <script src="./crossword.js"></script>
     <script src="./puzzles.js"></script>
 </body>
 

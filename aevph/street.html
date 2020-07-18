@@ -15,12 +15,11 @@
     <!-- meta character set -->
     <meta charset="UTF-8">
     <!-- Site Title -->
-    <title>Intro</title>
+    <title>The Street</title>
     <!-- CSS -->
     <link rel="stylesheet" href="../css/linearicons.css">
     <link rel="stylesheet" href="../css/font-awesome.min.css">
     <link rel="stylesheet" href="./puzzles.css">
-    <link rel="stylesheet" href="./intro.css">
 </head>
 
 <body>
@@ -28,26 +27,21 @@
         <div class="header-container">
             <i class="fa fa-home back-button" aria-hidden="true" onclick="goBack()"></i>
         </div>
-        <div class="form top">
-            <form>
-                <input placeholder="Where to go next?" id="pswd" class="box">
-                <input class="confirm" id="submitButton" type="button" value="&#9654;" />
-            </form>
+        <div class="image-overlay wide">
+            <img src="street.png">
+            <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1368 772">
+                <rect width="1368" height="772" />
+                <rect id="213" class="stings" x="276" y="596" width="125" height="167" />
+                <rect id="215" class="stings" x="450" y="574" width="168" height="186" />
+                <rect id="217" class="stings" x="704" y="613" width="75" height="145" />
+                <rect id="221" class="stings" x="1098" y="613" width="67" height="144" />
+            </svg>
         </div>
-        <div class="message-container">
-            <video preload="auto" autoplay preload controls>
-                <source src="intro.mp4" type="video/mp4">
-                <object data="intro.mp4" height="1080">
-                    <param name="wmode" value="transparent">
-                    <param name="autoplay" value="true">
-                    <param name="loop" value="false">
-                </object>
-            </video>
+        <div class="full">
         </div>
     </div>
     <script src="./jquery-3.3.1.min.js"></script>
-    <script src="./video.js"></script>
     <script src="./puzzles.js"></script>
-</body>
+    <script src="./street.js"></script>
 
 </html>

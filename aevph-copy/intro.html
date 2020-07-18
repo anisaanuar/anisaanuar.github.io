@@ -28,12 +28,6 @@
         <div class="header-container">
             <i class="fa fa-home back-button" aria-hidden="true" onclick="goBack()"></i>
         </div>
-        <div class="form top">
-            <form>
-                <input placeholder="Where to go next?" id="pswd" class="box">
-                <input class="confirm" id="submitButton" type="button" value="&#9654;" />
-            </form>
-        </div>
         <div class="message-container">
             <video preload="auto" autoplay preload controls>
                 <source src="intro.mp4" type="video/mp4">
@@ -44,8 +38,14 @@
                 </object>
             </video>
         </div>
+        <div class="form">
+            <form>
+                <input placeholder="Where to go next?" id="pswd" class="box">
+                <input class="confirm" id="submitButton" type="button" value="&#9654;" />
+            </form>
+        </div>
     </div>
-    <script src="./jquery-3.3.1.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="./video.js"></script>
     <script src="./puzzles.js"></script>
 </body>

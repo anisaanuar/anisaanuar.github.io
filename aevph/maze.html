@@ -15,7 +15,7 @@
     <!-- meta character set -->
     <meta charset="UTF-8">
     <!-- Site Title -->
-    <title>Join the hunt!</title>
+    <title>Maze</title>
     <!-- CSS -->
     <link rel="stylesheet" href="../css/linearicons.css">
     <link rel="stylesheet" href="../css/font-awesome.min.css">
@@ -24,23 +24,24 @@
 
 <body>
     <div class="screen">
-        <div class="message-container small">
-            <p class="message">
-                Phew. I knew you'd make it!
-            </p>
-            <p class="message">
-                So, unfortunately you're going to have to wait a little for access to the rest of the puzzles. Until then, sharpen up your puzzle-solving skills and don't forget to fill out <a href="https://forms.gle/bKft9Xr7jsXKLoz59">this form</a>!
-            </p>
-            <p class="message">
-                Just to clarify, I recommend doing the hunt with a group of people! You likely won't need the help, but I just think it's more fun that way.
-            </p>
-            <p class="message">
-                See you all again soon!
-            </p>
+        <div class="header-container">
+            <i class="fa fa-home back-button" aria-hidden="true" onclick="goBack()"></i>
+        </div>
+        <div class="form top">
+            <form>
+                <input placeholder="Which room is Anisa in?" id="pswd" class="box">
+                <input class="confirm" id="submitButton" type="button" value="&#9654;" />
+            </form>
+        </div>
+        <div class="image-overlay wide">
+            <img src="maze.png">
+        </div>
+        <div class="full">
         </div>
     </div>
     <script src="./jquery-3.3.1.min.js"></script>
     <script src="./puzzles.js"></script>
+    <script src="./inside.js"></script>
 </body>
 
 </html>

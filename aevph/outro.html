@@ -15,28 +15,28 @@
     <!-- meta character set -->
     <meta charset="UTF-8">
     <!-- Site Title -->
-    <title>Join the hunt!</title>
+    <title>The end :(</title>
     <!-- CSS -->
     <link rel="stylesheet" href="../css/linearicons.css">
     <link rel="stylesheet" href="../css/font-awesome.min.css">
     <link rel="stylesheet" href="./puzzles.css">
+    <link rel="stylesheet" href="./intro.css">
 </head>
 
 <body>
     <div class="screen">
-        <div class="message-container small">
-            <p class="message">
-                Phew. I knew you'd make it!
-            </p>
-            <p class="message">
-                So, unfortunately you're going to have to wait a little for access to the rest of the puzzles. Until then, sharpen up your puzzle-solving skills and don't forget to fill out <a href="https://forms.gle/bKft9Xr7jsXKLoz59">this form</a>!
-            </p>
-            <p class="message">
-                Just to clarify, I recommend doing the hunt with a group of people! You likely won't need the help, but I just think it's more fun that way.
-            </p>
-            <p class="message">
-                See you all again soon!
-            </p>
+        <div class="header-container">
+            <i class="fa fa-home back-button" aria-hidden="true" onclick="goBack()"></i>
+        </div>
+        <div class="message-container">
+            <video preload="auto" autoplay preload controls>
+                <source src="outro.mp4" type="video/mp4">
+                <object data="outro.mp4" height="1080">
+                    <param name="wmode" value="transparent">
+                    <param name="autoplay" value="true">
+                    <param name="loop" value="false">
+                </object>
+            </video>
         </div>
     </div>
     <script src="./jquery-3.3.1.min.js"></script>

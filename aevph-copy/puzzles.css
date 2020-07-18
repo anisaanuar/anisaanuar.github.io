@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css?family=Nunito');
-@import url('https://fonts.googleapis.com/css?family=Roboto+Mono');
 
 
 /* LOBBY */
@@ -164,17 +163,6 @@ form:focus-within {
     cursor: pointer;
 }
 
-/* AEVA */
-
-.second-hint {
-    color: grey;
-    opacity: 0;
-}
-
-.second-hint:hover {
-    opacity: 1;
-}
-
 /* VIDEO */
 
 .message-container {
@@ -257,10 +245,6 @@ p.message a {
     position: relative;
 }
 
-.image-overlay.wide {
-    width: 80%;
-}
-
 .image-overlay img,
 .image-overlay svg {
     width: 100%;
@@ -274,20 +258,8 @@ p.message a {
     opacity: 0.1 !important;
 }
 
-.image-overlay svg .cubby-note {
-    opacity: 0.05 !important;
-}
-
-.image-overlay svg .ddclick,
-.image-overlay svg .stings {
-    opacity: 0 !important;
-}
-
 .image-overlay svg rect.ig-sq:hover,
-.image-overlay svg rect.sm-icon:hover,
-.image-overlay svg path.cubby-note:hover,
-.image-overlay svg .ddclick:hover,
-.image-overlay svg .stings:hover {
+.image-overlay svg rect.sm-icon:hover {
     opacity: 0 !important;
     cursor: pointer;
 }
@@ -309,22 +281,13 @@ p.message a {
 .full-screen .ig-post {
     position: relative;
     text-align: left;
+    padding: 1em;
     background-color: white;
     border-radius: 10px;
     color: black;
     width: 30%;
     margin: 5% 35%;
     padding: 0.15% 0 1%;
-}
-
-.full-screen .cb-note {
-    position: relative;
-    text-align: left;
-    padding: 0;
-    background-color: rgb(237, 228, 222);
-    color: black;
-    width: 30%;
-    margin: 5% 35%;
 }
 
 .full-screen .ig-post a {
@@ -391,88 +354,6 @@ p.message a {
     margin-left: 1em;
 }
 
-/* FALLEN */
-
-.fall {
-    text-align: left;
-    font-size: 5em;
-    font-family: Roboto Mono;
-    outline: none;
-    width: 100%;
-    border: none;
-    background: none;
-    letter-spacing: 0.8em;
-    line-height: 1em;
-    font-weight: bold;
-}
-
-.image-overlay svg rect.ff-rect {
-    opacity: 0 !important;
-}
-
-button.floor {
-    background-color: #c69c6d;
-    font-family: Nunito;
-    font-size: 1em;
-    border: none;
-    padding: 0.5em 1em;
-    border-radius: 10px;
-    font-weight: bold;
-    color: #442a1b;
-    margin-bottom: 1em;
-}
-
-/* AEVA */
-
-.aeva-button {
-    position: fixed;
-    bottom: 0;
-    right: 0;
-}
-
-.aeva-button img {
-    width: 4em;
-    float: right;
-    padding: 1em;
-}
-
-.aeva-button img:hover {
-    cursor: pointer;
-}
-
-.aeva-full {
-    position: fixed;
-    background-color: rgba(0, 0, 0, 0.4);
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 2;
-}
-
-.aeva-full .aeva-message {
-    width: 70%;
-    margin: 5% 15%;
-    background: #E9ECEC;
-    position: relative;
-    border-radius: 10px;
-}
-
-.aeva-full .aeva-message .aeva-message-text {
-    padding: 10%;
-    font-weight: bold;
-    font-size: 1.2em;
-}
-
-.aeva-full .aeva-message img {
-    position: absolute;
-    right: -10%;
-    width: 10em;
-    bottom: -10%;
-}
-
-/* MEDIA QUERIES */
-
 @media only screen and (max-width: 1100px) {
 
     body {
@@ -485,10 +366,6 @@ button.floor {
 
     .image-overlay {
         width: 70%;
-    }
-
-    .image-overlay.wide {
-        width: 80%;
     }
 
     .message-container.snap {
@@ -524,25 +401,19 @@ button.floor {
         width: 80%;
     }
 
-    .image-overlay.wide {
-        width: 90%;
-    }
-
     .message-container.snap video {
         width: 100%;
     }
-
     .message-container.snap .video-puzzle {
         width: 100%;
-        float: none;
+        float:none;
     }
 
     .message-container.medium {
         width: 70%;
     }
 
-    .full-screen .ig-post,
-    .full-screen .cb-note {
+    .full-screen .ig-post {
         width: 70%;
         margin: 5% 15%;
     }
@@ -569,8 +440,7 @@ button.floor {
         width: 80%;
     }
 
-    .full-screen .ig-post,
-    .full-screen .cb-note {
+    .full-screen .ig-post {
         width: 70%;
         margin: 5% 15%;
     }

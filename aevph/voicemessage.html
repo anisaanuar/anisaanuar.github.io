@@ -15,12 +15,11 @@
     <!-- meta character set -->
     <meta charset="UTF-8">
     <!-- Site Title -->
-    <title>Intro</title>
+    <title>Voice Message</title>
     <!-- CSS -->
     <link rel="stylesheet" href="../css/linearicons.css">
     <link rel="stylesheet" href="../css/font-awesome.min.css">
     <link rel="stylesheet" href="./puzzles.css">
-    <link rel="stylesheet" href="./intro.css">
 </head>
 
 <body>
@@ -30,24 +29,29 @@
         </div>
         <div class="form top">
             <form>
-                <input placeholder="Where to go next?" id="pswd" class="box">
+                <input placeholder="How much time do we have left?" id="pswd" class="box">
                 <input class="confirm" id="submitButton" type="button" value="&#9654;" />
             </form>
         </div>
-        <div class="message-container">
-            <video preload="auto" autoplay preload controls>
-                <source src="intro.mp4" type="video/mp4">
-                <object data="intro.mp4" height="1080">
+        <div class="message-container medium">
+            <video preload="auto" preload controls>
+                <source src="voicemessage.MP4" type="video/mp4">
+                <object data="voicemessage.MP4" height="1080">
                     <param name="wmode" value="transparent">
-                    <param name="autoplay" value="true">
+                    <param name="autoplay" value="false">
                     <param name="loop" value="false">
                 </object>
             </video>
         </div>
+        <div class="aeva-button">
+            <img src="aeva-neutral.png">
+        </div>
+        <div class="full">
+        </div>
     </div>
     <script src="./jquery-3.3.1.min.js"></script>
-    <script src="./video.js"></script>
     <script src="./puzzles.js"></script>
+    <script src="./voice.js"></script>
 </body>
 
 </html>
