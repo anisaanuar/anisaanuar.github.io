@@ -182,10 +182,16 @@ function checkPswd() {
         case ('park'):
         case ('parkst'):
         case ('parkstreet'):
-            let parkNote = confirm("Alright, so we're out of the Park Street station. But how are we supposed to know where to go from here?? Anisa could be anywhere!");
-            if (parkNote) {
-                window.location = "street.html";
-            }
+            window.location = "signs.html";
+            break;
+        case ('down'):
+        case ('godown'):
+            window.location = "map.html";
+            break;
+        case ('west'):
+        case ('westst'):
+        case ('weststreet'):
+            window.location = "street.html";
             break;
         case ('1582a'):
             window.location = "outro.html";

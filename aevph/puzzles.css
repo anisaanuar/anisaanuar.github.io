@@ -452,8 +452,8 @@ button.floor {
 }
 
 .aeva-full .aeva-message {
-    width: 70%;
-    margin: 5% 15%;
+    width: 60%;
+    margin: 5% 20%;
     background: #E9ECEC;
     position: relative;
     border-radius: 10px;
@@ -494,6 +494,11 @@ button.floor {
 
     .message-container.snap {
         width: 80%;
+    }
+
+    .aeva-full .aeva-message img {
+        right: -5%;
+        width: 5em;
     }
 
 }
@@ -548,6 +553,15 @@ button.floor {
         margin: 5% 15%;
     }
 
+    .aeva-full .aeva-message {
+        width: 70%;
+        margin: 5% 15%;
+    }
+
+    .aeva-full .aeva-message .aeva-message-text {
+        font-size: 1em;
+    }
+
 }
 
 @media only screen and (max-width: 500px) {
@@ -578,6 +592,11 @@ button.floor {
 
     body {
         font-size: 3vw !important;
+    }
+
+    .aeva-full .aeva-message {
+        width: 80%;
+        margin: 5% 10%;
     }
 
 }
