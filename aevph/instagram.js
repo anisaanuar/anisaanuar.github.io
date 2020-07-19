@@ -16,6 +16,17 @@ $('.ig-sq').on('click', function() {
     $igimage.appendTo('.full');
 });
 
+var $aevaIGHint = $("<div class='aeva-full'><div class='aeva-message'><div class='aeva-message-text'><p>Try taking a look at the first character of each caption.</p></div><img src='aeva-help.png'></div></div>");
+
 $('.full').on('click', function() {
-	$igimage.remove();
+    if ($igimage) {
+        $igimage.remove();
+    }
+    if ($aevaIGHint) {
+        $aevaIGHint.remove();
+    }
+});
+
+$('.aeva-button').on('click', function() {
+    $aevaIGHint.appendTo('.full');
 });

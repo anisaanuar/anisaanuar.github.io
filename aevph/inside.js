@@ -8,9 +8,9 @@ $('.cubby-note').on('click', function() {
     $notebox.appendTo('.full');
 });
 
-var $aevaInsideCubby = $("<div class='aeva-full'><div class='aeva-message'><div class='aeva-message-text'><p>You found Anisa's cubby - isn't it great? It seems super cluttered, but maybe there's something in here that can help you find somewhere to look next.</p></div><img src='aeva-neutral.png'></div></div>");
+var $aevaInsideCubby = $("<div class='aeva-full'><div class='aeva-message'><div class='aeva-message-text'><p>You found Anisa's cubby - isn't it great? It seems super cluttered, but maybe there's something in here that can help you find somewhere to look next.</p></div><img src='aeva-smile.png'></div></div>");
 
-var $aevaInsideCubbyHint = $("<div class='aeva-full'><div class='aeva-message'><div class='aeva-message-text'><p>Find the place that seems out of order. Check the grocery list and the receipts - what did Anisa not have on her list that she bought? Maybe we can go there next?</p></div><img src='aeva-neutral.png'></div></div>");
+var $aevaInsideCubbyHint = $("<div class='aeva-full'><div class='aeva-message'><div class='aeva-message-text'><p>Find the place that seems out of order. Check the grocery list and the receipts - what did Anisa not have on her list that she bought? Maybe we can go there next?</p></div><img src='aeva-help.png'></div></div>");
 
 
 $(document).ready(function() {

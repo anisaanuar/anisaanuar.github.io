@@ -337,9 +337,9 @@ function tooltipPosition($current) {
     return {'left':left,'top':top,'offset':offset};
 }
 
-var $aevaCrossword  = $("<div class='aeva-full'><div class='aeva-message'><div class='aeva-message-text'><p>Checking Snell first, huh? Well, where in Snell should you look?</p></div><img src='aeva-neutral.png'></div></div>");
+var $aevaCrossword  = $("<div class='aeva-full'><div class='aeva-message'><div class='aeva-message-text'><p>Checking Snell first, huh? Well, where in Snell should you look?</p></div><img src='aeva-smile.png'></div></div>");
 
-var $aevaCrosswordHint = $("<div class='aeva-full'><div class='aeva-message'><div class='aeva-message-text'><p>Unfortunately, you're on your own for this crossword. Don't forget, you're entirely free to Google answers or ask Anisa for a hint.</p></div><img src='aeva-neutral.png'></div></div>");
+var $aevaCrosswordHint = $("<div class='aeva-full'><div class='aeva-message'><div class='aeva-message-text'><p>Need help with the crossword? Don't forget, you're entirely free to Google answers or ask Anisa for a hint.</p><p>Once you complete the crossword, you'll find an image you can use to help you decode where in Snell specifically you should go.</div><img src='aeva-help.png'></div></div>");
 
 $(document).ready(function() {
     $aevaCrossword.appendTo('.full');

@@ -26,9 +26,9 @@ $('.ddclick').on('click', function() {
     }
 });
 
-var $aevaDunkinDonuts = $("<div class='aeva-full'><div class='aeva-message'><div class='aeva-message-text'><p>Of course Anisa went to Dunkin. What else did you expect? Maybe there's something there that can help us.</p></div><img src='aeva-neutral.png'></div></div>");
+var $aevaDunkinDonuts = $("<div class='aeva-full'><div class='aeva-message'><div class='aeva-message-text'><p>Of course Anisa went to Dunkin. What else did you expect? Maybe there's something there that can help us.</p></div><img src='aeva-smile.png'></div></div>");
 
-var $aevaDunkinDonutsHint = $("<div class='aeva-full'><div class='aeva-message'><div class='aeva-message-text'><p>Think about what we have so far. We have Anisa's phone... but it's dead. But we have a charger!</p></div><img src='aeva-neutral.png'></div></div>");
+var $aevaDunkinDonutsHint = $("<div class='aeva-full'><div class='aeva-message'><div class='aeva-message-text'><p>Think about what we have so far. We have Anisa's phone... but it's dead. :( But we have a charger! :0</p></div><img src='aeva-help.png'></div></div>");
 
 
 $(document).ready(function() {

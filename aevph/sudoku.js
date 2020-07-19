@@ -1,6 +1,6 @@
-var $aevaSudoku = $("<div class='aeva-full'><div class='aeva-message'><div class='aeva-message-text'><p>An outlet! Smart thinking. You can charge Anisa's phone now. Now to figure out her passcode.</p></div><img src='aeva-neutral.png'></div></div>");
+var $aevaSudoku = $("<div class='aeva-full'><div class='aeva-message'><div class='aeva-message-text'><p>An outlet! Smart thinking. You can charge Anisa's phone now. Now to figure out her passcode.</p></div><img src='aeva-smile.png'></div></div>");
 
-var $aevaSudokuHint = $("<div class='aeva-full'><div class='aeva-message'><div class='aeva-message-text'><p>Unfortunately, you're on your own here.</p></div><img src='aeva-neutral.png'></div></div>");
+var $aevaSudokuHint = $("<div class='aeva-full'><div class='aeva-message'><div class='aeva-message-text'><p>Have you completed the Sudoku puzzle yet? Once you do, make sure to click on the 'Passcode' button to figure out how to get Anisa's passcode!</p></div><img src='aeva-help.png'></div></div>");
 
 
 $(document).ready(function() {

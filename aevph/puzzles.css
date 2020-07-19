@@ -279,7 +279,8 @@ p.message a {
 }
 
 .image-overlay svg .ddclick,
-.image-overlay svg .stings {
+.image-overlay svg .stings,
+.image-overlay svg .floor {
     opacity: 0 !important;
 }
 

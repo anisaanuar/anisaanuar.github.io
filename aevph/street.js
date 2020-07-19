@@ -5,6 +5,9 @@ var $streetbox;
 $('.stings').on('click', function() {
     $street = $(this).attr('id');
     switch ($street) {
+        case('rest'):
+            alert("Doesn't look like there's anything here. Maybe try somewhere else?");
+            break;
         case ('213'):
             alert("I love a good ice cream cone on a warm summer day, too. Unfortunately, no sign of Anisa anywhere here.");
             break;
@@ -24,4 +27,26 @@ $('.stings').on('click', function() {
             alert("Sorry, you can't go there.");
             break;
     }
+});
+
+var $aevaStreet  = $("<div class='aeva-full'><div class='aeva-message'><div class='aeva-message-text'><p>Alright, so this is where we ended up. But there's just a bunch of buildings. How are you supposed to know where to go from here? Anything look familiar?</p></div><img src='aeva-smile.png'></div></div>");
+
+var $aevaStreetHint = $("<div class='aeva-full'><div class='aeva-message'><div class='aeva-message-text'><p>The hint for this one relates to an earlier puzzle - the Instagram page. If you don't remember or didn't solve for the earlier hint, you could also just look everywhere and hope you end up in the right place!</p></div><img src='aeva-help.png'></div></div>");
+
+
+$(document).ready(function() {
+    $aevaStreet.appendTo('.full');
+});
+
+$('.full').on('click', function() {
+    if ($aevaStreet) {
+        $aevaStreet.remove();
+    }
+    if ($aevaStreetHint) {
+        $aevaStreetHint.remove();
+    }
+});
+
+$('.aeva-button').on('click', function() {
+    $aevaStreetHint.appendTo('.full');
 });

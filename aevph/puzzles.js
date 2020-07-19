@@ -159,14 +159,13 @@ function checkPswd() {
         case ('fiftynine'):
         case ('fiftyninemin'):
         case ('fiftynineminutes'):
-            let timeLeft = confirm("Less than an hour left... but it feels like we're so close! Maybe if we connect to wi-fi we can find out where to go next.");
-            if (timeLeft) {
-                window.location = "ddwifi.html";
-            }
+            window.location = "ddwifi.html";
             break;
         case ('youcompleteme'):
-                window.location = "whatsapp.html";
-                break;
+        case ('youmakemewhole'):
+        case ('youmakemecomplete'):
+            window.location = "whatsapp.html";
+            break;
         case ('snelllibrary'):
             let snellNote = confirm('Snell Library it is! Just so you know, if you move forward from this page, you will have to re-enter "checkmysocials" as a password to return to the social media pages.');
             if (snellNote) {
@@ -174,7 +173,7 @@ function checkPswd() {
             }
             break;
         case ('571364464'):
-                window.location = "voicemessage.html";
+            window.location = "voicemessage.html";
             break;
         case ('dunkin'):
         case ('dunkindonuts'):
@@ -370,9 +369,6 @@ function checkWapp() {
 }
 
 function openCodeNames() {
-    let codenamesNote = confirm("Seems like you're getting close to wherever Anisa is. Now to use this 'invitation' to figure out where to go next...");
-    if (codenamesNote) {
-        window.open('./codenames.png');
-        window.location = "mbta.html";
-    }
+    window.open('./codenames.png');
+    window.location = "mbta.html";
 }

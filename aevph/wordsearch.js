@@ -1,6 +1,6 @@
-var $aevaWordSearch = $("<div class='aeva-full'><div class='aeva-message'><div class='aeva-message-text'><p>You found Anisa's phone! But it's dead. Maybe you'll be able to recharge it along the way. In the meantime, the boba straw probably means Anisa went to KFT next. Let's head there now.</p></div><img src='aeva-neutral.png'></div></div>");
+var $aevaWordSearch = $("<div class='aeva-full'><div class='aeva-message'><div class='aeva-message-text'><p>You found Anisa's phone! But it's dead. Maybe you'll be able to recharge it along the way. In the meantime, the boba straw probably means Anisa went to KFT next. Let's head there now.</p></div><img src='aeva-smile.png'></div></div>");
 
-var $aevaWordSearchHint = $("<div class='aeva-full'><div class='aeva-message'><div class='aeva-message-text'><p>You need to order something to look around. There's a hidden message that you'll find once you cross out all the words.</p></div><img src='aeva-neutral.png'></div></div>");
+var $aevaWordSearchHint = $("<div class='aeva-full'><div class='aeva-message'><div class='aeva-message-text'><p>You need to order something to look around. There's a hidden message that you'll find once you cross out all the words.</p></div><img src='aeva-help.png'></div></div>");
 
 
 $(document).ready(function() {
