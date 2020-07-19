@@ -335,10 +335,7 @@ function checkFF() {
     let phrase = ($ffword1 + $ffword2 + $ffword3 + $ffword4 + $ffword5 + $ffword6 + $ffword7 + $ffword8).toLowerCase().replace(/\s/g, '');
     console.log(phrase);
     if (phrase === 'anisaisupsomewhereonthefifteenthfloor') {
-        let floorNote = confirm("Fifteenth floor, huh? Let's go then! But which room...?");
-        if (floorNote) {
-            window.location = "maze.html";
-        }
+        window.location = "maze.html";
     } else {
         alert("That doesn't seem to be the correct answer. Try again.");
     }
