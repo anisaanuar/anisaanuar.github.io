@@ -15,26 +15,26 @@
     <!-- meta character set -->
     <meta charset="UTF-8">
     <!-- Site Title -->
-    <title>MBTA</title>
+    <title>Final boss</title>
     <!-- CSS -->
     <link rel="stylesheet" href="../css/linearicons.css">
     <link rel="stylesheet" href="../css/font-awesome.min.css">
+    <link rel="stylesheet" href="./trivia.css">
     <link rel="stylesheet" href="./puzzles.css">
 </head>
 
 <body>
+    <div class="timer-container">
+        <div id="app"></div>
+    </div>
     <div class="screen">
-        <div class="header-container">
-            <i class="fa fa-home back-button" aria-hidden="true" onclick="goBack()"></i>
-        </div>
-        <div class="form top">
+        <div class="form trivia-top">
+            <h1 class="triv" id="question">1. Who created this puzzle hunt?</h1>
             <form>
-                <input placeholder="Which stop did Anisa go to?" id="pswd" class="box">
+                <input placeholder="Enter password" id="trivia" class="box">
                 <input class="confirm" id="submitButton" type="button" value="&#9654;" />
             </form>
-        </div>
-        <div class="image-overlay wide">
-            <img src="subway.png">
+            <a href="./puzzleoverview.html" class="all-button" target="blank">All puzzles</a>
         </div>
     </div>
     <div class="aeva-button">
@@ -44,7 +44,7 @@
     </div>
     <script src="./jquery-3.3.1.min.js"></script>
     <script src="./puzzles.js"></script>
-    <script src="./mbta.js"></script>
+    <script src="./trivia.js"></script>
 </body>
 
 </html>
