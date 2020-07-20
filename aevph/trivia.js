@@ -115,7 +115,7 @@ function checkTrivia() {
         }
     } else if ($pswd.id === 'trivia9') {
         if (password === 'colabt' || password === 't') {
-            $question.innerHTML = "10. What song is \"In a World of my Own\" from?";
+            $question.innerHTML = "10. What movie is \"In a World of my Own\" from?";
             $pswd.id = 'trivia10';
             $pswd.value = '';
             $pswd = document.getElementById("trivia10");
