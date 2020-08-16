@@ -10,6 +10,11 @@ body {
     font-size: 1.15vw;
 }
 
+h1 {
+    font-family: Nunito;
+    color: white;
+}
+
 .screen {
     height: 96%;
     width: 96%;
@@ -149,6 +154,48 @@ form:focus-within {
 
 .tile:hover .text {
     display: block;
+}
+
+/* PUZZLE PIECE */
+
+.puzzle-grid {
+    margin: 1em auto;
+    color: #664147;
+    display: table;
+    width: 90%;
+}
+
+.puzzle-piece {
+    text-align: left;
+    display: table-cell;
+    vertical-align: middle;
+    box-sizing: content-box;
+    float: left;
+    font-size: 1em;
+    background-color: rgba(233, 236, 236, 0.75);
+    margin: 0.5em;
+    padding: 2em 2em 1.5em 2em;
+    box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
+    min-width: 15%;
+    min-height: 2.75em;
+    transition: 0.25s;
+    color: #241C19;
+    font-weight: bold;
+}
+
+.puzzle-piece:hover {
+    background-color: rgba(233, 236, 236, 1);
+    box-shadow: none;
+    cursor: pointer;
+}
+
+h1.overview-text {
+    text-align: left;
+    color: #241C19;
+    font-weight: bold;
+    font-size:1.75em;
+    margin-bottom: 1em;
+    padding: 0 10%;
 }
 
 /* HOME ICON */
@@ -371,6 +418,30 @@ p.message a {
     text-decoration: underline;
 }
 
+/* TRIVIA */
+
+.form.trivia-top {
+    width: 100%;
+    display: block;
+    margin: 6em 0 2em;
+}
+
+.form.trivia-top form {
+    margin-bottom: 3em;
+}
+
+.all-button {
+    text-decoration: none;
+    background-color: rgba(255, 255, 255, 0.75);
+    padding: 0.5em 1em;
+    border-radius: 2em;
+    color: #241C19;
+}
+
+.all-button:hover {
+    background-color: rgba(255, 255, 255, 1);
+}
+
 /* WHATSAPP */
 
 
@@ -501,6 +572,11 @@ button.floor {
         width: 5em;
     }
 
+    .puzzle-piece {
+        width: 15%;
+        font-size: 0.9em;
+    }
+
 }
 
 
@@ -562,6 +638,11 @@ button.floor {
         font-size: 1em;
     }
 
+    .puzzle-piece {
+        width: 37%;
+        font-size: 1em;
+    }
+
 }
 
 @media only screen and (max-width: 500px) {
@@ -597,6 +678,10 @@ button.floor {
     .aeva-full .aeva-message {
         width: 80%;
         margin: 5% 10%;
+    }
+
+    .puzzle-piece {
+        width: 30%;
     }
 
 }

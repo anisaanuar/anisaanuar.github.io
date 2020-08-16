@@ -92,6 +92,10 @@ for (i = 0; i < words.length; i++) {
 
 /* MAIN */
 
+function openPuzzle(puzzleLocation) {
+    window.location = puzzleLocation;
+}
+
 function goBack() {
     window.open('./lobby.html', "_self");
 }
@@ -166,6 +170,7 @@ function checkPswd() {
         case ('youmakemecomplete'):
             window.location = "whatsapp.html";
             break;
+        case ('snell'):
         case ('snelllibrary'):
             let snellNote = confirm('Snell Library it is! Just so you know, if you move forward from this page, you will have to re-enter "checkmysocials" as a password to return to the social media pages.');
             if (snellNote) {
@@ -194,7 +199,7 @@ function checkPswd() {
             window.location = "street.html";
             break;
         case ('1582a'):
-            window.location = "outro.html";
+            window.location = "trivia.html";
             break;
         default:
             alert("Sorry, that doesn't seem to be a valid password.");
@@ -224,6 +229,15 @@ function backToSocials() {
     console.log('open');
     window.location = "socials.html";
 }
+
+function askForPass() {
+    var person = prompt("What is the answer to the last question of the trivia puzzle?", "");
+    if (person === '22') {
+        window.location = "outro.html";
+    } else {
+        alert('Sorry, you need to complete the trivia puzzle in order to unlock this page.')
+    }
+} 
 
 /* VIDEO */
 
