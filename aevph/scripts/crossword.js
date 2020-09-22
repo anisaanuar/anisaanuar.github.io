@@ -91,7 +91,7 @@ for (i=0;i<words.length;i++) {
 var $crosswordClues = $('<div class="crossword-clues col-md-4 col-lg-3"><div class="row"></div></div>');
 var $acrossClues = $('<div class="across-clues col-sm-6 col-md-12"><p><strong>Across</strong></p><ol></ol></div>');
 var $downClues = $('<div class="down-clues col-sm-6 col-md-12"><p><strong>Down</strong></p><ol></ol></div>');
-var $solution = $('<div class="solution col-sm-6 col-md-12"><a href="./aipvhniez.png" target="_blank"><p><strong>Nicely done. Click here to find out where to go next!</strong></p></a></div>')
+var $solution = $('<div class="solution col-sm-6 col-md-12"><a href="./assets/decoders/aipvhniez.png" target="_blank"><p><strong>Nicely done. Click here to find out where to go next!</strong></p></a></div>')
 for (i=0;i<words.length;i++) {
     var $clue = $('<li value="'+words[i].number+'" data-direction="'+words[i].direction+'" data-clue="'+words[i].number+'"><label>'+words[i].clue+' </label></li>');
     $clue.find('label').attr('for',$('[data-'+words[i].direction+'='+words[i].number+']').eq(0).attr('id'));
@@ -337,9 +337,9 @@ function tooltipPosition($current) {
     return {'left':left,'top':top,'offset':offset};
 }
 
-var $aevaCrossword  = $("<div class='aeva-full'><div class='aeva-message'><div class='aeva-message-text'><p>Checking Snell first, huh? Well, where in Snell should you look?</p></div><img src='aeva-smile.png'></div></div>");
+var $aevaCrossword  = $("<div class='aeva-full'><div class='aeva-message'><div class='aeva-message-text'><p>Checking Snell first, huh? Well, where in Snell should you look?</p></div><img src='./assets/aeva/aeva-smile.png'></div></div>");
 
-var $aevaCrosswordHint = $("<div class='aeva-full'><div class='aeva-message'><div class='aeva-message-text'><p>Need help with the crossword? Don't forget, you're entirely free to Google answers or ask Anisa for a hint.</p><p>Once you complete the crossword, you'll find an image you can use to help you decode where in Snell specifically you should go.</div><img src='aeva-help.png'></div></div>");
+var $aevaCrosswordHint = $("<div class='aeva-full'><div class='aeva-message'><div class='aeva-message-text'><p>Need help with the crossword? Don't forget, you're entirely free to Google answers or ask Anisa for a hint.</p><p>Once you complete the crossword, you'll find an image you can use to help you decode where in Snell specifically you should go.</div><img src='./assets/aeva/aeva-help.png'></div></div>");
 
 $(document).ready(function() {
     $aevaCrossword.appendTo('.full');

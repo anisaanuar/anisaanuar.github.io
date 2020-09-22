@@ -1,6 +1,6 @@
-var $aevaTrivia = $("<div class='aeva-full'><div class='aeva-message'><div class='aeva-message-text'><p>You get to Room 1582A. There's a tablet on the door that reads, \"Authorization needed: To unlock this door, answer the following questions in under two minutes and twenty two seconds.\"</p><p>Good luck!</p></div><img src='aeva-smile.png'></div></div>");
+var $aevaTrivia = $("<div class='aeva-full'><div class='aeva-message'><div class='aeva-message-text'><p>You get to Room 1582A. There's a tablet on the door that reads, \"Authorization needed: To unlock this door, answer the following questions in under two minutes and twenty two seconds.\"</p><p>Good luck!</p></div><img src='./assets/aeva/aeva-smile.png'></div></div>");
 
-var $aevaTriviaHint = $('<div class="aeva-full"><div class="aeva-message"><div class="aeva-message-text"><p>What are you doing?? You\'re wasting time!</p></div><img src="aeva-help.png"></div></div>');
+var $aevaTriviaHint = $('<div class="aeva-full"><div class="aeva-message"><div class="aeva-message-text"><p>What are you doing?? You\'re wasting time!</p></div><img src="./assets/aeva/aeva-help.png"></div></div>');
 
 $(document).ready(function() {
     $aevaTrivia.appendTo('.full');

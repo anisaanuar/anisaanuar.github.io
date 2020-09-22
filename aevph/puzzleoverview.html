@@ -5,7 +5,7 @@
     <!-- Mobile Specific Meta -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Favicon-->
-    <link rel="shortcut icon" href="img/favicon.png">
+    <link rel="shortcut icon" href="assets/favicon.png">
     <!-- Author Meta -->
     <meta name="author" content="colorlib">
     <!-- Meta Description -->
@@ -20,8 +20,8 @@
     <link rel="stylesheet" href="../css/linearicons.css">
     <link rel="stylesheet" href="../css/font-awesome.min.css">
     <link rel="stylesheet" href="../css/bootstrap.css">
-    <link rel="stylesheet" href="./puzzles.css">
-    <link rel="stylesheet" href="./overview.css">
+    <link rel="stylesheet" href="./styling/puzzles.css">
+    <link rel="stylesheet" href="./styling/overview.css">
 </head>
 
 <body>
@@ -29,6 +29,9 @@
         <br>
             <h1 class="overview-text">all aevph puzzles <span style="opacity:0.7">(aka "the cheat sheet")</span></h1>
         <div class="puzzle-grid">
+            <div class="puzzle-piece"  onclick="openPuzzle('lobby.html')">
+                <p>Lobby<br><span class="footnote">(password: aevph)</span></p>
+            </div>
             <div class="puzzle-piece"  onclick="openPuzzle('welcome.html')">
                 <p>1. Introductions<br><span class="footnote">(hidden message)</span></p>
             </div>
@@ -59,46 +62,49 @@
             <div class="puzzle-piece"  onclick="openPuzzle('dunkinside.html')">
                 <p>10. Dunkin Donuts<br><span class="footnote">(click around)</span></p>
             </div>
+            <div class="puzzle-piece"  onclick="openPuzzle('sudoku.html')">
+                <p>11. Phone passcode<br><span class="footnote">(sudoku)</span></p>
+            </div>
             <div class="puzzle-piece"  onclick="openPuzzle('voicemessage.html')">
-                <p>11. Voice message<br><span class="footnote">(listen)</span></p>
+                <p>12. Voice message<br><span class="footnote">(listen)</span></p>
             </div>
             <div class="puzzle-piece"  onclick="openPuzzle('ddwifi.html')">
-                <p>12. Dunkin wi-fi<br><span class="footnote">(riddle)</span></p>
+                <p>13. Dunkin wi-fi<br><span class="footnote">(riddle)</span></p>
             </div>
             <div class="puzzle-piece"  onclick="openPuzzle('whatsapp.html')">
-                <p>13. WhatsApp<br><span class="footnote">(translations)</span></p>
+                <p>14. WhatsApp<br><span class="footnote">(translations)</span></p>
             </div>
             <div class="puzzle-piece"  onclick="openPuzzle('codenames.png')">
-                <p>14. Invitation<br><span class="footnote">(codenames part 0)</span></p>
+                <p>15. Invitation<br><span class="footnote">(codenames part 0)</span></p>
             </div>
             <div class="puzzle-piece"  onclick="openPuzzle('mbta.html')">
-                <p>15. MBTA map<br><span class="footnote">(codenames part 1)</span></p>
+                <p>16. MBTA map<br><span class="footnote">(codenames part 1)</span></p>
             </div>
             <div class="puzzle-piece"  onclick="openPuzzle('signs.html')">
-                <p>16. MBTA signs<br><span class="footnote">(codenames part 2)</span></p>
+                <p>17. MBTA signs<br><span class="footnote">(codenames part 2)</span></p>
             </div>
             <div class="puzzle-piece"  onclick="openPuzzle('map.html')">
-                <p>17. Park St map<br><span class="footnote">(codenames part 3)</span></p>
+                <p>18. Park St map<br><span class="footnote">(codenames part 3)</span></p>
             </div>
             <div class="puzzle-piece"  onclick="openPuzzle('street.html')">
-                <p>18. Street view<br><span class="footnote">(click around)</span></p>
+                <p>19. Street view<br><span class="footnote">(click around)</span></p>
             </div>
             <div class="puzzle-piece"  onclick="openPuzzle('floorfinder.html')">
-                <p>19. Floor finder<br><span class="footnote">(fallen phrase)</span></p>
+                <p>20. Floor finder<br><span class="footnote">(fallen phrase)</span></p>
             </div>
             <div class="puzzle-piece"  onclick="openPuzzle('maze.html')">
-                <p>20. Room runner<br><span class="footnote">(maze)</span></p>
+                <p>21. Room runner<br><span class="footnote">(maze)</span></p>
             </div>
             <div class="puzzle-piece"  onclick="openPuzzle('trivia.html')">
-                <p>21. Unlock the room<br><span class="footnote">(trivia)</span></p>
+                <p>22. Unlock the room<br><span class="footnote">(trivia)</span></p>
             </div>
             <div class="puzzle-piece"  onclick="askForPass()">
-                <p>22. Outro<br><span class="footnote">(video)</span>
+                <p>Outro<br><span class="footnote">(video)</span>
             </div>
         </div>
     </div>
-    <script src="./jquery-3.3.1.min.js"></script>
-    <script src="./puzzles.js"></script>
+    <script src="./scripts/jquery-3.3.1.min.js"></script>
+    <script src="./scripts/puzzles.js"></script>
 </body>
 
 </html>

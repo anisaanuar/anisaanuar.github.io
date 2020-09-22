@@ -29,9 +29,9 @@ $('.stings').on('click', function() {
     }
 });
 
-var $aevaStreet  = $("<div class='aeva-full'><div class='aeva-message'><div class='aeva-message-text'><p>Alright, so this is where we ended up. But there's just a bunch of buildings. How are you supposed to know where to go from here? Anything look familiar?</p></div><img src='aeva-smile.png'></div></div>");
+var $aevaStreet  = $("<div class='aeva-full'><div class='aeva-message'><div class='aeva-message-text'><p>Alright, so this is where we ended up. But there's just a bunch of buildings. How are you supposed to know where to go from here? Anything look familiar?</p></div><img src='./assets/aeva/aeva-smile.png'></div></div>");
 
-var $aevaStreetHint = $("<div class='aeva-full'><div class='aeva-message'><div class='aeva-message-text'><p>The hint for this one relates to an earlier puzzle - the Instagram page. If you don't remember or didn't solve for the earlier hint, you could also just look everywhere and hope you end up in the right place!</p></div><img src='aeva-help.png'></div></div>");
+var $aevaStreetHint = $("<div class='aeva-full'><div class='aeva-message'><div class='aeva-message-text'><p>The hint for this one relates to an earlier puzzle - the Instagram page. If you don't remember or didn't solve for the earlier hint, you could also just look everywhere and hope you end up in the right place!</p></div><img src='./assets/aeva/aeva-help.png'></div></div>");
 
 
 $(document).ready(function() {
