@@ -58,17 +58,34 @@
 .window.back {
     width: 995px;
     max-width: 90%;
-    overflow: hidden;
 }
 
 .window.back svg {
     width: 995px;
 }
 
-.window.front {
+.window.front.desktop svg {
     width: 750px;
+}
+
+.window.front.mobile svg {
+    width: 100%;
+}
+
+.window.front.mobile {
+    display: none;
+    top: 120px;
+    right:7.5%;
+    width: 506px;
+    max-width: 80%;
+}
+
+.window.front.desktop {
     top: 150px;
     right: 60px;
+    width: 750px;
+    max-width: 80%;
+    display: block;
 }
 
 .window {
@@ -76,6 +93,7 @@
     float: left;
     top: 20px;
     border-radius: 15px;
+    overflow: hidden;
 }
 
 .anim1,
@@ -181,7 +199,81 @@ svg text {
     font-size: 17px;
 }
 
+.st0 {
+    fill: #F8F8F8;
+}
 
+.st1 {
+    fill: #E0E0E0;
+}
+
+.st2 {
+    font-family: 'ProximaNova-Regular';
+}
+
+.st3 {
+    font-size: 15px;
+}
+
+.st4 {
+    fill: #3E3E3E;
+}
+
+.st5 {
+    fill: #627166;
+}
+
+.st6 {
+    fill: #ACBFB1;
+}
+
+.st7 {
+    fill: #DBBFBF;
+}
+
+.st8 {
+    fill: #DBD6BF;
+}
+
+.st9 {
+    fill: #C7DBBF;
+}
+
+.st10 {
+    fill: #CFE5D0;
+}
+
+.st11 {
+    font-size: 14.9941px;
+}
+
+.st12 {
+    font-size: 15.0016px;
+}
+
+.st13 {
+    fill: #D6D6D6;
+}
+
+.st14 {
+    fill: #B2B2B2;
+}
+
+.st15 {
+    fill: #9F9F9F;
+}
+
+.st16 {
+    fill: #FFFFFF;
+}
+
+.st17 {
+    fill: #DEDDDD;
+}
+
+.st18 {
+    fill: #C4C4C4;
+}
 
 /* MEDIA QUERIES */
 
@@ -190,6 +282,18 @@ svg text {
     .header,
     .page-container {
         padding: 0 5%;
+    }
+
+}
+
+@media only screen and (max-width: 950px) {
+
+    .window.front.mobile {
+        display: block;
+    }
+
+    .window.front.desktop {
+        display: none;
     }
 
 }
