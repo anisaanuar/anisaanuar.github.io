@@ -77,7 +77,7 @@
     top: 120px;
     right:7.5%;
     width: 506px;
-    max-width: 80%;
+    max-width: 100%;
 }
 
 .window.front.desktop {
@@ -112,26 +112,29 @@
     display: none;
 }
 
-#browser_window {
+.browser-window {
     fill: #F8F8F8;
 }
 
-#asker_message {
+.asker-message {
     fill: #E0E0E0;
 }
 
-#asker_bubble,
-#chat_button_1 {
+.asker-bubble,
+.chat-button-one {
     fill: #B2B2B2;
 }
 
-#browser {
+.chat-button-two {
+    fill: #9F9F9F;
+}
+
+.browser {
     fill: #3E3E3E;
 }
 
 .my-icon,
-#browser_below,
-#browser_tab_1 {
+.browser-front-window {
     fill: #627166;
 }
 
@@ -139,140 +142,61 @@
     fill: #CFE5D0;
 }
 
-#browser_tab_2 {
+.browser-tab-2 {
     fill: #ACBFB1;
 }
 
-#browser_button_1 {
+.red-button {
     fill: #DBBFBF;
 }
 
-#browser_button_2 {
+.yellow-button {
     fill: #DBD6BF;
 }
 
-#browser_button_3 {
+.green-button {
     fill: #C7DBBF;
 }
 
-#chat_message_bar {
+.chat-message-bar {
     fill: #D6D6D6;
 }
 
-#airplane_wing_left,
-#airplane_wing_right {
+.airplane-wing-left,
+.airplane-wing-right {
     fill: #FFFFFF;
 }
 
-#airplane_middle {
+.airplane-middle {
     fill: #DEDDDD;
 }
 
-#airplane_bottom {
+.airplane-bottom {
     fill: #C4C4C4;
 }
 
-#chat_button_2 {
-    fill: #9F9F9F;
-}
-
-#back_browser_top {
+.back-browser-top {
     fill: #E8E8E8;
 }
 
-#back_browser_bottom,
-#back_browser_tab {
+.back-browser-tab {
     fill: #ACBFB1;
 }
 
-#back_browser_window {
+.back-browser-window {
     fill: #DDE6D2;
 }
 
-#back_browser_button_1,
-#back_browser_button_2,
-#back_browser_button_3 {
+.back-browser-button {
     fill: #9D9D9D;
 }
 
-svg text {
+.desktop svg text {
     font-size: 17px;
 }
 
-.st0 {
-    fill: #F8F8F8;
-}
-
-.st1 {
-    fill: #E0E0E0;
-}
-
-.st2 {
-    font-family: 'ProximaNova-Regular';
-}
-
-.st3 {
+.mobile svg text {
     font-size: 15px;
-}
-
-.st4 {
-    fill: #3E3E3E;
-}
-
-.st5 {
-    fill: #627166;
-}
-
-.st6 {
-    fill: #ACBFB1;
-}
-
-.st7 {
-    fill: #DBBFBF;
-}
-
-.st8 {
-    fill: #DBD6BF;
-}
-
-.st9 {
-    fill: #C7DBBF;
-}
-
-.st10 {
-    fill: #CFE5D0;
-}
-
-.st11 {
-    font-size: 14.9941px;
-}
-
-.st12 {
-    font-size: 15.0016px;
-}
-
-.st13 {
-    fill: #D6D6D6;
-}
-
-.st14 {
-    fill: #B2B2B2;
-}
-
-.st15 {
-    fill: #9F9F9F;
-}
-
-.st16 {
-    fill: #FFFFFF;
-}
-
-.st17 {
-    fill: #DEDDDD;
-}
-
-.st18 {
-    fill: #C4C4C4;
 }
 
 /* MEDIA QUERIES */
@@ -286,10 +210,11 @@ svg text {
 
 }
 
-@media only screen and (max-width: 950px) {
+@media only screen and (max-width: 880px) {
 
     .window.front.mobile {
         display: block;
+        max-width: 80%;
     }
 
     .window.front.desktop {
