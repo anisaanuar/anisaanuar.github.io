@@ -1,0 +1,195 @@
+* {
+    font-family: Proxima Nova;
+    font-weight: 400;
+}
+
+/* HEADER AND MENU STYLINGS */
+
+.header {
+    padding: 0 60px;
+    height: 85px;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, .16);
+}
+
+.logo {
+    background-image: url("./assets/anisa.svg");
+    background-position: 0px;
+    background-size: 100px 93px;
+    background-repeat: no-repeat;
+}
+
+.menu {
+    float: right;
+    margin-top: 30px;
+}
+
+.menu li {
+    list-style: none;
+    float: left;
+    margin-left: 48px;
+    text-decoration: none;
+}
+
+.menu li a {
+    text-transform: uppercase;
+    color: #000;
+    font-size: 14px;
+}
+
+.menu li a:hover {
+    text-decoration: none;
+    border-bottom: 3px solid #ccc;
+}
+
+.menu li.active a {
+    font-weight: 600;
+    border-bottom: 3px solid #ACBFB1;
+}
+
+/* PAGE STYLINGS */
+
+.page-container {
+    padding: 0 60px;
+    position: relative;
+}
+
+/* CHAT WINDOW STYLINGS */
+
+.window.back {
+    width: 995px;
+    max-width: 90%;
+    overflow: hidden;
+}
+
+.window.back svg {
+    width: 995px;
+}
+
+.window.front {
+    width: 750px;
+    top: 150px;
+    right: 60px;
+}
+
+.window {
+    position: absolute;
+    float: left;
+    top: 20px;
+    border-radius: 15px;
+}
+
+.anim1,
+.anim2,
+.anim3,
+.anim4,
+.anim5,
+.anim6,
+.anim7,
+.anim8,
+.anim9,
+.anim10,
+.anim11,
+.anim12,
+.anim13 {
+    display: none;
+}
+
+#browser_window {
+    fill: #F8F8F8;
+}
+
+#asker_message {
+    fill: #E0E0E0;
+}
+
+#asker_bubble,
+#chat_button_1 {
+    fill: #B2B2B2;
+}
+
+#browser {
+    fill: #3E3E3E;
+}
+
+.my-icon,
+#browser_below,
+#browser_tab_1 {
+    fill: #627166;
+}
+
+.chat-bubble {
+    fill: #CFE5D0;
+}
+
+#browser_tab_2 {
+    fill: #ACBFB1;
+}
+
+#browser_button_1 {
+    fill: #DBBFBF;
+}
+
+#browser_button_2 {
+    fill: #DBD6BF;
+}
+
+#browser_button_3 {
+    fill: #C7DBBF;
+}
+
+#chat_message_bar {
+    fill: #D6D6D6;
+}
+
+#airplane_wing_left,
+#airplane_wing_right {
+    fill: #FFFFFF;
+}
+
+#airplane_middle {
+    fill: #DEDDDD;
+}
+
+#airplane_bottom {
+    fill: #C4C4C4;
+}
+
+#chat_button_2 {
+    fill: #9F9F9F;
+}
+
+#back_browser_top {
+    fill: #E8E8E8;
+}
+
+#back_browser_bottom,
+#back_browser_tab {
+    fill: #ACBFB1;
+}
+
+#back_browser_window {
+    fill: #DDE6D2;
+}
+
+#back_browser_button_1,
+#back_browser_button_2,
+#back_browser_button_3 {
+    fill: #9D9D9D;
+}
+
+svg text {
+    font-size: 17px;
+}
+
+
+
+/* MEDIA QUERIES */
+
+@media only screen and (max-width: 1100px) {
+
+    .header,
+    .page-container {
+        padding: 0 5%;
+    }
+
+}
