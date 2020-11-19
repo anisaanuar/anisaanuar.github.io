@@ -145,7 +145,7 @@
 .window.front.desktop {
     top: 150px;
     right: 60px;
-    width: 750px;
+    min-width: 750px;
     max-width: 80%;
     display: block;
 }
@@ -274,6 +274,27 @@
 }
 
 /* MEDIA QUERIES */
+
+@media only screen and (min-width: 1280px) {
+
+    .window.back{
+        width: 75%;
+        max-width: 90%;
+    }
+
+    .window.back svg {
+        width: auto;
+    }
+
+    .window.front.desktop {
+        width: 60%;
+    }
+
+    .window.front.desktop svg {
+        width: auto;
+    }
+
+}
 
 @media only screen and (max-width: 1100px) {
 
