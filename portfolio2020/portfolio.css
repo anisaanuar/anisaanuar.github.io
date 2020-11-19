@@ -158,6 +158,10 @@
     overflow: hidden;
 }
 
+.window.desktop {
+    margin-bottom: 20px;
+}
+
 .anim1,
 .anim2,
 .anim3,
