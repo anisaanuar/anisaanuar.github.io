@@ -7,12 +7,18 @@
 
 .container-fluid {
     padding: 0 !important;
+    background: white;
 }
 
 .header {
-    padding: 0 60px;
+    padding: 0 80px;
     height: 85px;
     box-shadow: 0px 3px 6px rgba(0, 0, 0, .16);
+}
+
+.header-container {
+    width: 100%;
+    display: flex;
 }
 
 .logo {
@@ -35,28 +41,26 @@
     margin-top: 30px;
 }
 
-.menu li {
+.menu.desktop a {
     list-style: none;
     float: left;
     margin-left: 48px;
     text-decoration: none;
-}
-
-.menu li a {
     text-transform: uppercase;
     color: #000;
-    font-size: 14px;
+    font-size: 0.9em;
+    border-bottom: 3px solid #fff;
+    transition: 0.5s;
 }
 
-.menu li a:hover {
+.menu.desktop a:hover {
     text-decoration: none;
     border-bottom: 3px solid #ccc;
 }
 
-.menu li.active a,
-.menu .active a {
+.menu.desktop a.active {
     font-weight: 600;
-    border-bottom: 3px solid #ACBFB1;
+    border-bottom: 3px solid #8FA795;
 }
 
 /* MENU STYLINGS */
@@ -84,6 +88,8 @@
     color: #2C2C2C;
     text-decoration: none;
     display: block;
+    border-bottom: 1px solid #fff;
+    transition: 0.5s;
 }
 
 #menuLinks a {
@@ -110,8 +116,12 @@
 /* PAGE STYLINGS */
 
 .page-container {
-    padding: 0 60px;
+    padding: 0 80px;
     position: relative;
+}
+
+.no-overflow {
+    overflow: hidden;
 }
 
 /* CHAT WINDOW STYLINGS */
@@ -144,7 +154,7 @@
 
 .window.front.desktop {
     top: 150px;
-    right: 60px;
+    right: 80px;
     min-width: 750px;
     max-width: 80%;
     display: block;
@@ -156,6 +166,7 @@
     top: 20px;
     border-radius: 15px;
     overflow: hidden;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, .16);
 }
 
 .window.desktop {
@@ -209,7 +220,7 @@
 }
 
 .browser-tab-2 {
-    fill: #ACBFB1;
+    fill: #8FA795;
 }
 
 .red-button {
@@ -246,7 +257,7 @@
 }
 
 .back-browser-tab {
-    fill: #ACBFB1;
+    fill: #8FA795;
 }
 
 .back-browser-window {
@@ -258,26 +269,138 @@
 }
 
 .desktop svg text {
-    font-size: 17px;
+    font-size: 1.05em;
 }
 
 .mobile svg text {
-    font-size: 15px;
+    font-size: 0.95em;
+}
+
+/* ABOUT */
+
+.page-title {
+    font-size: 0.9em;
+    color: #898989;
+    margin: 28px 0 20px;
+}
+
+.text-container {
+    margin-bottom: 48px !important;
+}
+
+.text-container h1 {
+    font-size: 2.2em;
+    margin-bottom: 16px !important;
+    color: #2C2C2C;
+    font-weight: 800 !important;
+}
+
+.text-container p {
+    color: #2C2C2C;
+    font-size: 1em;
+}
+
+.text-container a {
+    color: #8FA795;
+}
+
+.text-container a:hover {
+    color: #6E8873;
+    text-decoration: none;
+}
+
+.button-container {
+    margin-bottom: 20px;
+}
+
+button {
+    padding: 20px 40px;
+    border: none;
+    margin: 0 20px 20px 0 !important;
+    text-transform: uppercase !important;
+    font-weight: 800;
+    color: #393939;
+    letter-spacing: 1.5;
+    font-size: 0.9em !important;
+    transition: 0.5s;
+}
+
+button.primary {
+    background-color: #8FA795;
+}
+
+button.primary:hover {
+    background-color: #6E8873;
+}
+
+button.secondary {
+    background-color: #C9C9C9;
+}
+
+button.secondary:hover {
+    background-color: #9F9F9F;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+button:active,
+button:focus {
+    border: none !important;
+    outline: none !important;
+}
+
+img.portrait {
+    width: 480px;
+    float: right;
+    display: inline-block;
+    margin: 0 15px 0 70px;
+    transform: translateY(-100px);
 }
 
 /* RESUME */
 
 .resume-container {
     width: 100%;
-    padding-top: 20px;
     margin-bottom: 20px;
+}
+
+.resume-container img {
+    max-width: 1080px;
+    width: 100%;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, .16);
+}
+
+.resume-container a {
+    color: #8FA795;
+}
+
+.resume-container a:hover {
+    color: #6E8873;
+    text-decoration: none;
 }
 
 /* MEDIA QUERIES */
 
-@media only screen and (min-width: 1280px) {
+@media only screen and (min-width: 1920px) {
 
-    .window.back{
+    .page-container,
+    .header-container {
+        max-width: 1800px;
+        padding: 0;
+        margin: 0 auto;
+    }
+
+    .window.front.desktop {
+        right: 20px;
+    }
+
+}
+
+@media only screen and (min-width: 1600px) {
+
+    .window.back {
         width: 75%;
         max-width: 90%;
     }
@@ -314,6 +437,11 @@
         left: 2.5%;
     }
 
+    img.portrait {
+        width: 400px;
+        margin-bottom: 300px;
+    }
+
 }
 
 @media only screen and (min-width: 880px) {
@@ -341,6 +469,19 @@
 
     .window.front.desktop {
         display: none;
+    }
+
+    .page-title {
+        width: 100%;
+    }
+
+    img.portrait {
+        width: 100%;
+        float: none;
+        display: block;
+        margin: 0;
+        transform: none;
+        margin-bottom: 40px;
     }
 
 }

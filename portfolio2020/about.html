@@ -18,47 +18,30 @@
 
 <body>
 	<!-- HEADER -->
-	<div class="container-fluid">
-		<div class="row no-gutters header">
-			<a class="col-3 col-lg-2 col-xl-1 logo" href="index.html"></a>
-			<!-- MENU -->
-			<div class="col-9 col-lg-10 col-xl-11">
-				<ul class="menu desktop">
-					<li><a href="index.html" class="link">home</a></li>
-					<li class="active"><a href="about.html" class="link">about</a></li>
-					<li><a href="resume.html" class="link">resume</a></li>
-					<li><a href="contact.html" class="link">contact</a></li>
-				</ul>
-				<div class="menu mobile">
-					<a href="javascript:void(0);" class="icon" onclick="toggleMenu()">
-						<i class="fa fa-bars"></i>
-					</a>
-				</div>
-			</div>
-		</div>
-		<div id="menuLinks">
-			<a href="index.html">HOME</a>
-			<a class="active" href="about.html">ABOUT</a>
-			<a href="resume.html">RESUME</a>
-			<a href="contact.html">CONTACT</a>
-		</div>
+	<div id="about" class="container-fluid">
 	</div>
 	<!-- PAGE -->
-	<div class="page-container">
-		<div class="back window">
-			<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 1332 723" style="enable-background:new 0 0 1332 723;" xml:space="preserve">
-				<g>
-					<path class="back-browser-top" d="M20,0h1292c11,0,20,9,20,20v75c0,11-9,20-20,20H20c-11,0-20-9-20-20V20C0,9,9,0,20,0z" />
-					<rect class="back-browser-tab" y="58" width="1332" height="57" />
-					<rect class="back-browser-window" y="115" width="1332" height="608" />
-					<path class="back-browser-tab" d="M106,11h130c11,0,20,9,20,20v28H86V31C86,20,95,11,106,11z" />
-					<ellipse class="back-browser-button" cx="23.5" cy="34" rx="5.5" ry="6" />
-					<ellipse class="back-browser-button" cx="42.5" cy="34" rx="5.5" ry="6" />
-					<ellipse class="back-browser-button" cx="61.5" cy="34" rx="5.5" ry="6" />
-				</g>
-			</svg>
+	<div class="page-container no-overflow">
+		<p class="page-title">ABOUT</p>
+		<img class="portrait" src="assets/portrait.JPG">
+		<div class="text-container">
+			<h1>Hey there! 👋🏼</h1>
+			<p><strong>Glad to have you here!</strong> I’m Anisa. I’m a Computer Science and Design major currently in my fifth and final year at Northeastern University. I was born in West Haven, CT and raised by two strong human beings who immigrated all the way from their respective small towns in Malaysia to provide an amazing life for me, my sister, and my five brothers. <em><a href="contact.html"><strong>And you are?</strong></a></em></p>
+
+			<p>Although I’m just below five feet tall, I find that I have high aspirations. As a growing developer, designer, writer, and baker, I look forward to making the world a better place, <strong>one fixed bug, one em space, one slant rhyme, or one chocolate chip at a time.</strong></p>
+
+			<p>Throughout my years at Northeastern, I developed a strong interest in web 
+				development and user experience design. With the help of all the amazing 
+				people I got to work with during my co-ops, work studies, and part-time 
+			jobs, I have gotten much closer to achieving my goals.</p>
+
+			<p><strong>This website is a collection of my works.</strong></p>
+		</div>
+		<div class="button-container">
+			<button class="primary" onclick="goToPage('resume.html')">Check out my resume</button><button class="secondary" onclick="goToPage('contact.html')">Get in touch</button>
 		</div>
 	</div>
+</div>
 </body>
 
 </html>
