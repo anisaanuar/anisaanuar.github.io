@@ -16,7 +16,7 @@ var menu = [{
 }
 ];
 
-var $header = $('<div class="row no-gutters header"> <div class="header-container"> <a class="col-3 col-lg-2 col-xl-1 logo" href="index.html"></a> <div class="col-9 col-lg-10 col-xl-11"> <div class="menu desktop"> </div> <div class="menu mobile"> <a href="javascript:void(0);" class="icon" onclick="toggleMenu()"> <i class="fa fa-bars"></i> </a> </div> </div> </div> </div> <div id="menuLinks"> <a href="index.html">HOME</a> <a href="about.html">ABOUT</a> <a href="resume.html">RESUME</a> <a href="contact.html">CONTACT</a>');
+var $header = $('<div class="row no-gutters header"> <div class="header-container"> <a class="col-4 col-lg-2 col-xl-1 logo" href="index.html"></a> <div class="col-8 col-lg-10 col-xl-11"> <div class="menu desktop"> </div> <div class="menu mobile"> <a href="javascript:void(0);" class="icon" onclick="toggleMenu()"> <i class="fa fa-bars"></i> </a> </div> </div> </div> </div> <div id="menuLinks"> <a href="index.html">HOME</a> <a href="about.html">ABOUT</a> <a href="resume.html">RESUME</a> <a href="contact.html">CONTACT</a>');
 
 $(document).ready(function() {
   $('.anim1').delay(0).fadeIn(1200);
