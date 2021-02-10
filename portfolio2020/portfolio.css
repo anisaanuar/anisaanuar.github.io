@@ -41,7 +41,8 @@
     margin-top: 30px;
 }
 
-.menu.desktop a {
+.menu.desktop a,
+.dropdown .dropbtn  {
     list-style: none;
     float: left;
     margin-left: 48px;
@@ -90,16 +91,46 @@
     display: block;
     border-bottom: 1px solid #fff;
     transition: 0.5s;
+    text-transform: uppercase;
 }
 
-#menuLinks a {
+#menuLinks a,
+#menuLinks .dropdown {
     padding: 16px 30px;
+    width:100%;
     border-bottom: 1px solid #BFBFBF;
     font-size: 17px;
 }
 
 #menuLinks a.active {
     font-weight: 600;
+}
+
+#menuLinks .dropdown {
+    float:none;
+    display: inline-block;
+}
+
+#menuLinks .dropdown .dropbtn {
+    margin: 0;
+    padding: 0;
+    font-size: 17px;
+}
+
+#menuLinks .dropdown-content {
+    position: relative;
+    margin: 40px 0 0;
+    padding: 0 !important;
+    box-shadow: none;
+}
+
+#menuLinks .dropdown-content a {
+    width: 100%;
+    display: inline-block !important;
+    border-bottom: none !important;
+    margin: 0 !important;
+    padding: 0 0 10px;
+    color: #898989;
 }
 
 /* Style the hamburger menu */
@@ -111,6 +142,50 @@
     top: 10px;
     padding: 14px 16px;
     font-size: 30px;
+}
+
+/* Style a dropdown menu */
+.dropdown {
+  float: left;
+}
+
+.dropdown .dropbtn {
+  border: none;
+  outline: none;
+  padding: 0;
+  background: none;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  margin: 20px 24px;
+  padding: 0 0 16px 0;
+  min-width: 160px;
+  z-index: 2;
+  background: white;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, .16);
+
+}
+
+.dropdown-content a {
+  color: black;
+  text-decoration: none;
+  text-align: left;
+  margin:16px 24px 0px 24px !important;
+}
+
+.dropdown:hover .dropbtn {
+  color: black;
+}
+
+.dropdown-content a:hover {
+  color: black;
+  border-bottom: 3px solid #ccc;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
 }
 
 /* PAGE STYLINGS */
@@ -313,7 +388,7 @@
     margin-bottom: 20px;
 }
 
-button {
+button.page {
     padding: 20px 40px;
     border: none;
     margin: 0 20px 20px 0 !important;
