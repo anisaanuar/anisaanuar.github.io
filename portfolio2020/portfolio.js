@@ -13,28 +13,55 @@ var menuContent = [{
         link: 'experience',
         dropdown: true,
         submenu: [{
-                label: 'paidia studio',
-                link: 'paidia.html'
-            },
-            {
-                label: 'nokia technologies',
-                link: 'nokia.html'
+                label: 'payjoy',
+                link: 'payjoy.html'
             },
             {
                 label: 'intuit',
                 link: 'intuit.html'
             },
             {
-                label: 'payjoy',
-                link: 'payjoy.html'
+                label: 'nokia technologies',
+                link: 'nokia.html'
+            },
+            {
+                label: 'work studies',
+                link: 'workstudies.html'
             }
         ]
     },
     {
-        label: 'resume',
-        link: 'resume.html',
+        label: 'projects',
+        link: 'projects',
+        dropdown: true,
+        submenu: [{
+                label: 'radical healing app',
+                link: 'capstone.html'
+            },
+            {
+                label: 'aevph (virtual puzzle hunt)',
+                link: 'aevph.html'
+            },
+            {
+                label: 'freelance design work',
+                link: 'design.html'
+            },
+            {
+                label: 'digital art',
+                link: 'art.html'
+            }
+        ]
+    },
+    {
+        label: 'leadership',
+        link: 'leadership.html',
         dropdown: false
     },
+    // {
+    //     label: 'resume',
+    //     link: 'resume.html',
+    //     dropdown: false
+    // },
     {
         label: 'contact',
         link: 'contact.html',
@@ -45,7 +72,9 @@ var menuContent = [{
 var mobileMenu = $('<span></span>');
 var desktopMenu = $('<span></span>');
 
-var $header = $('<div class="row no-gutters header"> <div class="header-container"> <a class="col-3 col-lg-2 col-xl-1 logo" href="index.html"></a> <div class="col-9 col-lg-10 col-xl-11"> <div class="menu desktop"> </div> <div class="menu mobile"> <a href="javascript:void(0);" class="icon" onclick="toggleMenu()"> <i class="fa fa-bars"></i> </a> </div> </div> </div> </div> <div id="menuLinks"> </div>');
+var $header = $('<div class="row no-gutters header"> <div class="header-container"> <a class="col-2 col-xl-1 logo" href="index.html"></a> <div class="col-10 col-xl-11"> <div class="menu desktop"> </div> <div class="menu mobile"> <a href="javascript:void(0);" class="icon" onclick="toggleMenu()"> <i class="fa fa-bars"></i> </a> </div> </div> </div> </div> <div id="menuLinks"> </div>');
+
+var $footer = $('<div id="footer"><div id="contact-bar"><div id="social-media"><div class="sm-icon"><a href="mailto:anuar.a@northeastern.edu"><i class="fa fa-envelope"></i></a></div><div class="sm-icon"><a href="https://www.linkedin.com/in/anisaanuar/" target="blank"><i class="fab fa-linkedin"></i></a></div><div class="sm-icon"><a href="https://www.facebook.com/iamnees" target="blank"><i class="fab fa-facebook"></i></a></div><div class="sm-icon"><a href="https://instagram.com/chocolatechipsmiles/" target="blank"><i class="fab fa-instagram"></i></a></div><div class="sm-icon"><a href="resume.pdf" target="blank"><i class="fa fa-link"></i></a></div></div></div><p>ANISA ANUAR</p></div>')
 
 $(document).ready(function() {
     $('.anim1').delay(0).fadeIn(1200);
@@ -69,6 +98,9 @@ $(document).ready(function() {
     // });
 
     $header.appendTo('.container-fluid');
+    $footer.appendTo('body');
+
+    // Puts together menu from dictionary
 
     for (item in menuContent) {
         if (menuContent[item].dropdown) {
@@ -86,6 +118,9 @@ $(document).ready(function() {
 
     mobileMenu.appendTo('#menuLinks');
     desktopMenu.appendTo('.menu.desktop');
+
+
+    // Setting active menu page
 
     var url = window.location.href;
     var desktop = $('.menu a').filter(function() {

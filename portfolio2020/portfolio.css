@@ -41,8 +41,12 @@
     margin-top: 30px;
 }
 
+.menu.desktop a:first-of-type {
+    margin-left: 0px;
+}
+
 .menu.desktop a,
-.dropdown .dropbtn  {
+.dropdown .dropbtn {
     list-style: none;
     float: left;
     margin-left: 48px;
@@ -97,7 +101,7 @@
 #menuLinks a,
 #menuLinks .dropdown {
     padding: 16px 30px;
-    width:100%;
+    width: 100%;
     border-bottom: 1px solid #BFBFBF;
     font-size: 17px;
 }
@@ -107,7 +111,7 @@
 }
 
 #menuLinks .dropdown {
-    float:none;
+    float: none;
     display: inline-block;
 }
 
@@ -146,46 +150,46 @@
 
 /* Style a dropdown menu */
 .dropdown {
-  float: left;
+    float: left;
 }
 
 .dropdown .dropbtn {
-  border: none;
-  outline: none;
-  padding: 0;
-  background: none;
+    border: none;
+    outline: none;
+    padding: 0;
+    background: none;
 }
 
 .dropdown-content {
-  display: none;
-  position: absolute;
-  margin: 20px 24px;
-  padding: 0 0 16px 0;
-  min-width: 160px;
-  z-index: 2;
-  background: white;
-  box-shadow: 0px 3px 6px rgba(0, 0, 0, .16);
+    display: none;
+    position: absolute;
+    margin: 20px 24px;
+    padding: 0 0 16px 0;
+    min-width: 160px;
+    z-index: 2;
+    background: white;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, .16);
 
 }
 
 .dropdown-content a {
-  color: black;
-  text-decoration: none;
-  text-align: left;
-  margin:16px 24px 0px 24px !important;
+    color: black;
+    text-decoration: none;
+    text-align: left;
+    margin: 16px 24px 0px 24px !important;
 }
 
 .dropdown:hover .dropbtn {
-  color: black;
+    color: black;
 }
 
 .dropdown-content a:hover {
-  color: black;
-  border-bottom: 3px solid #ccc;
+    color: black;
+    border-bottom: 3px solid #ccc;
 }
 
 .dropdown:hover .dropdown-content {
-  display: block;
+    display: block;
 }
 
 /* PAGE STYLINGS */
@@ -200,6 +204,10 @@
 }
 
 /* CHAT WINDOW STYLINGS */
+
+.windows-container {
+    height: 650px;
+}
 
 .window.back {
     width: 995px;
@@ -370,6 +378,12 @@
     font-weight: 800 !important;
 }
 
+.text-container h2 {
+    font-size: 1.5em;
+    color: #2C2C2C;
+    font-weight: 600 !important;
+}
+
 .text-container p {
     color: #2C2C2C;
     font-size: 1em;
@@ -464,7 +478,7 @@ img.portrait {
     display: block;
     float: left;
     margin: 0 auto;
-    padding: 10px 0 20px;
+    padding: 0 0 10px;
 }
 
 #contact-bar p {
@@ -539,6 +553,7 @@ img.portrait {
 #footer {
     width: 100%;
     text-align: center;
+    padding-bottom: 20px;
 }
 
 #footer p {
@@ -550,7 +565,7 @@ img.portrait {
 
 /* MEDIA QUERIES */
 
-@media only screen and (min-width: 1920px) {
+@media only screen and (min-width: 1850px) {
 
     .page-container,
     .header-container {
@@ -561,6 +576,10 @@ img.portrait {
 
     .window.front.desktop {
         right: 20px;
+    }
+
+    .windows-container {
+        height: 1050px;
     }
 
 }
@@ -584,6 +603,18 @@ img.portrait {
         width: auto;
     }
 
+    .windows-container {
+        height: 800px;
+    }
+}
+
+
+@media only screen and (min-width: 1700px) {
+
+    .windows-container {
+        height: 850px;
+    }
+
 }
 
 @media only screen and (max-width: 1100px) {
@@ -600,13 +631,17 @@ img.portrait {
         padding-right: 20px;
     }
 
+    .menu.desktop a {
+        margin-left: 40px;
+    }
+
     .logo {
         left: 2.5%;
     }
 
     img.portrait {
         width: 400px;
-        margin-bottom: 300px;
+        margin-bottom: 200px;
     }
 
 }
@@ -618,6 +653,7 @@ img.portrait {
     }
 
 }
+
 
 @media only screen and (max-width: 880px) {
 
@@ -649,6 +685,30 @@ img.portrait {
         margin: 0;
         transform: none;
         margin-bottom: 40px;
+    }
+
+    .windows-container {
+        height: 900px;
+    }
+
+}
+
+
+
+@media only screen and (max-width: 600px) {
+
+    .windows-container {
+        height: 850px;
+    }
+
+}
+
+
+
+@media only screen and (max-width: 500px) {
+
+    .windows-container {
+        height: 750px;
     }
 
 }
