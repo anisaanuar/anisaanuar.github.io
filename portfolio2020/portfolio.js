@@ -57,11 +57,6 @@ var menuContent = [{
         link: 'leadership.html',
         dropdown: false
     },
-    // {
-    //     label: 'resume',
-    //     link: 'resume.html',
-    //     dropdown: false
-    // },
     {
         label: 'contact',
         link: 'contact.html',
@@ -129,6 +124,18 @@ $(document).ready(function() {
     var mobile = $('#menuLinks a').filter(function() {
         return this.href == url
     }).addClass('active');
+
+    // scrolling
+    $("a").on('click', function(event) {
+
+        // Make sure this.hash has a value before overriding default behavior
+        if (this.hash !== "") {
+            // Prevent default anchor click behavior
+            event.preventDefault();
+
+            scrollToHash(this.hash);
+        } // End if
+    });
 });
 
 function getDropdownContent(label, items) {
@@ -145,6 +152,7 @@ function getDropdownContent(label, items) {
 function toggleMenu() {
     var x = document.getElementById("menuLinks");
     if (x.style.display === "block") {
+     
         x.style.display = "none";
     } else {
         x.style.display = "block";
@@ -153,4 +161,29 @@ function toggleMenu() {
 
 function goToPage(page) {
     window.location = page;
+}
+
+window.onscroll = function() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        $('#backToTop').show();
+    } else {
+        $('#backToTop').hide();
+    }
+}
+
+function scrollToHash(hash) {
+    // Using jQuery's animate() method to add smooth page scroll
+    // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+    $('html, body').animate({
+        scrollTop: $(hash).offset().top
+    }, 800, function() {
+
+        // Add hash (#) to URL when done scrolling (default click behavior)
+        window.location.hash = hash;
+    });
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function scrollToTop() {
+    $("html, body").animate({ scrollTop: 0 }, "slow");
 }

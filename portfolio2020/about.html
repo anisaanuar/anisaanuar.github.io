@@ -1,48 +1,68 @@
 <html>
 
 <head>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-	<script src="./portfolio.js"></script>
-	<link rel="stylesheet" href="./portfolio.css">
-	<link rel="stylesheet" href="./css/bootstrap/bootstrap.css">
-	<link rel="stylesheet" href="./css/font-awesome.min.css">
-	<link rel="stylesheet" href="https://use.typekit.net/anx1abt.css">
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
-	<meta content="width=device-width, initial-scale=1" name="viewport" />
-	<meta name="p:domain_verify" content="67358c12db48039522097b93aae46de0" />
-	<title>About - Anisa Anuar</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="./portfolio.js"></script>
+    <link rel="stylesheet" href="./portfolio.css">
+    <link rel="stylesheet" href="./css/bootstrap/bootstrap.css">
+    <link rel="stylesheet" href="./css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://use.typekit.net/anx1abt.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <meta name="p:domain_verify" content="67358c12db48039522097b93aae46de0" />
+    <title>About - Anisa Anuar</title>
 
-	<head profile="http://www.w3.org/2005/10/profile">
-		<link rel="icon" type="image/png" href="./assets/logo.png">
-	</head>
+    <head profile="http://www.w3.org/2005/10/profile">
+        <link rel="icon" type="image/png" href="./assets/logo.png">
+    </head>
 </head>
 
 <body>
-	<!-- HEADER -->
-	<div id="about" class="container-fluid">
-	</div>
-	<!-- PAGE -->
-	<div class="page-container no-overflow">
-		<p class="page-title">ABOUT</p>
-		<img class="portrait" src="assets/portrait.JPG">
-		<div class="text-container">
-			<h1>Hey there! 👋🏼</h1>
-			<p><strong>Glad to have you here!</strong> I’m Anisa. I’m a Computer Science and Design major currently in my fifth and final year at Northeastern University. I was born in West Haven, CT and raised by two strong human beings who immigrated all the way from their respective small towns in Malaysia to provide an amazing life for me, my sister, and my five brothers. <em><a href="contact.html"><strong>And you are?</strong></a></em></p>
-
-			<p>Although I’m just below five feet tall, I find that I have high aspirations. As a growing developer, designer, writer, and baker, I look forward to making the world a better place, <strong>one fixed bug, one em space, one slant rhyme, or one chocolate chip at a time.</strong></p>
-
-			<p>Throughout my years at Northeastern, I developed a strong interest in web 
-				development and user experience design. With the help of all the amazing 
-				people I got to work with during my co-ops, work studies, and part-time 
-			jobs, I have gotten much closer to achieving my goals.</p>
-
-			<p><strong>This website is a collection of my works.</strong></p>
-		</div>
-		<div class="button-container">
-			<button class="page primary" onclick="goToPage('resume.html')">Check out my resume</button><button class="page secondary" onclick="goToPage('contact.html')">Get in touch</button>
-		</div>
-	</div>
-	
+    <!-- HEADER -->
+    <div id="about" class="container-fluid">
+    </div>
+    <!-- PAGE -->
+    <div class="page-container no-overflow">
+        <p class="page-title">ABOUT</p>
+        <img class="portrait" src="assets/portrait.JPG">
+        <div class="text-container">
+            <h1>Hey there! 👋🏼</h1>
+            <p><strong>Glad to have you here!</strong> I’m Anisa <em>(she/her)</em>. I’m a Computer Science and Design major currently in my fifth and final year at Northeastern University. I was born in West Haven, CT and raised by two strong human beings who immigrated all the way from their respective small towns in Malaysia to provide an amazing life for me, my sister, and my five brothers. <em><a href="contact.html"><strong>And you are?</strong></a></em></p>
+            <p>Although I’m just below five feet tall, I find that I have high aspirations. As a growing developer, designer, writer, and baker, I look forward to making the world a better place, <strong>one fixed bug, one em space, one slant rhyme, or one chocolate chip at a time.</strong></p>
+            <p>Throughout my years at Northeastern, I developed a strong interest in web
+                development and user experience design. With the help of all the amazing
+                people I got to work with during my co-ops, work studies, and part-time
+                jobs, I have gotten much closer to achieving my goals.</p>
+            <p><strong>This website is a collection of my works.</strong></p>
+        </div>
+        <div class="button-container">
+            <button class="page primary" onclick="scrollToHash('#resume')">Check out my resume</button><button class="page secondary" onclick="goToPage('contact.html')">Get in touch</button>
+        </div>
+        <hr>
+        <div id="motivation" class="text-container">
+            <h1>Goals and Motivations</h1>
+            <div class="row">
+                <div class="col-12 col-lg-6">
+                    <h2>Expectations for my work</h2>
+                    <p>When it comes to computer science and interaction design, my real interests lie in the intersection of the two. I find the logic and structure of programming to be compelling and satisfying, and intertwined with the complexity and unpredictability of the average user, there are endless scenarios to consider and potential problems to solve.</p>
+                    <p>These are the challenges that excite me and inspire me to work towards something that pleases as many people involved as possible - including the designers and developers behind the solution.</p>
+                </div>
+                <div class="col-12 col-lg-6">
+                    <h2>Expectations for myself</h2>
+                    <p>I am passionate about increasing accessibility, bridging gaps, and providing support for the underprivileged. I strongly believe in the need for those in places of privilege to acknowledge the lack of equity in many systems that currently exist in the world and to take responsibility for righting those wrongs.</p>
+                    <p>In everything I do, I plan to hold myself and my peers accountable for our actions. Our impact stems beyond our active efforts to how we work, socialize, and rest. After all, change starts from within.</p>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div id="resume" class="text-container">
+            <h1>Resume</h1>
+            <p>To open a downloadable pdf, <a href="assets/AnisaAnuar_Resume_January2021.pdf" target="_blank">click here</a>. I created this resume in Adobe InDesign using icons from <a href="https://www.flaticon.com/" target="_blank">FlatIcon.</a></p><br>
+            <div class="resume-container">
+                <img src="assets/resume.jpg">
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>
