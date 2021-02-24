@@ -67,7 +67,7 @@ var menuContent = [{
 var mobileMenu = $('<span></span>');
 var desktopMenu = $('<span></span>');
 
-var $header = $('<div class="row no-gutters header"> <div class="header-container"> <a class="col-2 col-xl-1 logo" href="index.html"></a> <div class="col-10 col-xl-11"> <div class="menu desktop"> </div> <div class="menu mobile"> <a href="javascript:void(0);" class="icon" onclick="toggleMenu()"> <i class="fa fa-bars"></i> </a> </div> </div> </div> </div> <div id="menuLinks"> </div>');
+var $header = $('<div class="row no-gutters header"> <div class="header-container"> <a class="col-3 col-xl-1 logo" href="index.html"></a> <div class="col-9 col-xl-11"> <div class="menu desktop"> </div> <div class="menu mobile"> <a href="javascript:void(0);" class="icon" onclick="toggleMenu()"> <i class="fa fa-bars"></i> </a> </div> </div> </div> </div> <div id="menuLinks"> </div>');
 
 var $footer = $('<div id="footer"><div id="contact-bar"><div id="social-media"><div class="sm-icon"><a href="mailto:anuar.a@northeastern.edu"><i class="fa fa-envelope"></i></a></div><div class="sm-icon"><a href="https://www.linkedin.com/in/anisaanuar/" target="blank"><i class="fab fa-linkedin"></i></a></div><div class="sm-icon"><a href="https://www.facebook.com/iamnees" target="blank"><i class="fab fa-facebook"></i></a></div><div class="sm-icon"><a href="https://instagram.com/chocolatechipsmiles/" target="blank"><i class="fab fa-instagram"></i></a></div><div class="sm-icon"><a href="resume.pdf" target="blank"><i class="fa fa-link"></i></a></div></div></div><p>ANISA ANUAR</p></div>')
 

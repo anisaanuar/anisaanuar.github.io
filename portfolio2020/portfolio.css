@@ -28,11 +28,12 @@
     background-repeat: no-repeat;
 }
 
-.menu.desktop {
+.desktop,
+    {
     display: block;
 }
 
-.menu.mobile {
+.mobile {
     display: none;
 }
 
@@ -207,18 +208,45 @@ figure.post {
     margin: 0px 0px 1em 1em;
     float: right;
     width: 25%;
+    max-height: 500px;
+}
+
+figure.post.wide {
+    width: 35%;
 }
 
 figure.post figcaption {
     font-style: italic;
-    margin: 0.5em;
+    margin: 0.5em 0.5em 1.5em;
     text-align: center;
     color: #898989;
     font-size: 0.9em;
 }
 
-figure.post img {
+figure.post img,
+figure.post video {
+    max-height: inherit;
+    margin: 0 auto;
+    display: block;
+}
+
+figure.post video {
     width: 100%;
+}
+
+figure.post.video, {
+    margin: 0 1em 2em;
+}
+
+figure.post.video.wide {
+    margin: 0 1em 0em;
+}
+
+.wide-video {
+    width: 70%;
+    margin: 0 15%;
+    height: 40vw;
+    padding: 0.5em 0 1em;
 }
 
 #backToTop {
@@ -709,11 +737,11 @@ hr {
 
 @media only screen and (max-width: 880px) {
 
-    .menu.desktop {
+    .desktop {
         display: none;
     }
 
-    .menu.mobile {
+    .mobile {
         display: block;
     }
 
@@ -743,23 +771,51 @@ hr {
         height: 900px;
     }
 
-    figure.post {
+    figure.post,
+    figure.post.wide {
         text-align: center;
         width: 100%;
+        height: auto;
+        max-height: none;
+    }
+
+    figure.post.video {
+        margin: 0 0 2em;
+    }
+
+    figure.post.video.wide {
+        margin: 0 0 1em;
     }
 
     figure.post figcaption {
         margin: 0;
     }
 
-    figure.post img {
+    figure.post img,
+    figure.post video {
         width: 50%;
         margin: 1em 25%;
+    }
+
+    figure.post.short img {
+        width: 80%;
+        margin: 1em 10%;
+    }
+
+    figure.post.wide video {
+        width: 80%;
+        margin: 1em 10%;
     }
 
     hr {
         margin-top: 2rem !important;
         margin-bottom: 2rem !important;
+    }
+
+    .wide-video {
+        width: 100%;
+        margin: 0;
+        height: 50vw;
     }
 }
 
@@ -771,6 +827,10 @@ hr {
         height: 850px;
     }
 
+    figure.post.video {
+        margin: 0 0 2em;
+    }
+
 }
 
 
@@ -779,6 +839,10 @@ hr {
 
     .windows-container {
         height: 750px;
+    }
+
+    figure.post.video {
+        margin: 0 0 1em;
     }
 
 }
