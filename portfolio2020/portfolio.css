@@ -243,9 +243,9 @@ figure.post.video.wide {
 }
 
 .wide-video {
-    width: 70%;
-    margin: 0 15%;
-    height: 40vw;
+    width: 100%;
+    margin: 0;
+    height: 50vw;
     padding: 0.5em 0 1em;
 }
 
@@ -272,6 +272,19 @@ figure.post.video.wide {
     /* Add a dark-grey background on hover */
 }
 
+.coop-logo {
+    display: inline-block;
+    height: 1.2em;
+    width: auto;
+    padding-bottom: 0.2em;
+    margin: 0 0.1em;
+}
+
+.video-container,
+.video-container video {
+    width: 100%;
+}
+
 /* CHAT WINDOW STYLINGS */
 
 .windows-container {
@@ -293,7 +306,6 @@ figure.post.video.wide {
 
 .window.front.mobile svg {
     width: 100%;
-    margin-bottom: 20px;
 }
 
 .window.front.mobile {
@@ -421,7 +433,7 @@ figure.post.video.wide {
 }
 
 .desktop svg text {
-    font-size: 1.05em;
+    font-size: 1.1em;
 }
 
 .mobile svg text {
