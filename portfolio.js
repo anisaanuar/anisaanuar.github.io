@@ -31,33 +31,6 @@ var menuContent = [{
         ]
     },
     {
-        label: 'projects',
-        link: 'projects',
-        dropdown: true,
-        submenu: [{
-                label: 'radical healing app',
-                link: 'capstone.html'
-            },
-            {
-                label: 'aevph (virtual puzzle hunt)',
-                link: 'aevph.html'
-            },
-            {
-                label: 'freelance design work',
-                link: 'design.html'
-            },
-            {
-                label: 'digital art',
-                link: 'art.html'
-            }
-        ]
-    },
-    {
-        label: 'leadership',
-        link: 'leadership.html',
-        dropdown: false
-    },
-    {
         label: 'contact',
         link: 'contact.html',
         dropdown: false
