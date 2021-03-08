@@ -272,9 +272,9 @@ $('#transcript').on('click', function() {
 
 /* SNAPCHAT */
 
-var $pi1 = document.getElementById("pi1")
-var $pi2 = document.getElementById("pi2")
-var $pi3 = document.getElementById("pi3")
+var $pi1 = document.getElementById("pi1");
+var $pi2 = document.getElementById("pi2");
+var $pi3 = document.getElementById("pi3");
 
 if ($pi1) {
     // pi being "packed item", checks what packed item is being submitted
@@ -393,6 +393,6 @@ function checkWapp() {
 
 function openCodeNames() {
     // this function opens the codenames image
-    window.open('./assets/codenames.png');
+    window.open('./assets/codenames/codenames.png');
     window.location = "mbta.html";
 }
