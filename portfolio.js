@@ -35,11 +35,11 @@ var menuContent = [{
         link: 'projects.html',
         dropdown: false
     },
-    {
-        label: 'leadership',
-        link: 'leadership.html',
-        dropdown: false
-    },
+    // {
+    //     label: 'leadership',
+    //     link: 'leadership.html',
+    //     dropdown: false
+    // },
     {
         label: 'contact',
         link: 'contact.html',
