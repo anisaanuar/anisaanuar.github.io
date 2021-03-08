@@ -31,6 +31,16 @@ var menuContent = [{
         ]
     },
     {
+        label: 'projects',
+        link: 'projects.html',
+        dropdown: false
+    },
+    {
+        label: 'leadership',
+        link: 'leadership.html',
+        dropdown: false
+    },
+    {
         label: 'contact',
         link: 'contact.html',
         dropdown: false
