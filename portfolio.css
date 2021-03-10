@@ -610,10 +610,11 @@ hr {
 .tz-gallery img {
     border-radius: 2px;
     width: 100%;
+    margin-bottom: 1em;
 }
 
 .tz-gallery .caption{
-    padding: 16px 0 32px;
+    padding: 0 0 32px;
     text-align: left;
 }
 
