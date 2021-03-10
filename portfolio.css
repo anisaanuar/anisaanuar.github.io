@@ -913,7 +913,7 @@ hr {
 @media only screen and (max-width: 600px) {
 
     .windows-container {
-        height: 850px;
+        height: 140vw;
     }
 
     figure.post.video {
@@ -927,7 +927,20 @@ hr {
 @media only screen and (max-width: 500px) {
 
     .windows-container {
-        height: 750px;
+        height: 150vw;
+    }
+
+    figure.post.video {
+        margin: 0 0 1em;
+    }
+
+}
+
+
+@media only screen and (max-width: 400px) {
+
+    .windows-container {
+        height: 600px;
     }
 
     figure.post.video {
