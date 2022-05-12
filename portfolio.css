@@ -293,12 +293,12 @@ figure.post.video.wide {
 }
 
 .window.back {
-    width: 995px;
+    width: 900px;
     max-width: 90%;
 }
 
 .window.back svg {
-    width: 995px;
+    width: 900px;
 }
 
 .window.front.desktop svg {
@@ -843,6 +843,10 @@ hr {
         display: none;
     }
 
+    .window.back {
+        max-width: 80%;
+    }
+
     .page-title {
         width: 100%;
     }
@@ -857,7 +861,7 @@ hr {
     }
 
     .windows-container {
-        height: 900px;
+        height: 770px;
     }
 
     figure.post,
@@ -913,7 +917,7 @@ hr {
 @media only screen and (max-width: 600px) {
 
     .windows-container {
-        height: 140vw;
+        height: 125vw;
     }
 
     figure.post.video {
@@ -927,7 +931,7 @@ hr {
 @media only screen and (max-width: 500px) {
 
     .windows-container {
-        height: 150vw;
+        height: 130vw;
     }
 
     figure.post.video {
@@ -940,7 +944,7 @@ hr {
 @media only screen and (max-width: 400px) {
 
     .windows-container {
-        height: 600px;
+        height: 540px;
     }
 
     figure.post.video {
