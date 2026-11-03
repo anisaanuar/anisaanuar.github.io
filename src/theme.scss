@@ -1,0 +1,2667 @@
+// Palette: dark editor look. Charcoal page, soft gray text, a few clear accents.
+// (Approximated from the feel of Cursor's dark theme, not copied from it.)
+$charcoal: #181818;
+$mist: #d6d6dd;
+$sky: #87c3ff;
+$teal: #82d2ce;
+$rose: #e394dc;
+$amber: #efb080;
+$sage: #a8cc7c;
+
+// Darker versions of the accents, for headings and markers on the light page
+$accent-blue: #3a68a0;
+$link-blue: #2f5682; // the blue of the cap in the contact photo
+$link-blue-hover: #1d3a5c; // a deeper blue for hover and keyboard focus
+$accent-amber: #8f5f2c;
+$accent-green: #44764a;
+
+// Previous palette: space theme (purples), kept for reference
+$shadow-grey-deep: #282938;
+$shadow-grey: #2c2d3e;
+$charcoal-blue: #374158;
+$dusk-blue: #44577f;
+$dusty-grape: #7466a7;
+$amethyst-smoke: #998cc2;
+$lavender: #dcd8ea;
+$periwinkle: #b2b5d6;
+$lavender-grey: #8892c2;
+$slate-indigo: #5466c3;
+
+// Daylight: near-white with just a trace of neutral warmth, slightly deeper toward the bottom.
+// (The night-sky version is in the screencaps folder, and in git history once committed.)
+$sky-top: #fdfdfc;
+$sky-mid: #f7f7f5;
+$sky-low: #ececf0;
+$sky-glow: #cdd8ee; // pale blue
+$sky-warm: #f2dccb; // pale peach
+$sky-sage: #d2e5dd; // pale sage
+
+// The Anisa mark: one near-black ink, from the lettering to the ring to the star.
+$ink: #17181d;
+$mark-text: $ink;
+$mark-ring: $ink;
+$mark-bright: #2c2e38; // the star's lighter facet, close to the darker one
+
+// A small four-point sparkle, in the spirit of the star in the wordmark but simpler: one flat color, no halves. Used
+// as a bullet; `$opacity` softens it.
+@function star-bullet($opacity: 1) {
+  $svg: "<svg xmlns='http://www.w3.org/2000/svg' viewBox='-12 -13 24 26'><path fill='#{$mark-ring}' fill-opacity='#{$opacity}' d='M0-13Q2-2 12 0Q2 2 0 13Q-2 2-12 0Q-2-2 0-13Z'/></svg>";
+  @return url("data:image/svg+xml,#{str-replace($svg, '#', '%23')}");
+}
+
+@function str-replace($string, $search, $replace: '') {
+  $index: str-index($string, $search);
+  @if $index {
+    @return str-slice($string, 1, $index - 1) + $replace + str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
+  }
+  @return $string;
+}
+
+// Roles
+$bg: $sky-mid;
+// Page text is a softer charcoal than the mark's ink.
+$text: #3e414d;
+$muted: #666a76;
+
+// Type: Zalando Sans for everything
+$font-text: 'Zalando Sans', system-ui, sans-serif;
+
+// Dark arrow cursor, a plain filled shape with no outline or glow, forced on every element (links and buttons included).
+$cursor-arrow-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='-4 -4 40 40'%3E%3Cg transform='rotate(-5 6 4)'%3E%3Cpath d='M6 4L24.5 17.7 14.5 20 7 27z' fill='%2322252e'/%3E%3C/g%3E%3C/svg%3E");
+$cursor: $cursor-arrow-image 10 8, default;
+
+// The same, as a pointing hand, for anything clickable.
+$cursor-hand-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='38' height='38' viewBox='-6 -6 44 44'%3E%3Cg transform='translate(-2 1) rotate(-14 13 1.5)'%3E%3Cpath d='M13 1.5A2.5 2.5 0 0 1 15.5 4L15.6 8.6Q15.7 10.3 17.4 10.3C21.6 10.3 26.2 12.6 26.2 17.6C26.2 22.9 21.8 26.9 17 26.9C13.6 27 10.2 26.6 8.65 24.2L3.54 16.03A2.5 2.5 0 0 1 7.78 13.37C8.41 14.39 10.5 13.2 10.5 11.6L10.5 4A2.5 2.5 0 0 1 13 1.5z' fill='%23fcfcfe' stroke='%2341465a' stroke-width='1.7' stroke-linejoin='round'/%3E%3C/g%3E%3C/svg%3E");
+$cursor-pointer: $cursor-hand-image 15 7, pointer;
+
+// A simple, round open hand (four rounded fingers and a thumb), for the greeting on the
+// homepage. Its hot spot is the wrist, at the bottom, so when it waves it turns about the pointer.
+// It is one smooth outline, with short lines dividing the fingers.
+$cursor-wave-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='38' height='38' viewBox='0 0 44 44'%3E%3Cpath d='M10 26.7L10 9A3 3 0 0 1 16 9L16 5A3 3 0 0 1 22 5L22 7A3 3 0 0 1 28 7L28 11A3 3 0 0 1 34 11L34 26C34 35 29.5 40 22 40C15 40 10 38 7.4 33.3L2.9 24.8A2.8 2.8 0 0 1 7.7 22.3Z' fill='%23fcfcfe' stroke='%2341465a' stroke-width='1.7' stroke-linejoin='round'/%3E%3Cpath d='M16 9L16 20M22 7L22 20M28 11L28 20' fill='none' stroke='%2341465a' stroke-width='1.7' stroke-linecap='round'/%3E%3C/svg%3E");
+$cursor-wave: $cursor-wave-image 19 21, pointer;
+
+:root {
+  --cursor-arrow: #{$cursor-arrow-image};
+  --cursor-hand: #{$cursor-hand-image};
+  --cursor-wave: #{$cursor-wave-image};
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  cursor: $cursor !important;
+}
+
+a,
+button,
+summary,
+select,
+[role='button'],
+input[type='button'],
+input[type='submit'],
+a *,
+button *,
+summary *,
+[role='button'] * {
+  cursor: $cursor-pointer !important;
+}
+
+// The plain cursor over a wave spot: the open hand.
+[data-cursor='wave'],
+[data-cursor='wave'] * {
+  cursor: $cursor-wave !important;
+}
+
+// Once the animated cursor is running (see Cursor.jsx), the plain one is hidden.
+html.has-custom-cursor,
+html.has-custom-cursor * {
+  cursor: none !important;
+}
+
+@keyframes cursor-wave {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+
+  25% {
+    transform: rotate(20deg);
+  }
+
+  75% {
+    transform: rotate(-20deg);
+  }
+}
+
+// The animated cursor: an empty box that sits on the pointer, with the shapes hung off it so
+// that the pointer is exactly the cursor's hot spot.
+.cursor {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 0;
+  height: 0;
+  z-index: 9999;
+  pointer-events: none;
+  opacity: 0;
+  will-change: transform;
+
+  &.is-visible {
+    opacity: 1;
+  }
+
+  &__arrow,
+  &__hand,
+  &__wave {
+    position: absolute;
+    display: none;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+  }
+
+  &__arrow {
+    width: 40px;
+    height: 40px;
+    left: -10px;
+    top: -8px;
+    background-image: var(--cursor-arrow);
+  }
+
+  &__hand {
+    width: 38px;
+    height: 38px;
+    left: -15px;
+    top: -7px;
+    background-image: var(--cursor-hand);
+  }
+
+  &__wave {
+    width: 38px;
+    height: 38px;
+    left: -19px;
+    top: -21px;
+    background-image: var(--cursor-wave);
+    // The pointer is in the middle of the palm, and the hand turns about it.
+    transform-origin: 19px 21px;
+  }
+
+  &.is-waving &__wave {
+    animation: cursor-wave 0.5s ease-in-out infinite;
+  }
+
+  &[data-shape='arrow'] &__arrow,
+  &[data-shape='hand'] &__hand,
+  &[data-shape='wave'] &__wave {
+    display: block;
+  }
+}
+
+// The room the homepage nav takes up down the left side: its left margin, the icon and dots, and the longest word
+// that fades in beside them. The sections stay clear of it, so when the window narrows the content never goes
+// under the nav or over it.
+:root {
+  --nav-w: 240px;
+
+  // The main content container, which every section but the first screen sits in: centered in the room to the right of
+  // the nav (so in the middle of the window once the nav is gone). When that room is no wider than the container's
+  // maximum (--content-max) it takes all of it, flush with the right edge; as the window widens it stops growing and
+  // the room on both sides of it grows together. (Pictures don't follow it; see the stage, below.)
+  --content-max: 1100px;
+  --content-left: calc(var(--nav-w) + max(0px, calc((100vw - var(--nav-w) - var(--content-max)) / 2)));
+  --content-w: min(var(--content-max), calc(100vw - var(--nav-w)));
+}
+
+body {
+  margin: 0;
+  background: $sky-top;
+  color: $text;
+  font-family: $font-text;
+  font-weight: 300;
+  letter-spacing: 0.02em;
+}
+
+.wordmark {
+  position: absolute;
+  left: 22px;
+  top: 18px;
+  padding: 10px;
+  color: $text;
+  line-height: 0;
+  text-decoration: none;
+
+  // 54px tall is about 49px of lettering plus the ring around it.
+  &__mark {
+    display: block;
+    height: 54px;
+    width: auto;
+  }
+}
+
+// Icon links in the top right: LinkedIn, GitHub and the contact page. Same ink as the mark.
+.social {
+  position: absolute;
+  top: 18px;
+  right: 22px;
+  z-index: 1;
+  display: flex;
+  gap: 2px;
+
+  &__link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    color: $ink;
+    opacity: 0.78;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+
+    &:hover,
+    &:focus-visible {
+      opacity: 1;
+      transform: translateY(-1px);
+    }
+
+    svg {
+      width: 22px;
+      height: 22px;
+      fill: currentColor;
+    }
+  }
+}
+
+// Daylight backdrop (see Sky.jsx): a soft gradient whose colors drift slowly.
+//
+// Two oversized layers of wide, soft diagonal bands slide across a deep gradient, in
+// different directions and at different speeds. Because they are bands and not glows, there
+// is no round shape anywhere; the colors just seem to move around and mix.
+.sky {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  overflow: hidden;
+  background: linear-gradient(180deg, $sky-top 0%, $sky-mid 55%, $sky-low 100%);
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-repeat: no-repeat;
+    will-change: background-position;
+  }
+
+  // Pale blue and sage bands, sliding one way
+  &::before {
+    background-image: linear-gradient(
+      118deg,
+      rgba($sky-glow, 0) 0%,
+      rgba($sky-glow, 0.32) 18%,
+      rgba($sky-glow, 0.1) 34%,
+      rgba($sky-sage, 0.19) 52%,
+      rgba($sky-sage, 0) 66%,
+      rgba($sky-glow, 0.25) 84%,
+      rgba($sky-glow, 0) 100%
+    );
+    background-size: 280% 280%;
+    animation: sky-slide-a 150s ease-in-out infinite alternate;
+  }
+
+  // Deeper blue and a trace of peach, sliding the other way
+  &::after {
+    background-image: linear-gradient(
+      205deg,
+      rgba($sky-warm, 0) 0%,
+      rgba($sky-warm, 0.29) 14%,
+      rgba($sky-glow, 0) 30%,
+      rgba($sky-glow, 0.23) 52%,
+      rgba($sky-glow, 0.06) 72%,
+      rgba($sky-sage, 0.17) 90%,
+      rgba($sky-sage, 0) 100%
+    );
+    background-size: 320% 320%;
+    animation: sky-slide-b 190s ease-in-out infinite alternate;
+  }
+}
+
+@keyframes sky-slide-a {
+  from {
+    background-position: 0% 12%;
+  }
+
+  to {
+    background-position: 100% 88%;
+  }
+}
+
+@keyframes sky-slide-b {
+  from {
+    background-position: 100% 70%;
+  }
+
+  to {
+    background-position: 0% 18%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sky::before,
+  .sky::after {
+    animation: none;
+  }
+}
+
+// The Anisa lettering is dark ink, slightly see-through so it sits softly on the light page.
+.anisa-mark__letters {
+  fill: $mark-text;
+  fill-opacity: 0.92;
+}
+
+// The ring is a tapered, filled shape in the same color as the star's darker half.
+// The sweep across the wordmark when the page first loads (see AnisaMark.jsx): a soft shadow under the letters that
+// travels along them, once. It is hidden until its turn, and stays hidden for anyone who prefers less motion.
+.anisa-mark__shadow {
+  fill: #121426;
+  fill-opacity: 0.42;
+}
+
+.anisa-mark__sweep {
+  // One short stretch of the route, parked just before its start until the animation moves it along.
+  stroke-dasharray: 16 1000;
+  stroke-dashoffset: 16;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  // The shadow deepens and fades softly, and slowly, as it travels (three slow breaths over the length of the sweep).
+  .anisa-mark__shadow {
+    animation: anisa-pulse 2s ease-in-out 0.8s 3 both;
+  }
+
+  .anisa-mark__sweep {
+    animation: anisa-sweep 6s linear 0.8s 1 both;
+  }
+}
+
+@keyframes anisa-pulse {
+  0%,
+  100% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes anisa-sweep {
+  from {
+    stroke-dashoffset: 16;
+  }
+  to {
+    stroke-dashoffset: -1000;
+  }
+}
+
+.anisa-mark__ring {
+  fill: $mark-ring;
+}
+
+// The star is two facets: a lighter half and a darker half.
+.anisa-mark__star-light {
+  fill: $mark-bright;
+}
+
+.anisa-mark__star-dark {
+  fill: $mark-ring;
+}
+
+// Resume
+.resume {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 120px 32px 140px;
+
+  // The link at the very end sits right under the stage.
+  padding-top: 0;
+
+  &__heading {
+    margin: 0 0 32px;
+    font-size: clamp(1.4rem, 2.8vw, 1.9rem);
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    color: $text;
+  }
+
+  // Eyebrow, then role and dates, above each entry's bullets.
+  // The link to the full resume at the very bottom.
+  // The closing note and the link under it, at the very end.
+  &__closing {
+    margin-top: 88px;
+  }
+
+  &__thanks {
+    max-width: 34rem;
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 300;
+    line-height: 1.55;
+    letter-spacing: 0.02em;
+    color: rgba($text, 0.9);
+    text-wrap: pretty;
+  }
+
+  // A waving hand at the end of the thank-you; pointing at it brings the waving cursor (see Cursor.jsx).
+  &__wave {
+    display: inline-block;
+    padding: 0.25em 0.25em 0.25em 0.2em;
+    margin: -0.25em 0;
+    line-height: 1;
+  }
+
+  &__download {
+    margin: 20px 0 0;
+    font-size: 1rem;
+    font-weight: 400;
+    letter-spacing: 0.03em;
+
+    a {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4em;
+      color: $text;
+      text-decoration: underline;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 5px;
+      transition: text-decoration-thickness 0.2s ease;
+
+      &:hover,
+      &:focus-visible {
+        text-decoration-thickness: 2px;
+      }
+    }
+
+    svg {
+      width: 0.95em;
+      height: 0.95em;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 1.8;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+  }
+
+  // One entry: who and when on the left, the bullet points on the right.
+  // One job: its role and the line about it, then what was done, one above the other.
+  &__entry {
+    display: grid;
+    gap: 22px;
+    align-items: start;
+
+    & + & {
+      margin-top: 56px;
+    }
+  }
+
+  &__who {
+    display: grid;
+    gap: 6px;
+
+    // In the left column each role has its dates on the line below it, rather than after it.
+    .resume__role {
+      display: grid;
+      gap: 2px;
+    }
+
+    .resume__role .resume__sep {
+      display: none;
+    }
+
+    // A little more room between one role and the next.
+    .resume__role + .resume__role {
+      margin-top: 6px;
+    }
+  }
+
+  // A job's pictures, above its role and story, joined into one rounded strip: each is cut on a slant so it meets
+  // the next along a diagonal.
+  &__photos {
+    --slant: clamp(12px, 1.8vw, 26px);
+    display: flex;
+    height: var(--strip-h, clamp(150px, 27vh, 260px));
+    margin: 0;
+    border-radius: 16px;
+    overflow: hidden;
+    // A line close around the strip, as around the photo in About Me. It follows the rounded corners.
+    outline: 1.5px solid rgba($text, 0.75);
+    outline-offset: 12px;
+
+    .lead__photo {
+      flex: 1 1 0;
+      min-width: 0;
+      height: 100%;
+      aspect-ratio: auto;
+      border-radius: 0;
+      // Slanted at both ends, overlapping the one before by the slant so the diagonals meet.
+      clip-path: polygon(var(--slant) 0, 100% 0, calc(100% - var(--slant)) 100%, 0 100%);
+      margin-left: calc(var(--slant) * -1);
+    }
+
+    .lead__photo:first-child {
+      margin-left: 0;
+      clip-path: polygon(0 0, 100% 0, calc(100% - var(--slant)) 100%, 0 100%);
+    }
+
+    .lead__photo:last-child {
+      clip-path: polygon(var(--slant) 0, 100% 0, 100% 100%, 0 100%);
+    }
+
+    .lead__photo:only-child {
+      clip-path: none;
+    }
+
+    // Two pictures meet along one straight edge, inside the same rounded strip and the same line around it.
+    &--pair {
+      --slant: 0px;
+    }
+
+    // Phone screens: shown whole at the strip's height, side by side with a little room between, and not cropped to fill the strip.
+    &--natural {
+      // A little room between the two, inside the same line around them.
+      gap: 14px;
+
+      .lead__photo,
+      .lead__photo:first-child,
+      .lead__photo:last-child {
+        flex: 0 0 auto;
+        border-radius: 0;
+      }
+
+      .lead__photo img {
+        width: auto;
+        max-width: 100%;
+        object-fit: contain;
+        filter: none;
+      }
+    }
+  }
+
+  // What goes round a job's strip: the strip, a thin line around it, and a second line further out with a break on
+  // the right for the wordmark's star (as around the photo in About Me).
+  &__frame {
+    --halo: 22px;
+    --strip-h: clamp(150px, 27vh, 260px);
+    // How far down the right side the star sits (not in the middle, like the one around the photo in About Me).
+    --star-y: calc(var(--strip-h) * var(--star-at, 0.28));
+    position: relative;
+    margin: 0 0 52px;
+  }
+
+  &__frame.resume__photos--natural {
+    width: max-content;
+    max-width: 100%;
+  }
+
+  &__halo {
+    position: absolute;
+    inset: calc(var(--halo) * -1);
+    border: 1px solid rgba($text, 0.4);
+    border-radius: calc(16px + var(--halo));
+    pointer-events: none;
+    -webkit-mask-image: radial-gradient(circle at 100% calc(var(--star-y) + var(--halo)), transparent 11px, #000 32px);
+    mask-image: radial-gradient(circle at 100% calc(var(--star-y) + var(--halo)), transparent 11px, #000 32px);
+  }
+
+  &__star {
+    position: absolute;
+    left: calc(100% + var(--halo));
+    top: var(--star-y);
+    width: 16px;
+    height: 24px;
+    transform: translate(-50%, -50%);
+    opacity: 0.8;
+    pointer-events: none;
+
+    .star__light {
+      fill: $mark-bright;
+    }
+
+    .star__dark {
+      fill: $mark-ring;
+    }
+  }
+
+  // The dots under the gallery (only on a small screen).
+  &__dots {
+    display: none;
+  }
+
+  // The company at the top of a job's overview, with its place under it, then each role, then keywords.
+  &__company {
+    margin: 0;
+    font-size: 1.15rem;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    line-height: 1.25;
+    color: $text;
+  }
+
+  // Under the role, on one line: the company, where it was, and when, with a dot between them.
+  &__meta {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 4px 0 0;
+    font-size: 0.875rem;
+    font-weight: 300;
+    line-height: 1.5;
+    color: $muted;
+
+    span + span::before {
+      content: '';
+      display: inline-block;
+      align-self: center;
+      width: 0.6em;
+      height: 0.65em;
+      margin-inline: 0.7em;
+      background: star-bullet(0.6) center / contain no-repeat;
+    }
+
+    // The company is a little firmer than the rest.
+    span:first-child {
+      font-weight: 400;
+      color: $text;
+    }
+  }
+
+  // One role in a job that had several: a little room between them.
+  &__position + &__position {
+    margin-top: 16px;
+  }
+
+  &__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin: 14px 0 0;
+    padding: 0;
+    list-style: none;
+
+    li {
+      padding: 0.28em 0.8em;
+      border: 1px solid rgba($text, 0.25);
+      border-radius: 999px;
+      font-size: 0.75rem;
+      font-weight: 300;
+      letter-spacing: 0.03em;
+      line-height: 1.3;
+      color: $text;
+    }
+  }
+
+  &__eyebrow {
+    margin: 0;
+    font-size: 0.8rem;
+    font-weight: 300;
+    line-height: 1.3;
+    color: $muted;
+  }
+
+  &__org {
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+
+  &__sep {
+    margin: 0 0.5em;
+  }
+
+  &__role {
+    margin: 0;
+    font-size: 0.9375rem;
+    font-weight: 400;
+    line-height: 1.4;
+  }
+
+  &__dates {
+    font-weight: 300;
+    color: $muted;
+  }
+
+  // A job told as a short story instead of bullet points: the same body text, set against the left.
+  &__story {
+    max-width: 54rem;
+    margin: 0;
+
+    p {
+      margin: 0;
+    }
+
+    // A new paragraph starts a clear line below.
+    p + p {
+      margin-top: 1.1em;
+    }
+
+    // The same size as the roles in Outside of Work.
+    font-size: 0.9375rem;
+    font-weight: 300;
+    line-height: 1.45;
+    letter-spacing: 0.02em;
+    color: rgba($text, 0.9);
+    text-wrap: pretty;
+  }
+
+  // A link in the story to another section: underlined, like the other links.
+  &__link {
+    color: inherit;
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
+    transition: text-decoration-thickness 0.2s ease;
+
+    &:hover,
+    &:focus-visible {
+      text-decoration-thickness: 2px;
+    }
+  }
+
+  // A list that follows a story's last paragraph stays close to it.
+  &__story + &__bullets {
+    margin-top: -10px;
+  }
+
+  &__bullets {
+    // A comfortable line length, set against the left, though the container is wider.
+    max-width: 54rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    // The same size as the roles in Outside of Work (15px), light, 1.55 line height.
+    font-size: 0.9375rem;
+
+    li {
+      position: relative;
+      font-weight: 300;
+      letter-spacing: 0.02em;
+      color: rgba($text, 0.9);
+      margin-top: 6px;
+      // Pushed in a little from the text's edge, with the star at its left.
+      padding-left: 34px;
+      line-height: 1.45;
+
+      &:first-child {
+        margin-top: 0;
+      }
+
+      // A small star, like the one in the wordmark.
+      &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0.45em;
+        left: 12px;
+        width: 10px;
+        height: 11px;
+        background: star-bullet(0.75) center / contain no-repeat;
+      }
+    }
+  }
+}
+
+// The page's stage (see Frozen.jsx): a tall track with a screen-high stage fixed to the top of the
+// window, every section stacked inside it, and one showing at a time. How much scrolling each unit of
+// weight takes (--unit) is set in Frozen.jsx.
+.frozen {
+  position: relative;
+  height: calc(100vh + var(--units) * var(--unit));
+
+  &__stage {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  &__step {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    // The main content container (see --content-left above): the room to the left of it, and whatever is right of it.
+    padding-left: var(--content-left);
+    padding-right: calc(100vw - var(--content-left) - var(--content-w));
+    opacity: 0;
+    translate: 0 14px;
+    pointer-events: none;
+    transition:
+      opacity 0.35s cubic-bezier(0.22, 0.61, 0.36, 1),
+      translate 0.35s cubic-bezier(0.22, 0.61, 0.36, 1);
+
+    // The section whose turn it is. It waits for the one before it to fade out completely, then
+    // fades in.
+    &.is-active {
+      opacity: 1;
+      translate: 0 0;
+      pointer-events: auto;
+      transition-delay: 0.4s;
+    }
+
+    // Resume-width content: the whole container, with the same side padding as the About Me card.
+    &.is-wide > * {
+      width: 100%;
+      padding-inline: 32px;
+      box-sizing: border-box;
+    }
+
+    > .contact,
+    > .chat {
+      width: 100%;
+    }
+
+    // The first screen fills its step.
+    > .home {
+      width: 100%;
+      height: 100%;
+      min-height: 0;
+    }
+
+    // The first screen is the wordmark, which sits away from the nav and takes the whole width.
+    &:has(> .home) {
+      padding-inline: 0;
+    }
+
+    // Pictures don't follow the content container: the rows of pictures in Outside of Work and Guest Appearances run
+    // out to the right edge of the window, with only the nav's room kept clear on the left. (Only their text sits in
+    // the container.)
+    &:has(> .lead),
+    &:has(> .appear) {
+      padding-left: var(--nav-w);
+      padding-right: 0;
+    }
+
+  }
+
+  // The group headings (Experience and so on) are not shown, so each section has the whole screen; they stay
+  // in the page for screen readers.
+  &__heading,
+  &__inline-heading {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  // On the stage the card is centered in the screen with no extra room around it, and (like the chat) fills the content
+  // container, so its text starts and ends where the text of every other section does.
+  .contact--stage {
+    min-height: 0;
+    padding-block: 0;
+    max-width: none;
+    margin: 0;
+  }
+
+  // The closing note, as the last step: centered in the screen with no room above it.
+  .resume__closing--stage {
+    margin-top: 0;
+  }
+
+  // The chat keeps its own smaller column, in the middle of the content container.
+  .chat {
+    padding-block: 0;
+  }
+}
+
+// Where a section might not fit in one screen (a phone, a tablet, a short window) they just stack down
+// the page, each coming in as it scrolls into view.
+@media not all and (min-width: 961px) and (min-height: 700px) {
+  .frozen {
+    height: auto;
+
+    &__stage {
+      position: static;
+      height: auto;
+      overflow: visible;
+      padding-block: 0 40px;
+    }
+
+    &__step {
+      position: static;
+      display: block;
+      opacity: 1;
+      translate: none;
+      pointer-events: auto;
+      margin-bottom: 88px;
+
+      &.is-wide > * {
+        padding-inline: 20px;
+        margin-inline: auto;
+      }
+    }
+
+    .contact--stage {
+      padding-block: 0;
+    }
+
+    // The first screen is still a whole screen, with the wordmark toward its bottom right.
+    .frozen__step > .home {
+      height: auto;
+      min-height: 100svh;
+    }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .frozen__step,
+  .frozen__heading {
+    transition: none;
+  }
+}
+
+// Leadership and volunteering (see Showcase.jsx): an organization's pictures in rows of three, with its name, roles
+// and a few words below them, away from the nav at the top left. The rows run edge to edge, wider than the text,
+// with square corners.
+// Within a row the pictures line up top and bottom, and every row sits against the right edge, which keeps the
+// top left clear for the nav.
+.lead {
+  // Every picture is this wide: a little under a third of the screen, and never so large that an organization's rows
+  // won't fit on screen together. They don't shrink to make room for the nav: when the rows would reach it, the nav is
+  // taken away instead (see HomeNav.jsx).
+  --size: min(calc((100vw - 2 * 8px) / 3 * 0.7), 31vh);
+  // Landscape pictures are a little larger than the vertical ones.
+  --wide: calc(var(--size) * 1.25);
+  // How wide the last row of pictures (the one the name and roles sit beside) is: three vertical ones, here.
+  --last-row-w: calc(3 * var(--size) + 2 * 8px);
+
+  // For an organization whose pictures are all landscape: every picture at one wider size (about 8:5), three to a
+  // row with the rows' room to spare, so less of each is cropped away and the rows are the same width.
+  &--wide-rows {
+    --wide: min(calc(var(--size) * 1.25 * 1.19), calc((100vw - 2 * 8px) / 3));
+    // ...and two landscape ones, here.
+    --last-row-w: calc(2 * var(--wide) + 8px);
+  }
+
+  &--wide-rows &__photo {
+    aspect-ratio: 1.6;
+  }
+
+  // The top row is nudged into the right side of the screen (its last picture runs a little off the edge), so the
+  // rows don't stack up like a grid.
+  &--wide-rows &__row:first-child {
+    margin-right: calc(var(--wide) * -0.12);
+  }
+  display: grid;
+  gap: 8px;
+  width: 100%;
+  position: relative;
+
+  // The lines round the rows of pictures, and the star on the outer one (see RowsOutline.jsx); drawn over the section.
+  &__outline {
+    position: absolute;
+    left: 0;
+    top: 0;
+    overflow: visible;
+    pointer-events: none;
+
+    &-line {
+      fill: none;
+      stroke: $text;
+    }
+
+    &-line--inner {
+      stroke-width: 1.5;
+      stroke-opacity: 0.75;
+    }
+
+    &-line--halo {
+      stroke-width: 1;
+      stroke-opacity: 0.4;
+    }
+  }
+
+  &__star {
+    position: absolute;
+    width: 16px;
+    height: 24px;
+    // Flipped across, so its curve is turned the other way. The star's points lean a little to one side of its middle (1.4px
+    // at this size), so it is moved over by that much to put its points exactly on the line.
+    transform: translate(calc(-50% - 1.4px), -50%) scaleX(-1);
+    opacity: 0.8;
+    pointer-events: none;
+
+    .star__light {
+      fill: $mark-bright;
+    }
+
+    .star__dark {
+      fill: $mark-ring;
+    }
+  }
+
+  // The rows of pictures together. (On a small screen they become a swipeable strip instead.)
+  &__gallery {
+    display: grid;
+    gap: 8px;
+    width: 100%;
+  }
+
+  // The copy of the name and roles that goes above the pictures, and the dots under them, are for a small screen.
+  &__who--top,
+  &__dots {
+    display: none;
+  }
+
+  // The few words about it, in a row of their own under the pictures, against the left like the name above.
+  &__text {
+    width: 100%;
+    margin: 16px 0 0;
+    padding-inline: 32px;
+    box-sizing: border-box;
+  }
+
+  // The name and roles, at the left end of the last row of pictures, level with its bottom.
+  &__who {
+    // Its text starts at the left edge of the pictures in Guest Appearances (the nav's room, or 24px in on a window
+    // with no nav), when there is room for it beside these pictures. When there isn't, the pictures stay as they are
+    // and the text is pushed further left instead, over the nav's room (which is clear down here), until it is 24px
+    // from the window's edge; only then does it wrap. The box is --text-w wide (its longest line and its right
+    // padding) and 8px (the gap) short of the pictures.
+    flex: 1 1 auto;
+    min-width: 0;
+    margin-left: max(
+      calc(24px - var(--nav-w)),
+      min(0px, calc(100vw - var(--last-row-w) - var(--text-w, 0px) - 8px - var(--nav-w)))
+    );
+    align-self: flex-end;
+    padding-inline: 0 44px;
+    box-sizing: border-box;
+  }
+
+  // The last row (with the name and roles at its left) never wraps: when it is too wide, its text is pushed left.
+  &__row#{&}__row--last {
+    flex-wrap: nowrap;
+  }
+
+  .resume__company {
+    margin: 0;
+  }
+
+  // A few words under the name and dates, a comfortable line length set against the left of the column.
+  &__summary {
+    max-width: 48rem;
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 300;
+    line-height: 1.55;
+    letter-spacing: 0.02em;
+    color: rgba($text, 0.9);
+    text-wrap: pretty;
+  }
+
+  // One role to a line, each with its dates after it.
+  &__roles {
+    display: flex;
+    flex-direction: column;
+    // Clear room between one role and the next, with its own lines (when it wraps) closer together, so a line that
+    // runs on belongs to the role above it and a new role is a separate item.
+    gap: 5px;
+    margin: 6px 0 0;
+    font-size: 0.9375rem;
+    line-height: 1.3;
+  }
+
+  // A role's dates stay together: if they don't fit at the end of its title they go to the next line as a whole.
+  &__roles .resume__dates {
+    white-space: nowrap;
+  }
+
+  &__row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end; // against the right edge
+    gap: 8px;
+  }
+
+  &__photo {
+    flex: 0 0 var(--wide);
+    width: var(--wide);
+    margin: 0;
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+
+    // A vertical photo, in a row of its own: a little taller than wide.
+    &--tall {
+      flex-basis: var(--size);
+      width: var(--size);
+      aspect-ratio: 13 / 15;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  // Until a picture is in, a soft pale panel holds its place.
+  // A picture shown whole, on the page, rather than cropped to fill its frame (a cut-out, for instance).
+  &__photo--contain img {
+    object-fit: contain;
+    filter: none;
+  }
+
+  &__placeholder {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(160deg, rgba($sky-glow, 0.55), rgba($sky-warm, 0.5));
+    outline: 1px solid rgba($text, 0.14);
+    outline-offset: -1px;
+  }
+}
+
+// "Guest" appearances (see Appearances.jsx): a large picture from each conference in one row, edge to edge, with
+// its title beneath, square corners like the rest, and a few words above them, lined up with the rest of the text.
+.appear {
+  width: 100%;
+  position: relative;
+
+  &__intro {
+    // The few words sit in the content container, though the pictures under them run out to the window's edge.
+    width: var(--content-w);
+    max-width: none;
+    margin: 0 0 32px calc(var(--content-left) - var(--nav-w));
+    padding-inline: 32px;
+    box-sizing: border-box;
+
+    // The text itself keeps a comfortable line length, set against the left of that column.
+    p {
+      max-width: 40rem;
+      margin: 0;
+      font-size: 1rem;
+      font-weight: 300;
+      line-height: 1.55;
+      letter-spacing: 0.02em;
+      color: rgba($text, 0.9);
+      text-wrap: pretty;
+    }
+  }
+
+  &__events {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 8px;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  &__event .lead__photo {
+    --size: 100%;
+    flex: none;
+    aspect-ratio: 4 / 3;
+  }
+
+
+  // The talk's title under its picture, and under that where and when it was.
+  &__name {
+    margin: 12px 0 0;
+    padding-inline: 16px;
+    font-size: 0.9375rem;
+    font-weight: 400;
+    line-height: 1.35;
+    letter-spacing: 0.03em;
+    color: $text;
+  }
+
+  &__where {
+    margin: 2px 0 0;
+    padding-inline: 16px;
+    font-size: 0.8125rem;
+    font-weight: 300;
+    letter-spacing: 0.04em;
+    color: $muted;
+  }
+}
+
+// On a smaller screen (a tablet or a phone, up to 1024px wide) an organization reads straight down: its name and
+// roles, left-aligned, then its pictures as a strip you swipe sideways (each one snaps into place, with the next
+// peeking in), with a dot for each under it, so the pictures keep their shape and there is much less to scroll
+// through. Everything is sized from the room the strip has, not from the screen.
+@media (max-width: 1024px) {
+  .lead {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  // The name and roles go above the pictures, against the left. (The copy that sits beside the pictures on a big
+  // screen is hidden.)
+  .lead__who--top {
+    display: block;
+    flex: none;
+    align-self: stretch;
+    padding-inline: 28px;
+    // Under the pictures and their dots, as in Work Experience: some room above the name and roles.
+    order: 3;
+    margin-top: 10px;
+  }
+
+  .lead__gallery { order: 1; }
+  .lead__dots { order: 2; }
+  .lead__text { order: 4; }
+
+  .lead__row .lead__who {
+    display: none;
+  }
+
+  // No lines round the pictures on a small screen (they are a gallery there).
+  .lead__outline,
+  .lead__star {
+    display: none;
+  }
+
+  .lead__gallery {
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+    // Room at each end so the first and last pictures can sit in the middle like the rest.
+    padding-inline: 28px;
+    scroll-snap-type: x mandatory;
+    scroll-padding-inline: 28px;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+    // Pictures keep their own shapes, so they sit in the middle if one is shorter than another.
+    align-items: center;
+    // Draggable with a mouse too.
+    cursor: grab;
+    user-select: none;
+
+    &.is-dragging {
+      cursor: grabbing;
+    }
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  .lead__row,
+  .lead__row--last {
+    display: contents;
+  }
+
+  // One picture at a time: each is as wide as the strip (but never more than 560px), with its neighbours peeking in
+  // on either side, and every one is the same height (a 4:3 frame), so the strip never changes size as you swipe. A
+  // picture that is narrower than the frame (a portrait one) sits in the middle with room on either side, and none
+  // is cropped. Each snaps into the middle (and one swipe only ever moves one), the one in the middle is clear and
+  // the others are a little faint (they only fade, they never change size).
+  .lead__gallery .lead__photo,
+  .lead__gallery .lead__photo--tall,
+  .lead--wide-rows .lead__gallery .lead__photo {
+    flex: 0 0 min(100%, 560px);
+    width: min(100%, 560px);
+    height: auto;
+    aspect-ratio: 4 / 3;
+    scroll-snap-align: center;
+    scroll-snap-stop: always;
+    opacity: 0.55;
+    transition: opacity 0.3s ease;
+
+    &.is-current {
+      opacity: 1;
+    }
+  }
+
+  .lead__gallery .lead__photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  .lead__dots {
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+    // More room between the pictures and the dots under them.
+    margin-top: 10px;
+  }
+
+  .lead__dot {
+    width: 7px;
+    height: 7px;
+    padding: 0;
+    border: 0;
+    border-radius: 50%;
+    background: $text;
+    opacity: 0.3;
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+
+    &.is-on {
+      opacity: 0.75;
+    }
+  }
+}
+
+// On a phone the text of every section sits in the same column as the About Me text, and the conferences stack.
+@media (max-width: 760px) {
+  .lead__who--top {
+    align-self: center;
+    width: var(--contact-column);
+    padding-inline: 0;
+  }
+
+  .appear__intro {
+    width: var(--contact-column);
+    max-width: none;
+    margin-inline: auto;
+    padding-inline: 0;
+  }
+
+  .appear__name,
+  .appear__where {
+    padding-inline: calc((100vw - var(--contact-column)) / 2);
+  }
+
+  // The text of the other sections sits in the same column as the About Me text (centered, and no wider than it).
+  .frozen__step.is-wide > * {
+    width: var(--contact-column);
+    max-width: none;
+    padding-inline: 0;
+    margin-inline: auto;
+  }
+
+  .appear__events {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 24px;
+  }
+
+  // The pictures of the talks use the whole width, one above the other (they aren't part of the swipeable strips
+  // above), and keep their own shapes.
+  .appear__event .lead__photo {
+    flex: none;
+    width: 100%;
+    aspect-ratio: auto;
+
+    img {
+      height: auto;
+    }
+  }
+}
+
+// Links to a place further down the page glide there instead of jumping.
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+// The first screen: the wordmark, large, toward the bottom right. It takes most of the width, but never
+// so much that it runs off a short screen.
+.home__mark {
+  width: 100%;
+  margin: 0;
+  line-height: 0;
+  color: $ink;
+
+  &-svg {
+    display: block;
+    width: var(--mark-w);
+    height: auto;
+    margin-left: auto; // against the right
+  }
+}
+
+// The line under the wordmark that invites you in, with a hand-drawn curved arrow pointing down; the whole thing
+// is a link to the next section. It is as wide as the wordmark, against the right.
+.home__begin {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.3em;
+  box-sizing: border-box;
+  width: var(--mark-w);
+  // Room under the wordmark, and the arrow's right edge lined up with the wordmark's (the star at its right end sits
+  // a hair inside the drawing's edge).
+  margin: 22px calc(var(--mark-w) * 0.0138) 0 0;
+  color: $text;
+  font-size: 1rem;
+  font-weight: 300;
+  line-height: 1.4;
+  letter-spacing: 0.02em;
+  text-align: right;
+  text-decoration: none;
+  opacity: 0.85;
+  transition: opacity 0.2s ease;
+
+  &:hover,
+  &:focus-visible {
+    opacity: 1;
+  }
+
+  // The arrow is the size of the type, like a character at the end of the line.
+  &-arrow {
+    flex: none;
+    width: 1.2em;
+    height: 1.2em;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.7;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+}
+
+@media (max-width: 760px) {
+  .home {
+    --mark-w: min(85vw, 800px, calc((100svh - 260px) * 2.617));
+  }
+}
+
+
+// The homepage nav, top left (see HomeNav.jsx): a house, then a trail of short lines, one for each section, with a
+// longer line for a section that has parts of its own. A word fades in beside the section you are in (and its
+// parts), and beside any you point at.
+.hnav {
+  position: fixed;
+  top: 26px;
+  left: 32px;
+  // The nav's own column: everything to its right is the content's.
+  width: calc(var(--nav-w) - 32px);
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  // The room between one section's line and the next.
+  gap: 6px;
+
+  // A section and its parts share one continuous line, down through each of their rows.
+  &__group {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  // Every row is a fixed size and each piece sits in its place inside it, so nothing changes size or moves
+  // the rows around.
+  &__link {
+    position: relative;
+    display: block;
+    // Just wide enough to point at the icon or line comfortably; the word hangs out to the right of it.
+    width: 28px;
+    height: 28px;
+    color: $text;
+    font-size: 0.8125rem;
+    font-weight: 300;
+    line-height: 28px;
+    // The same letter spacing for the section words and the words for their parts.
+    letter-spacing: 0.05em;
+    text-decoration: none;
+  }
+
+  // The house icon and the lines: the same 16px column, always showing.
+  &__mark {
+    position: absolute;
+    opacity: 0.3;
+    transition: opacity 0.25s ease;
+  }
+
+  &__icon {
+    top: 4px;
+    left: -2px;
+    width: 20px;
+    height: 20px;
+    // A solid house with rounded corners, the roof's eaves past the walls and a door notched in the bottom; the
+    // outline in the same color rounds off every corner.
+    fill: currentColor;
+    stroke: currentColor;
+    stroke-width: 1.8;
+    stroke-linejoin: round;
+  }
+
+  // The trail: each section is a line in the house's column, one under another like a path. A row's piece of the
+  // line fills the row, so a section's pieces run together into one line that runs the full height of its words, with
+  // a little room above and below them.
+  &__dash {
+    top: 0;
+    bottom: 0;
+    left: 7px;
+    width: 2px;
+    background: currentColor;
+  }
+
+  &__link:first-child .hnav__dash {
+    border-top-left-radius: 1px;
+    border-top-right-radius: 1px;
+  }
+
+  &__link:last-child .hnav__dash {
+    border-bottom-left-radius: 1px;
+    border-bottom-right-radius: 1px;
+  }
+
+  // A part of a section: its row is as tall as its word (one line or two) plus a little, so the words are the same
+  // distance apart whichever run to a second line, and the whole row, word included, is the thing to point at.
+  &__link--sub {
+    width: calc(var(--nav-w) - 32px);
+    height: auto;
+    box-sizing: border-box;
+    padding: 1.5px 0 1.5px 26px;
+    font-size: 0.75rem;
+    line-height: 1.15;
+  }
+
+  // The section's own row is shorter when it has parts, so they sit just under its word.
+  &__link:first-child:has(+ .hnav__link--sub) {
+    height: 24.5px;
+    padding-top: 3.5px;
+    box-sizing: border-box;
+    line-height: 21px;
+
+    .hnav__tag {
+      top: 3.5px; // below the row's padding, which an absolutely placed word doesn't follow
+      line-height: 21px;
+    }
+  }
+
+  &__link:first-child + &__link--sub {
+    padding-top: 0;
+  }
+
+  // The same room below the last part's word as above the first word.
+  &__link--sub:last-child {
+    padding-bottom: 6.2px;
+  }
+
+  // The last stop is a line like the rest, ending in a round cap.
+  &__dash--end {
+    // Short enough that the cap at its end sits level with the middle of the word beside it.
+    bottom: 13.5px;
+    border-radius: 1px;
+
+    // The cap: a small round end under the line, so it reads clearly as the end of the trail.
+    &::after {
+      content: '';
+      position: absolute;
+      left: 50%;
+      bottom: -2px;
+      width: 5px;
+      height: 5px;
+      margin-left: -2.5px;
+      border-radius: 50%;
+      background: currentColor;
+    }
+  }
+
+  // The word for a line or the house: it just fades in beside it and fades out again.
+  &__tag {
+    position: absolute;
+    top: 0;
+    left: 26px;
+    white-space: nowrap;
+    // The section words are heavier than the words for their parts.
+    font-weight: 500;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+  }
+
+  // The words for a section's parts are a little smaller, lined up with the section's own word, and can run to a
+  // second line.
+  &__tag--sub {
+    position: static;
+    display: block;
+    font-weight: 300;
+    white-space: normal;
+    font-size: 0.75rem;
+    line-height: 1.15;
+    letter-spacing: 0.05em;
+  }
+
+  // The word of the section you are in shows beside its line, with the words for its parts under it.
+  &__link[data-state='current'] .hnav__tag,
+  &__link.is-section .hnav__tag {
+    opacity: 1;
+  }
+
+  &__group[data-current] .hnav__tag--sub {
+    opacity: 0.6;
+  }
+
+  &__group[data-current] .hnav__link--sub[data-state='current'] .hnav__tag--sub {
+    opacity: 1;
+  }
+
+  // Anywhere in a section, its whole line is darker, its parts included; the line is no thicker, only darker.
+  &__link.is-active .hnav__mark,
+  &__group[data-current] .hnav__link .hnav__mark {
+    opacity: 0.75;
+  }
+
+  // Pointing at a section brings it up, shows its word, and shows the words for its parts.
+  // The house darkens when pointed at; a section's line darkens as a whole (below), never just the piece under the
+  // pointer.
+  &__home:hover .hnav__mark,
+  &__home:focus-visible .hnav__mark {
+    opacity: 0.75;
+  }
+
+  &__group:hover .hnav__link .hnav__mark,
+  &__group:has(:focus-visible) .hnav__link .hnav__mark {
+    opacity: 0.75;
+  }
+
+  &__link:hover .hnav__tag,
+  &__link:focus-visible .hnav__tag {
+    opacity: 1;
+  }
+
+  // A word that is showing can be clicked like its line (a word that is hidden can't be, so nothing invisible
+  // is in the way).
+  &__link[data-state='current'] .hnav__tag,
+  &__link.is-section .hnav__tag,
+  &__home:hover .hnav__tag,
+  &__group:hover .hnav__tag {
+    pointer-events: auto;
+  }
+
+  // Pointing anywhere along a section's line shows the words for the whole section.
+  &__group:hover .hnav__link:not(.hnav__link--sub) .hnav__tag {
+    opacity: 1;
+  }
+
+  &__group:hover .hnav__tag--sub {
+    opacity: 0.6;
+  }
+
+  &__group:hover .hnav__link--sub:hover .hnav__tag--sub {
+    opacity: 1;
+  }
+
+  // The word for the part you point at is a touch heavier.
+  &__link--sub:hover .hnav__tag--sub,
+  &__link--sub:focus-visible .hnav__tag--sub {
+    font-weight: 400;
+  }
+}
+
+// On a smaller window the nav is taken away altogether, so there is no room held back for it and the content container
+// (see --content-left) has the whole width to work in. (A nav for phones is still to come.) HomeNav.jsx turns this on
+// (as `no-nav` on the page) once the rows of pictures, which stay the same size, would run into the nav; up to 1024px
+// wide it is always off.
+html.no-nav {
+  --nav-w: 0px;
+
+  .hnav {
+    display: none;
+  }
+}
+
+@media (max-width: 1024px) {
+  :root {
+    --nav-w: 0px;
+  }
+
+  .hnav {
+    display: none;
+  }
+}
+
+@media (max-width: 760px) {
+  .hnav {
+    left: 20px;
+
+    &__link {
+      font-size: 0.75rem;
+    }
+  }
+}
+
+// On the homepage the first screen is the wordmark, so there is no small one, and nothing stays on screen
+// as you scroll.
+body:has(.home-page) .wordmark {
+  display: none;
+}
+
+// The homepage never scrolls sideways, even though the little walker's ground line runs on past its right side.
+.home-page {
+  overflow-x: clip;
+}
+
+// Home: a single drawn line that writes "hello" on the right of the first screen, with a short
+// line under it. --at is how far across the page the middle of the word sits.
+.home {
+  --at: 71%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+  min-height: 100vh;
+  min-height: 100svh;
+  // A nudge of room on the right and the bottom.
+  padding: 96px clamp(16px, 3vw, 48px) clamp(24px, 7vh, 80px) 16px;
+  overflow: hidden;
+
+  // How wide the wordmark is: about 80% of the screen's width, but never more than 800px, and never so tall it runs
+  // off a short screen (the line under it takes some room too).
+  --mark-w: min(80vw, 800px, calc((100svh - 260px) * 2.617));
+
+  // The greeting's size, which the line under it is a fraction of, so they scale together.
+  --heading-size: clamp(2.5rem, 9vw, 6rem);
+  --subtitle-ratio: 0.21;
+
+  &__hello {
+    margin: 0;
+  }
+
+  &__subtitle {
+    position: relative;
+    left: var(--at);
+    // `translate` (not `transform`) so the rise-in animation, which uses transform, leaves it alone.
+    translate: -50% 0;
+    box-sizing: border-box;
+    width: min(34em, calc(2 * (100% - var(--at)) - 32px));
+    margin: 0.4em 0 0;
+    // Never smaller than 14px, so it stays readable on a phone.
+    font-size: max(0.875rem, calc(var(--heading-size) * var(--subtitle-ratio)));
+    font-weight: 300;
+    line-height: 1.45;
+    letter-spacing: 0.02em;
+    text-align: center;
+    color: rgba($text, 0.9);
+  }
+
+  // Keeps the last word and the arrow together, so the arrow never sits alone on a line.
+  &__nowrap {
+    white-space: nowrap;
+  }
+
+  // The arrow is a link down to the experience section.
+  &__down {
+    display: inline-block;
+    margin-left: 0.3em;
+    color: inherit;
+    text-decoration: none;
+    transition: transform 0.2s ease;
+
+    &:hover,
+    &:focus-visible {
+      transform: translateY(2px);
+    }
+  }
+
+  // A small arrow pointing down, drawn to match the type's weight.
+  &__arrow {
+    display: block;
+    width: 0.95em;
+    height: 0.95em;
+    margin-top: 0.12em;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+}
+
+// Below 900px the drawing is made wider than the screen and slid over, so the word stays a good
+// size and sits a little right of centre instead of shrinking to nothing.
+@media (max-width: 900px) {
+  .home {
+    --at: 53%;
+    --least: 720px;
+  }
+}
+
+// The line itself. It is as wide as the page (at least 900px), and drawn thin.
+.hello {
+  display: block;
+  width: max(100%, var(--least, 900px));
+  // The word's middle is 73.5% of the way across the drawing; this puts that point at --at.
+  margin-left: calc(var(--at) - 0.735 * max(100%, var(--least, 900px)));
+  height: auto;
+  aspect-ratio: 1000 / 260;
+  overflow: visible;
+  fill: none;
+  pointer-events: none;
+
+  &__line {
+    stroke: $text;
+    // In the drawing's own units, so it scales with the drawing (about 1.5px on a laptop).
+    stroke-width: 1.2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  &__hit {
+    fill: transparent;
+    pointer-events: all;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  // The line draws itself, then the line under it fades in.
+  .hello__line {
+    stroke-dasharray: 1;
+    stroke-dashoffset: 1;
+    animation: hello-draw 4.2s cubic-bezier(0.55, 0, 0.3, 1) 0.3s forwards;
+  }
+
+  .home__subtitle {
+    animation: contact-rise 0.9s cubic-bezier(0.22, 0.61, 0.36, 1) 3.2s both;
+  }
+}
+
+@keyframes hello-draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+// It rises and fades in on arrival, the same way the contact page does.
+@media (prefers-reduced-motion: no-preference) {
+  .home__statement {
+    animation: contact-rise 0.9s cubic-bezier(0.22, 0.61, 0.36, 1) 0.2s both;
+  }
+
+  .home__subtitle {
+    animation: contact-rise 0.9s cubic-bezier(0.22, 0.61, 0.36, 1) 0.55s both;
+  }
+}
+
+// Contact: a virtual business card. The image sits first in the markup, so it is on top on
+// small screens; on wide screens the photo is on the left, with the details close beside it.
+.contact {
+  box-sizing: border-box;
+  display: grid;
+  // minmax(0, ...) keeps the column from growing to fit the text block, which is a little wider
+  // than the photo (it matches the outer outline), and would otherwise push the photo wider.
+  grid-template-columns: minmax(0, 1fr);
+  gap: 40px;
+  max-width: 1100px;
+  min-height: 100vh;
+  margin: 0 auto;
+  padding: 112px 32px 96px;
+  align-content: center;
+
+  // The heading's size, and the body text as a fixed fraction of it, so the two always scale
+  // together and keep the same proportion on every screen.
+  --heading-size: clamp(2.75rem, 6.5vw, 4.5rem);
+  --body-ratio: 0.2222; // 16px beside the largest heading (72px)
+
+  // The photo, its frame and its two outlines. It is a size container so the star can be
+  // placed along the outer outline using the figure's own width.
+  &__figure {
+    --radius: 8px; // how round the photo's corners are
+    --inner: 12px; // how far the inner outline sits from the photo
+    --halo: 22px; // how far the outer outline sits from the photo
+    --star-y: 30cqw; // how far down the right side of the outer outline the star sits
+    --tilt: 0deg; // how far the star is turned; 0 is upright, along the line
+    position: relative;
+    width: 100%;
+    max-width: 420px;
+    justify-self: center;
+    container-type: inline-size;
+  }
+
+  // The photo fades out toward the top.
+  &__image {
+    position: relative;
+    aspect-ratio: 3 / 4;
+    border-radius: var(--radius);
+    overflow: hidden;
+    // A line close around the photo. It follows the rounded corners.
+    outline: 1.5px solid rgba($text, 0.75);
+    outline-offset: var(--inner);
+
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      // Eased back a little so the photo sits softly on the pale page.
+      filter: saturate(0.8);
+      // Fades toward the top so the sky melts into the page.
+      -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.12) 0%, #000 55%);
+      mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.12) 0%, #000 55%);
+    }
+
+    // The cats, laid over the portrait and faded in when "yes! three!" is pointed at.
+    .contact__cats {
+      position: absolute;
+      inset: 0;
+      object-position: 50% 100%;
+      filter: saturate(0.9);
+      -webkit-mask-image: none;
+      mask-image: none;
+      opacity: 0;
+      transition: opacity 0.35s ease;
+    }
+  }
+
+  &.is-cats &__cats {
+    opacity: 1;
+  }
+
+  // The outer outline: a thin line that fades out around the star.
+  &__halo {
+    position: absolute;
+    inset: calc(var(--halo) * -1);
+    border: 1px solid rgba($text, 0.4);
+    // Concentric with the photo: its corners are the photo's plus the distance out.
+    border-radius: calc(var(--radius) + var(--halo));
+    pointer-events: none;
+    // The star sits on the right edge of this box. Its spot is measured from the box's own
+    // corner, which starts one halo distance outside the figure.
+    -webkit-mask-image: radial-gradient(
+      circle at calc(100cqw + var(--halo) * 2) calc(var(--star-y) + var(--halo)),
+      transparent 11px,
+      #000 32px
+    );
+    mask-image: radial-gradient(
+      circle at calc(100cqw + var(--halo) * 2) calc(var(--star-y) + var(--halo)),
+      transparent 11px,
+      #000 32px
+    );
+  }
+
+  // A small caption under the outlines, lined up with the right edge of the photo.
+  &__caption {
+    position: absolute;
+    top: calc(100% + var(--halo) + 10px);
+    right: 0;
+    margin: 0;
+    font-size: 0.8125rem;
+    font-weight: 300;
+    font-style: italic;
+    letter-spacing: 0.06em;
+    white-space: nowrap;
+    color: $muted;
+
+    // The name, and in its place (right-aligned, the same spot) who the cats are, while they are showing.
+    &-name,
+    &-cats {
+      transition: opacity 0.35s ease;
+    }
+
+    &-cats {
+      position: absolute;
+      top: 0;
+      right: 0;
+      opacity: 0;
+    }
+  }
+
+  &.is-cats &__caption-name {
+    opacity: 0;
+  }
+
+  &.is-cats &__caption-cats {
+    opacity: 1;
+  }
+
+  // The phrase that brings up the cats: marked lightly so it can be found.
+  &__cats-trigger {
+    text-decoration: underline dotted;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 4px;
+  }
+
+  // The wordmark's star, sitting in the break on the outer outline.
+  &__star {
+    position: absolute;
+    left: calc(100cqw + var(--halo));
+    top: var(--star-y);
+    width: 16px;
+    height: 24px;
+    transform: translate(-50%, -50%) rotate(var(--tilt));
+    opacity: 0.8;
+    pointer-events: none;
+
+    .star__light {
+      fill: $mark-bright;
+    }
+
+    .star__dark {
+      fill: $mark-ring;
+    }
+  }
+
+  &__name {
+    white-space: nowrap; // the heading breaks only where the greeting says it does
+    margin: 0 0 28px;
+    font-size: var(--heading-size);
+    line-height: 0.84;
+    font-weight: 500;
+    font-style: italic;
+    letter-spacing: 0.005em;
+
+    // The second line of the greeting is a little lighter than the first.
+    span + span {
+      font-weight: 300;
+    }
+  }
+
+  &__text {
+    margin: 0;
+    // In em, not rem, so the line length scales with the text and it wraps in the same places at
+    // every screen size.
+    max-width: 29em; // about as wide as the heading's longer line
+    // The same body text as everywhere else on the page: 16px, light, 1.55 line height.
+    font-size: 1rem;
+    font-weight: 300;
+    line-height: 1.55;
+    letter-spacing: 0.02em;
+    color: rgba($text, 0.9);
+
+    & + & {
+      margin-top: 20px;
+    }
+
+    // The words picked out in the copy: a medium weight.
+    strong {
+      font-weight: 500;
+    }
+
+    a {
+      color: $link-blue;
+      text-decoration: underline;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 4px;
+      transition:
+        color 0.2s ease,
+        text-decoration-thickness 0.2s ease;
+
+      &:hover,
+      &:focus-visible {
+        color: $link-blue-hover;
+        text-decoration-thickness: 2px;
+      }
+    }
+  }
+}
+
+// Arrival: each part of the page fades in while rising a little, one after another, so the
+// page settles into place instead of just appearing. Skipped for anyone who prefers less motion.
+@keyframes contact-rise {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .contact:not(.contact--stage) .contact__figure,
+  .contact:not(.contact--stage) .contact__name,
+  .contact:not(.contact--stage) .contact__text {
+    animation: contact-rise 0.9s cubic-bezier(0.22, 0.61, 0.36, 1) both;
+  }
+
+  .contact:not(.contact--stage) {
+    .contact__figure {
+      animation-delay: 0.1s;
+    }
+
+    .contact__name {
+      animation-delay: 0.4s;
+    }
+
+    .contact__text {
+      animation-delay: 0.6s;
+
+      & + .contact__text {
+        animation-delay: 0.75s;
+      }
+    }
+  }
+}
+
+// Wide screens: the photo on the left, the details beside it. Below this width the photo
+// goes on top and the details stack under it.
+@media (min-width: 961px) {
+  .contact {
+    // The photo on the left with the details tucked in close beside it, the pair centered.
+    // The text column is wide enough for the heading's longer line; the body text keeps its own,
+    // narrower max-width.
+    grid-template-columns: minmax(240px, 420px) minmax(300px, 1fr);
+    justify-content: center;
+    gap: clamp(72px, 5vw, 88px);
+    // A little more room on the right as the window narrows towards the container's width, so the heading and text
+    // don't run right up to the edge of the window; none extra once the container has room on its right.
+    padding-right: clamp(32px, calc(32px + (1340px - 100vw) * 0.2), 72px);
+    // The photo and words start at the left of the container, like the text of every other section.
+    &--stage {
+      justify-content: start;
+    }
+
+    // The words start level with the top of the photo (a little below it), however tall they run, rather than being
+    // centered against it, so the heading is never above the photo.
+    align-items: start;
+
+    // The heading's size follows the width of the column it sits in (not the window), so it never outgrows the text
+    // beside the photo as the window narrows: 72px in a full-width column, smaller in a narrower one.
+    --heading-size: min(4.5rem, 14.5cqw);
+
+    &__figure {
+      grid-column: 1;
+      grid-row: 1;
+      justify-self: stretch;
+    }
+
+    &__details {
+      grid-column: 2;
+      grid-row: 1;
+      container-type: inline-size;
+    }
+  }
+}
+
+@media (max-width: 960px) {
+  // The stacked column's width: the photo plus the outer outline's distance on each side.
+  :root {
+    --contact-column: calc(min(420px, 100vw - 88px) + 44px);
+  }
+
+  .contact {
+    // Room for the outlines that sit outside the photo.
+    padding-inline: 44px;
+    padding-top: 144px; // clear of the wordmark and icons above
+    gap: 96px; // room for the caption under the outlines
+
+    --heading-size: clamp(2.75rem, 12.8vw, 3.75rem);
+    --body-ratio: 0.27; // a little larger against the smaller heading, so it stays easy to read (13px on a phone)
+
+    // The text is as wide as the picture, outlines included, and centered with it.
+    &__details {
+      width: var(--contact-column);
+      justify-self: center;
+    }
+  }
+
+  // On the contact page the wordmark lines up with the picture's left edge, outlines included,
+  // instead of sitting in the far corner. (It has 10px of padding around the lettering.)
+  body:has(main.contact) .wordmark {
+    left: calc(50% - var(--contact-column) / 2 - 10px);
+  }
+
+}
+
+// A short chat between the contact card and the resume (see ChatSection.jsx): a dark bubble from the
+// left, then a grey one from the right that types and then answers.
+.chat {
+  display: grid;
+  gap: 22px;
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 120px 32px;
+
+  &__bubble {
+    margin: 0;
+    max-width: 82%;
+    padding: 0.8em 1.25em;
+    border-radius: 22px;
+    font-size: clamp(1.05rem, 2.3vw, 1.5rem);
+    font-weight: 400;
+    line-height: 1.35;
+    letter-spacing: 0.01em;
+    opacity: 0;
+    transition:
+      opacity 0.7s cubic-bezier(0.22, 0.61, 0.36, 1),
+      translate 0.7s cubic-bezier(0.22, 0.61, 0.36, 1);
+
+    &.is-in {
+      opacity: 1;
+      translate: 0 0;
+    }
+
+    // From the left: dark, with soft white text. The corner on the speaker's side is squarer.
+    &--ask {
+      justify-self: start;
+      border-bottom-left-radius: 6px;
+      background: $text;
+      color: #f4f4f1;
+      translate: -28px 0;
+    }
+
+    // From the right: grey, with dark text. Its dots and its words share one spot, so the bubble
+    // is already the right size when the dots turn into words.
+    &--reply {
+      display: grid;
+      justify-self: end;
+      border-bottom-right-radius: 6px;
+      background: #dcdde3;
+      color: $text;
+      translate: 28px 0;
+    }
+  }
+
+  &__dots,
+  &__words {
+    grid-area: 1 / 1;
+  }
+
+  // The dots go away completely first; only then do the words come in.
+  &__dots {
+    transition: opacity 0.3s ease;
+  }
+
+  &__words {
+    transition: opacity 0.5s ease;
+  }
+
+  &__dots {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.28em;
+
+    i {
+      width: 0.45em;
+      height: 0.45em;
+      border-radius: 50%;
+      background: currentColor;
+      opacity: 0.45;
+    }
+  }
+
+  &__words {
+    opacity: 0;
+  }
+
+  &__bubble.is-written {
+    .chat__dots {
+      opacity: 0;
+    }
+
+    .chat__words {
+      opacity: 1;
+      transition-delay: 0.4s; // after the dots have finished fading
+    }
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .chat__dots i {
+    animation: chat-dot 1.2s ease-in-out infinite;
+
+    &:nth-child(2) {
+      animation-delay: 0.15s;
+    }
+
+    &:nth-child(3) {
+      animation-delay: 0.3s;
+    }
+  }
+}
+
+@keyframes chat-dot {
+  0%,
+  60%,
+  100% {
+    opacity: 0.35;
+    transform: translateY(0);
+  }
+
+  30% {
+    opacity: 0.9;
+    transform: translateY(-0.2em);
+  }
+}
+
+@media (max-width: 760px) {
+  .chat {
+    padding-inline: 20px;
+  }
+}
+
+// Anything marked .fade (see useFade.js) fades in as it scrolls fully into view and fades back out
+// as it leaves, rising a little each time.
+.fade {
+  transition:
+    opacity 0.8s cubic-bezier(0.22, 0.61, 0.36, 1),
+    transform 0.8s cubic-bezier(0.22, 0.61, 0.36, 1);
+
+  &.is-pending {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+}
+
+@media (max-width: 760px) {
+  // On a small screen each entry stacks: who and when first, then the bullet points.
+  .resume__entry {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 16px;
+  }
+
+  .resume {
+    padding: 104px 20px 140px;
+  }
+}
+
+// The little walker above the note (see Walker.jsx).
+.walker {
+  display: block;
+  width: 150px;
+  height: auto;
+  margin: 0 0 24px;
+  color: $ink;
+  overflow: hidden;
+
+  // Everything is drawn in thin outline.
+  &__line {
+    fill: none;
+    stroke: currentColor;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  &__line {
+    stroke-width: 1.5;
+  }
+
+
+  // A boot is never gone: at its faintest it is a pale grey (see the fade below).
+  &__boot {
+    opacity: 0.4;
+  }
+
+  // Each boot moves as one piece, turning about its ankle.
+  &__boot {
+    transform-box: view-box;
+    transform-origin: 80px 84px;
+  }
+}
+
+// The walk: a full step takes 1.7s. A boot slides back along the ground while it is down, then its heel peels up
+// and it swings forward in a high, rounded arc and lands heel first. The far boot is half a step behind.
+@media (prefers-reduced-motion: no-preference) {
+  // A boot is darkest as it lands flat, fades to a light grey as it slides back to the left, and darkens again as it is
+  // picked up and swung forward to land. The two are half a step apart, so they are never the same shade.
+  .walker__boot {
+    animation: walker-boot 1.7s linear infinite, walker-fade 1.7s linear infinite;
+  }
+
+  .walker__boot--far {
+    animation-delay: -0.85s;
+  }
+
+}
+
+@keyframes walker-fade {
+  0% { opacity: 1; }
+  10% { opacity: 1; }
+  60% { opacity: 0.4; }
+  100% { opacity: 1; }
+}
+
+// Where the boot is, and how far it has turned, over a whole step (worked out as a foot lifting off, swinging and landing).
+@keyframes walker-boot {
+  0.0% { transform: translate(17.0px, -3.0px) rotate(-8.0deg); }
+  2.5% { transform: translate(15.6px, -3.0px) rotate(-6.5deg); }
+  5.0% { transform: translate(14.2px, -3.0px) rotate(-3.3deg); }
+  7.5% { transform: translate(12.8px, -3.0px) rotate(-0.6deg); }
+  10.0% { transform: translate(11.3px, -3.0px) rotate(0.0deg); }
+  12.5% { transform: translate(9.9px, -3.0px) rotate(0.0deg); }
+  15.0% { transform: translate(8.5px, -3.0px) rotate(0.0deg); }
+  17.5% { transform: translate(7.1px, -3.0px) rotate(0.0deg); }
+  20.0% { transform: translate(5.7px, -3.0px) rotate(0.0deg); }
+  22.5% { transform: translate(4.2px, -3.0px) rotate(0.0deg); }
+  25.0% { transform: translate(2.8px, -3.0px) rotate(0.0deg); }
+  27.5% { transform: translate(1.4px, -3.0px) rotate(0.0deg); }
+  30.0% { transform: translate(0.0px, -3.0px) rotate(0.0deg); }
+  32.5% { transform: translate(-1.4px, -3.0px) rotate(0.0deg); }
+  35.0% { transform: translate(-2.8px, -3.0px) rotate(0.0deg); }
+  37.5% { transform: translate(-4.2px, -3.0px) rotate(0.0deg); }
+  40.0% { transform: translate(-5.7px, -3.0px) rotate(0.0deg); }
+  42.5% { transform: translate(-7.1px, -3.0px) rotate(0.1deg); }
+  45.0% { transform: translate(-8.5px, -3.0px) rotate(2.2deg); }
+  47.5% { transform: translate(-9.9px, -3.0px) rotate(6.7deg); }
+  50.0% { transform: translate(-11.3px, -3.0px) rotate(12.5deg); }
+  52.5% { transform: translate(-12.8px, -3.0px) rotate(18.7deg); }
+  55.0% { transform: translate(-14.2px, -3.0px) rotate(24.3deg); }
+  57.5% { transform: translate(-15.6px, -3.0px) rotate(28.4deg); }
+  60.0% { transform: translate(-17.0px, -3.0px) rotate(30.0deg); }
+  62.5% { transform: translate(-16.4px, -6.4px) rotate(29.6deg); }
+  65.0% { transform: translate(-15.1px, -9.3px) rotate(28.4deg); }
+  67.5% { transform: translate(-13.4px, -11.8px) rotate(26.5deg); }
+  70.0% { transform: translate(-11.2px, -14.0px) rotate(24.1deg); }
+  72.5% { transform: translate(-8.7px, -15.7px) rotate(21.2deg); }
+  75.0% { transform: translate(-5.9px, -17.0px) rotate(18.0deg); }
+  77.5% { transform: translate(-3.0px, -17.7px) rotate(14.5deg); }
+  80.0% { transform: translate(0.0px, -18.0px) rotate(11.0deg); }
+  82.5% { transform: translate(3.0px, -17.7px) rotate(7.5deg); }
+  85.0% { transform: translate(5.9px, -17.0px) rotate(4.0deg); }
+  87.5% { transform: translate(8.7px, -15.7px) rotate(0.8deg); }
+  90.0% { transform: translate(11.2px, -14.0px) rotate(-2.1deg); }
+  92.5% { transform: translate(13.4px, -11.8px) rotate(-4.5deg); }
+  95.0% { transform: translate(15.1px, -9.3px) rotate(-6.4deg); }
+  97.5% { transform: translate(16.4px, -6.4px) rotate(-7.6deg); }
+  100.0% { transform: translate(17.0px, -3.0px) rotate(-8.0deg); }
+}
+
+// On a small screen a job's pictures are a gallery, as in Outside of Work: one at a time in a 4:3 frame, uncropped,
+// with its neighbours peeking in, swiped or dragged, and dots beneath.
+@media (max-width: 1024px) {
+  .resume__photos.resume__photos {
+    gap: 10px;
+    height: auto;
+    margin: 0 0 6px;
+    padding-inline: 0;
+    border-radius: 0;
+    outline: 0;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+    align-items: center;
+    cursor: grab;
+    user-select: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    &.is-dragging {
+      cursor: grabbing;
+    }
+
+    .lead__photo.lead__photo {
+      flex: 0 0 min(100%, 560px);
+      width: min(100%, 560px);
+      height: auto;
+      aspect-ratio: 4 / 3;
+      margin-left: 0;
+      clip-path: none;
+      border-radius: 10px;
+      outline: 0;
+      scroll-snap-align: center;
+      scroll-snap-stop: always;
+      opacity: 0.55;
+      transition: opacity 0.3s ease;
+
+      &.is-current {
+        opacity: 1;
+      }
+    }
+
+    .lead__photo.lead__photo img {
+      width: 100%;
+      height: 100%;
+      max-width: none;
+      object-fit: contain;
+    }
+  }
+
+  // No lines around the gallery.
+  .resume__frame {
+    margin: 0;
+  }
+
+  .resume__halo,
+  .resume__star {
+    display: none;
+  }
+
+  .resume__dots {
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+    margin: 4px 0 22px;
+  }
+}
+
+// Section titles: with no nav on a small screen, each section starts with its name. (On a computer the nav says it.)
+.frozen__section-title {
+  display: none;
+}
+
+@media (max-width: 1024px) {
+  .frozen__section-title {
+    display: block;
+    margin: 0 0 22px;
+    padding-inline: 28px;
+    // Each word on its own line (the titles carry their line breaks).
+    white-space: pre-line;
+    font-size: 2rem;
+    font-weight: 500;
+    letter-spacing: 0.03em;
+    line-height: 1.12;
+    color: $text;
+  }
+}
+
+// Where the stage still holds still at that width, the title sits at the top of its screen.
+@media (max-width: 1024px) and (min-width: 961px) and (min-height: 700px) {
+  .frozen__step {
+    > .frozen__section-title {
+      position: absolute;
+      top: 26px;
+      left: var(--content-left);
+      margin: 0;
+    }
+  }
+}
+
+@media (max-width: 760px) {
+  .frozen__step > .frozen__section-title {
+    width: var(--contact-column);
+    margin-inline: auto;
+    padding-inline: 0;
+  }
+}
+
+// The link at the bottom right of each section that goes on to the next one, in the style of the line under the wordmark:
+// a few words and the curved arrow.
+.frozen__next {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.3em;
+  // On the stage: the bottom right of the screen.
+  position: absolute;
+  right: 32px;
+  bottom: 24px;
+  z-index: 2;
+  color: $text;
+  font-size: 1rem;
+  font-weight: 300;
+  line-height: 1.4;
+  letter-spacing: 0.02em;
+  text-align: right;
+  text-decoration: none;
+  opacity: 0.85;
+  transition: opacity 0.2s ease;
+
+  &:hover,
+  &:focus-visible {
+    opacity: 1;
+  }
+
+  &-arrow {
+    flex: none;
+    width: 1.2em;
+    height: 1.2em;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.7;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+}
+
+// Where the sections stack down the page instead, it ends its section, against the right.
+@media not all and (min-width: 961px) and (min-height: 700px) {
+  .frozen__next {
+    position: static;
+    width: max-content;
+    margin: 20px 20px 0 auto;
+  }
+}
+
+// The link keeps its own size and place, whatever the section's content is told to do.
+.frozen__step.is-wide > .frozen__next,
+.frozen__step > .frozen__next {
+  width: auto;
+  padding-inline: 0;
+  margin-inline: 0;
+}
+
+@media not all and (min-width: 961px) and (min-height: 700px) {
+  .frozen__step.is-wide > .frozen__next,
+  .frozen__step > .frozen__next {
+    width: max-content;
+    margin: 20px 20px 0 auto;
+  }
+}
+
+// A job's pictures start at the same height in every Work Experience section, so the lines around them (and the
+// star on them) don't move from one section to the next, however long the text is.
+@media (min-width: 961px) and (min-height: 700px) {
+  .frozen__step:has(> article > .resume__frame) {
+    align-items: flex-start;
+    padding-top: clamp(48px, 7.5vh, 72px);
+  }
+}
+
+// Guest Appearances, while the nav is there to the left of the pictures (wider than 1024px, and until the pictures run the
+// whole width of the window): the line that runs along the top of the pictures and out to the left (AppearOutline.jsx)
+// has room, the pictures sit lower to leave space for it, and the first picture's top left corner is rounded to go with
+// it (the line's curve, less its distance from the picture: 30px - 12px). Without the nav the pictures span the whole
+// window, there is no line (it is hidden below), and the pictures keep their square corners.
+@media (min-width: 1025px) {
+  html:not(.no-nav) .appear {
+    &__intro {
+      // Room under it for the line, with the text nudged down a little, closer to the pictures, without moving them.
+      margin-bottom: 100px;
+      transform: translateY(28px);
+    }
+
+    &__event:first-child .lead__photo {
+      border-top-left-radius: 18px;
+    }
+  }
+}
+
+html.no-nav .appear {
+  .lead__outline,
+  .lead__star {
+    display: none;
+  }
+}
