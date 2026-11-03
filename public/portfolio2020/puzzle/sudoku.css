@@ -1,0 +1,99 @@
+body {
+    width: 100vw;
+    height: 100vh;
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-flow: column;
+    margin: 0;
+    overflow: hidden;
+}
+
+.sudoku-container {
+    border: none;
+    margin: 0 auto;
+    position: relative;
+    padding: 0 2px;
+}
+
+tr:nth-child(1) td:nth-child(3) input,
+tr:nth-child(1) td:nth-child(6) input {
+    margin: 0 10px 0 0;
+}
+
+tr:nth-child(3) input,
+tr:nth-child(6) input {
+    margin: 0 0 10px 0;
+}
+
+.sudoku-container input {
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    font-size: 1em;
+    font-weight: bold;
+    font-family: Nunito;
+    padding: 0;
+    border: 3px #CECACB solid;
+    background-color: #CECACB;
+    color: #664147;
+}
+
+.sudoku-container input:focus {
+    border-color: #927163;
+}
+
+.sudoku-container input.highlight {
+    background-color: #29B6F6;
+    border-color: #29B6F6;
+}
+
+.sudoku-container input.disabled {
+    cursor: default;
+    background-color: #927163;
+    border-color: #927163;
+    color: #241C19;
+}
+
+.sudoku-container input.disabled.highlight {
+    background-color: #29B6F6;
+    border-color: #29B6F6;
+}
+
+.sudoku-container .invalid {
+    border-color: #FF9785;
+}
+
+.sudoku-container .invalid:focus {
+    border-color: #FF9785;
+}
+
+.sudoku-container.valid-matrix {
+    border-color: #927163;
+}
+
+#controls {    
+	margin: 0 auto;
+    text-align: center;
+    padding: 1em;
+}
+
+.btn.primary {
+    font-family: Nunito;
+    padding: 0.5em 0.75em;
+    margin: 0 0.5em;
+    font-weight: bold;
+    color: #241C19;
+    background-color: #927163;
+    border: none;
+}
+
+.btn.primary:hover {
+	cursor:pointer;
+    background-color: #755b50;
+}
